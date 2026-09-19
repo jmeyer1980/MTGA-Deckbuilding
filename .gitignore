@@ -1,0 +1,20 @@
+/collection.txt
+/collection.txt.bak
+/collection.txt.prev
+/owned-overrides.txt
+/pool.json
+/wildcard-wishlist.md
+/paper/*
+!/paper/README.md
+/decks/*
+!/decks/README.md
+.card_cache.json
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS cruft
+.DS_Store
+Thumbs.db
