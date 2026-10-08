@@ -1,0 +1,48 @@
+OLD (single line):
+const ruleKeep = n => n>=2 && n<=5;
+
+NEW:
+// Hares v2 rule — per memory_2565 (2026-10-06), refined: Hare is a body,
+// not a land bridge. Fail-mode override counts FUNCTIONAL lands (Nykthos
+// half, Field colorless-risk) and requires a LAND-finder/rock, not just Hare.
+const landVal = c => {
+  if (!c.l) return 0;
+  const t = c.t || [];
+  if (c.n === "Fabled Passage") return 0.5; // swap-land is tapped — half-land regardless
+  if (t.includes("half")) return 0.5;      // Nykthos needs devotion
+  return 1;
+};
+const isLandBridge = c => !c.l && ["Ambitious Farmhand","Knight of the White Orchid","Loyal Warhound","Arcane Signet","The Mind Stone","Pearl Medallion"].includes(c.n.split(" // ")[0]);
+const isBridge = c => isLandBridge(c) || (!c.l && (c.n === "Hare Apparent" || c.n === "Esper Sentinel"));
+const isStranded = c => !c.l && ((c.t || []).includes("stranded"));
+const earlyPlay = c => !c.l && (c.c <= 2 || isBridge(c)); // castable T1-T2 or finder/rock/Hare
+const ruleKeepV2 = hand => {
+  const lands = hand.filter(c => c.l).length;
+  const f = hand.reduce((s, c) => s + landVal(c), 0);
+  if (lands <= 1 || lands >= 6) return { keep: false, why: lands + " lands — base rule mulls 0/1/6/7" };
+  const stranded = hand.filter(isStranded).length;
+  const landBridge = hand.some(isLandBridge);
+  const early = hand.some(earlyPlay);
+  const colorlessRisk = hand.some(c => c.l && ((c.t || []).includes("colorless")));
+  if (f < 2) return { keep: false, why: "only " + f + " functional lands (Nykthos/Lotus Field count half)" };
+  if (stranded >= 2 && !landBridge)
+    return { keep: false, why: "fail-mode: " + stranded + " stranded 4-5s with no land-finder/rock (Hare is a body, not a bridge)" };
+  if (!early)
+    return { keep: false, why: "no play before turn 3 — dead vs token/ramp curves" };
+  if (colorlessRisk && f <= 2)
+    return { keep: true, why: "keep, thin: Field of Ruin is colorless toward WW-by-5 — find white by T3", warn: true };
+  return { keep: lands >= 2 && lands <= 5, why: lands + " lands with bridge/early action" };
+};
+// dispatch: v21b hares entry uses V2, every other deck keeps the legacy land rule
+const ruleKeep = handOrN => {
+  if (typeof handOrN === "number") return handOrN >= 2 && handOrN <= 5;
+  if (deck && deck.rule === "hares-v2") return ruleKeepV2(handOrN).keep;
+  const lands = handOrN.filter(c => c.l).length;
+  return lands >= 2 && lands <= 5;
+};
+const ruleWhy = hand => {
+  if (deck && deck.rule === "hares-v2") return ruleKeepV2(hand);
+  const lands = hand.filter(c => c.l).length;
+  const k = lands >= 2 && lands <= 5;
+  return { keep: k, why: lands + " lands — base 2-5 rule" };
+};

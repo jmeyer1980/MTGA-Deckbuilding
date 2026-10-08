@@ -6,8 +6,11 @@ legality including bans, what the deck costs in wildcards, and the mana curve.
 
 Formats:
     standard  60-card minimum, <=15 sideboard, max 4 copies, Standard-legal
-    brawl     Arena's ranked 100-card Brawl: exactly 100 including the
-              commander, singleton, colour identity enforced, no sideboard
+    brawl     Arena's ranked 100-card Brawl (Competitive Brawl): exactly 100
+              including the commander, singleton, colour identity enforced,
+              no sideboard. Ban checks read Scryfall's `competitivebrawl`
+              legality; `brawl` is CASUAL Brawl's list and would reject cards
+              the ranked queue allows (memory_2535).
 
 Format is inferred from the filename ("brawl100-*" / "brawl-*" -> brawl,
 anything else -> standard) unless --format is given.
@@ -110,10 +113,15 @@ class Cards:
             # Cached lookups predate any override added since; re-apply the
             # confirmed count so a new owned-overrides.txt line takes effect
             # without deleting .card_cache.json.
-            rec = self.cache[key]
-            if key in self.overrides:
-                rec["owned"] = max(rec.get("owned", 0), self.overrides[key])
-            return rec
+            # Entries cached before Competitive Brawl existed lack the ranked
+            # legality -- fall through to a live refetch rather than check the
+            # CASUAL field. owned is only ever set from overrides, so the fetch
+            # path re-applying them loses nothing.
+            if "competitivebrawl" in self.cache[key]:
+                rec = self.cache[key]
+                if key in self.overrides:
+                    rec["owned"] = max(rec.get("owned", 0), self.overrides[key])
+                return rec
 
         url = NAMED + urllib.parse.quote(name)
         req = urllib.request.Request(
@@ -156,6 +164,12 @@ class Cards:
             "color_identity": c.get("color_identity", []),
             "standard": c.get("legalities", {}).get("standard"),
             "brawl": c.get("legalities", {}).get("brawl"),
+            # Ranked ladder's own list. Fallback keeps a Scryfall schema gap
+            # from becoming a missing key (which would read as "not legal").
+            "competitivebrawl": (
+                c.get("legalities", {}).get("competitivebrawl")
+                or c.get("legalities", {}).get("brawl")
+            ),
             "owned": 0,
             "any_number": any(
                 "a deck can have any number of cards named" in (t or "").lower()
@@ -304,6 +318,7 @@ def check(path, fmt, cards, quiet=False):
     entries += [(q, n, "side") for q, n in side]
 
     unresolved, illegal, banned = [], [], []
+    casual_only = []
     shortfall = {r: 0 for r in RARITY_ORDER}
     shortfall_cards = []
     uncountable = []
@@ -325,7 +340,17 @@ def check(path, fmt, cards, quiet=False):
             ):
                 errors.append(f"Commander must be a legendary creature or planeswalker: {n} ({tl})")
 
-        status = c.get(fmt)
+        if fmt == "brawl":
+            # Ranked (Competitive) Brawl is the ladder this repo tracks: its
+            # ban list is `competitivebrawl`, while `brawl` is CASUAL Brawl's
+            # and bans many 99-cards ranked allows (memory_2535). Fallback to
+            # the older field only if the ranked key is absent -- degrading to
+            # a false positive beats a silent pass.
+            status = c.get("competitivebrawl") or c.get("brawl")
+            if status == "legal" and c.get("brawl") == "banned":
+                casual_only.append(n)
+        else:
+            status = c.get(fmt)
         if status == "banned":
             banned.append(n)
         elif status not in ("legal", "restricted"):
@@ -385,12 +410,18 @@ def check(path, fmt, cards, quiet=False):
             + ", ".join(f"{n} more {r}" for r, n in short_by.items())
         )
 
+    label = "competitive brawl" if fmt == "brawl" else fmt
     if banned:
-        errors.append(f"BANNED in {fmt}: " + ", ".join(sorted(set(banned))))
+        errors.append(f"BANNED in {label}: " + ", ".join(sorted(set(banned))))
     if illegal:
-        errors.append(f"Not legal in {fmt}: " + ", ".join(sorted(set(illegal))))
+        errors.append(f"Not legal in {label}: " + ", ".join(sorted(set(illegal))))
     if unresolved:
         errors.append("Unresolved card names: " + ", ".join(unresolved))
+    if casual_only:
+        warnings.append(
+            "casual-Brawl banned, competitive-legal (ranked queue unaffected): "
+            + ", ".join(sorted(set(casual_only)))
+        )
 
     # ---- report --------------------------------------------------------
     name = os.path.basename(path)

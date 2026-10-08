@@ -20,8 +20,10 @@ TRAPS encoded here:
 Usage:
     python scripts/pool.py                      # build/refresh pool.json
     python scripts/pool.py --report             # summarise legality + bans
+    python scripts/pool.py --reuse --moxfield-csv  # export Moxfield CSV
 """
 import argparse
+import csv
 import json
 import os
 import re
@@ -133,10 +135,17 @@ def build(counts):
             entry["qty"] = qty_for(card["name"])
             entry["any_number"] = any_number(card)
             leg = card.get("legalities", {})
-            # 'brawl' is Arena's 100-card Brawl. 'standardbrawl' is the 60-card
-            # format, which has no ranked queue -- we do not track it.
+            # 'brawl' is CASUAL 100-card Brawl's list; 'competitivebrawl' is
+            # the ranked ladder (commanders-only bans). Both are stored so
+            # consumers choose deliberately -- deck_check bans against the
+            # competitive field. 'standardbrawl' (60-card) has no ranked queue
+            # -- we do not track it. Fallback keeps a Scryfall schema gap from
+            # becoming a missing key.
             entry["standard"] = leg.get("standard")
             entry["brawl"] = leg.get("brawl")
+            entry["competitivebrawl"] = (
+                leg.get("competitivebrawl") or leg.get("brawl")
+            )
             pool[card["name"]] = entry
 
         for nf in data.get("not_found", []):
@@ -175,6 +184,9 @@ def report(pool, missing):
     std_banned = [n for n, e in pool.items() if e["standard"] == "banned"]
     brawl_legal = [n for n, e in pool.items() if e["brawl"] == "legal"]
     brawl_banned = [n for n, e in pool.items() if e["brawl"] == "banned"]
+    comp_brawl_banned = [
+        n for n, e in pool.items() if e.get("competitivebrawl") == "banned"
+    ]
 
     print(f"Distinct resolved : {len(pool)}")
     print(f"Total copies      : {total}")
@@ -185,8 +197,12 @@ def report(pool, missing):
         print(f"    ! {n}")
     print()
     print(f"Brawl legal       : {len(brawl_legal)}")
-    print(f"Brawl BANNED      : {len(brawl_banned)}")
+    print(f"Casual Brawl BANNED: {len(brawl_banned)}")
     for n in sorted(brawl_banned):
+        print(f"    ! {n}")
+    print()
+    print(f"Competitive (ranked) Brawl BANNED: {len(comp_brawl_banned)}")
+    for n in sorted(comp_brawl_banned):
         print(f"    ! {n}")
 
     alchemy = [n for n in missing if n.startswith("A-")]
@@ -201,10 +217,30 @@ def report(pool, missing):
             print(f"    ... and {len(other)-40} more")
 
 
+def write_moxfield_csv(pool, path):
+    """Write owned quantities in Moxfield's supported Count/Name CSV format."""
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    total = 0
+    with open(path, "w", encoding="utf-8", newline="") as fh:
+        writer = csv.writer(fh, lineterminator="\n")
+        writer.writerow(("Count", "Name"))
+        for name, entry in sorted(pool.items(), key=lambda item: item[0].casefold()):
+            qty = entry.get("qty", 0)
+            if qty > 0:
+                writer.writerow((qty, name))
+                total += qty
+    print(f"Wrote {path} ({total} copies)")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--collection", default=COLLECTION)
     ap.add_argument("--out", default=POOL)
+    ap.add_argument("--moxfield-csv", nargs="?",
+                    const=os.path.join(ROOT, "collection-moxfield.csv"),
+                    metavar="PATH",
+                    help="also write a Moxfield Count/Name CSV "
+                         "(default: collection-moxfield.csv)")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--reuse", action="store_true",
                     help="report from existing pool.json without re-fetching")
@@ -213,6 +249,8 @@ def main():
     if args.reuse:
         with open(args.out, encoding="utf-8") as fh:
             saved = json.load(fh)
+        if args.moxfield_csv:
+            write_moxfield_csv(saved["pool"], args.moxfield_csv)
         report(saved["pool"], saved["missing"])
         return
 
@@ -233,6 +271,9 @@ def main():
     with open(args.out, "w", encoding="utf-8") as fh:
         json.dump({"pool": pool, "missing": missing}, fh, indent=1)
     print(f"Wrote {args.out}", file=sys.stderr)
+
+    if args.moxfield_csv:
+        write_moxfield_csv(pool, args.moxfield_csv)
 
     if args.report:
         print()

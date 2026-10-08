@@ -37,6 +37,7 @@ POOL = os.path.join(ROOT, "pool.json")
 
 SEARCH = "https://api.scryfall.com/cards/search"
 UA = "jerio-mtga-deckbuilding/1.0"
+RARITY_RANK = {"common": 0, "uncommon": 1, "rare": 2, "mythic": 3}
 
 
 def norm(name):
@@ -77,7 +78,12 @@ def search(query, pages):
     # historic:banned + brawl:legal. Require Historic legality too.
     if "f:brawl" in query and "f:historic" not in query:
         query = f"{query} f:historic"
-    url = f"{SEARCH}?q={urllib.parse.quote(query)}&order=edhrec&unique=cards"
+    # unique=cards would let Scryfall arbitrarily pick one printing per card --
+    # often a rarity-boosted Masterpiece/Secret Lair print (e.g. Path to Exile
+    # in Marvel Universe is mythic) instead of the cheapest one actually on
+    # Arena. unique=prints returns every Arena printing so main() can keep the
+    # lowest-rarity one, which is what a wildcard actually costs to craft.
+    url = f"{SEARCH}?q={urllib.parse.quote(query)}&order=edhrec&unique=prints"
     seen = 0
     while url and seen < pages:
         req = urllib.request.Request(
@@ -117,8 +123,17 @@ def main():
     args = ap.parse_args()
 
     owned = load_owned()
-    rows = []
+    # Multiple Arena printings can share an oracle_id at different rarities;
+    # keep only the cheapest-to-craft one per card.
+    best = {}
     for c in search(args.query, args.pages):
+        key = c.get("oracle_id") or c["name"]
+        cur = best.get(key)
+        if cur is None or RARITY_RANK.get(c.get("rarity"), 99) < RARITY_RANK.get(cur.get("rarity"), 99):
+            best[key] = c
+
+    rows = []
+    for c in best.values():
         have = owned.get(norm(c["name"]), 0)
         if bool(have) != args.owned:
             continue

@@ -1,0 +1,352 @@
+<title>Mulligan Drill</title>
+<style>
+  :root{
+    --ground:#EDF0F3; --surface:#FFFFFF; --surface-2:#F5F7F9; --line:#D6DCE4;
+    --ink:#101519; --muted:#5B6674; --accent:#24557E;
+    --keep:#1E6B4C; --keep-bg:#E4F0EA; --mull:#98392A; --mull-bg:#F7E7E3;
+    --land:#8A6A1F; --land-bg:#F6EFDD; --half:#B45309; --shadow:0 1px 2px rgba(16,21,25,.08),0 4px 12px rgba(16,21,25,.05);
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#0C1015; --surface:#151A21; --surface-2:#1C222B; --line:#2A323D;
+      --ink:#E5E9EF; --muted:#8892A2; --accent:#74AADD;
+      --keep:#4FB489; --keep-bg:#152A22; --mull:#DE7C63; --mull-bg:#2C1A16;
+      --land:#CBA451; --land-bg:#2A2417; --half:#E8A33D; --shadow:0 1px 2px rgba(0,0,0,.5),0 4px 14px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0C1015; --surface:#151A21; --surface-2:#1C222B; --line:#2A323D;
+    --ink:#E5E9EF; --muted:#8892A2; --accent:#74AADD;
+    --keep:#4FB489; --keep-bg:#152A22; --mull:#DE7C63; --mull-bg:#2C1A16;
+    --land:#CBA451; --land-bg:#2A2417; --half:#E8A33D; --shadow:0 1px 2px rgba(0,0,0,.5),0 4px 14px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+       font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:24px 20px 64px;display:flex;flex-direction:column;gap:20px}
+  header{display:flex;flex-direction:column;gap:4px}
+  h1{font-size:22px;margin:0;letter-spacing:-.01em;font-weight:650;text-wrap:balance}
+  .sub{color:var(--muted);font-size:13.5px;max-width:64ch}
+  .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+  .bar{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;
+       background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)}
+  .field{display:flex;flex-direction:column;gap:5px}
+  select,.seg button,.btn{font-family:var(--sans);font-size:14px;color:var(--ink)}
+  select{background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:7px 10px;min-width:250px}
+  .seg{display:flex;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+  .seg button{background:var(--surface-2);border:0;padding:7px 14px;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+  .meta{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;line-height:1.7}
+  .meta b{color:var(--ink);font-weight:600}
+
+  .grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:20px;align-items:start}
+  @media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+  .panel-h{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  .panel-b{padding:16px}
+
+  .hand{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+  @media (max-width:760px){.hand{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  @media (max-width:440px){.hand{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .card{border:1px solid var(--line);border-radius:8px;background:var(--surface-2);
+        padding:9px 9px 8px;min-height:104px;display:flex;flex-direction:column;gap:6px;
+        animation:in .22s ease both}
+  .card.land{background:var(--land-bg);border-color:color-mix(in srgb,var(--land) 34%,var(--line))}
+  .card .nm{font-size:12.5px;line-height:1.3;font-weight:550;overflow-wrap:anywhere}
+  .card .tag{margin-top:auto;font-family:var(--mono);font-size:10px;letter-spacing:.07em;
+             text-transform:uppercase;color:var(--muted)}
+  .card.land .tag{color:var(--land)}
+  .role{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:12px;color:var(--muted)}
+  .legend span{font-family:var(--mono);font-size:11px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2)}
+  .card.half .tag{color:var(--half);font-weight:700}
+  @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.card{animation:none}}
+
+  .call{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+  .btn{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;
+       padding:11px 20px;cursor:pointer;font-weight:600;letter-spacing:.01em}
+  .btn:hover:not(:disabled){border-color:var(--accent)}
+  .btn:disabled{opacity:.45;cursor:default}
+  .btn.keep{border-color:color-mix(in srgb,var(--keep) 45%,var(--line));color:var(--keep)}
+  .btn.mull{border-color:color-mix(in srgb,var(--mull) 45%,var(--line));color:var(--mull)}
+  .btn.pri{background:var(--accent);color:#fff;border-color:var(--accent)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .verdict{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+  .pill{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+        padding:4px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface-2)}
+  .pill.ok{color:var(--keep);background:var(--keep-bg);border-color:color-mix(in srgb,var(--keep) 35%,var(--line))}
+  .pill.no{color:var(--mull);background:var(--mull-bg);border-color:color-mix(in srgb,var(--mull) 35%,var(--line))}
+  .draws{display:flex;flex-wrap:wrap;gap:6px}
+  .draw{font-family:var(--mono);font-size:11.5px;padding:4px 8px;border-radius:6px;
+        border:1px solid var(--line);background:var(--surface-2)}
+  .draw.l{color:var(--land);background:var(--land-bg);border-color:color-mix(in srgb,var(--land) 30%,var(--line))}
+  .note{font-size:13px;color:var(--muted);margin-top:12px}
+
+  table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums}
+  th,td{text-align:right;padding:5px 4px;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  th{font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .big{font-family:var(--mono);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .stat{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
+  .stat:last-child{border-bottom:0}
+  .stat span{font-size:12.5px;color:var(--muted)}
+  .stat b{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:600;font-size:14px}
+  .scroll{overflow-x:auto}
+  .warn{color:var(--mull)}
+  .good{color:var(--keep)}
+  .foot{font-size:12.5px;color:var(--muted);max-width:70ch}
+  .linkish{background:none;border:0;color:var(--accent);font:inherit;font-size:12.5px;cursor:pointer;padding:0;text-decoration:underline}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Mulligan Drill</h1>
+    <p class="sub">Call it before you see the verdict. The tally is the point &mdash; after fifty hands you'll have a real number instead of a memory.</p>
+  </header>
+
+  <div class="bar">
+    <div class="field">
+      <span class="lbl">Deck</span>
+      <select id="deck"></select>
+    </div>
+    <div class="field">
+      <span class="lbl">Position</span>
+      <div class="seg" role="group" aria-label="Play or draw">
+        <button id="onplay" aria-pressed="true">On the play</button>
+        <button id="ondraw" aria-pressed="false">On the draw</button>
+      </div>
+    </div>
+    <div class="meta" id="deckmeta"></div>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="panel-h"><span class="lbl">Opening hand</span><span class="lbl" id="handcount" style="margin-left:auto"></span></div>
+      <div class="panel-b">
+        <div class="hand" id="hand"></div>
+        <div class="legend" aria-label="Card face legend"><span>🐇 hare/engine</span><span>🌉 land-bridge</span><span>📖 draw</span><span>🔥 removal</span><span>🛡️ protect</span><span>💥 payoff</span><span>💧 ramp</span><span>👯 tokens</span><span>🧰 utility</span><span>🟫 land</span><span>⚠️ ½ land — counts 0.5</span><span>⚙️ artifact</span><span>✨ enchantment</span><span>⚡ instant</span><span>🔮 sorcery</span><span>👑 planeswalker</span></div>
+<div class="call">
+          <button class="btn keep" id="bkeep">Keep</button>
+          <button class="btn mull" id="bmull">Mulligan</button>
+          <button class="btn pri" id="bdeal">Deal a hand</button>
+        </div>
+        <div id="reveal" hidden aria-live="polite">
+          <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+          <div class="verdict" id="verdict"></div>
+          <div class="lbl" style="margin-bottom:6px">What the next five draws were</div>
+          <div class="draws" id="draws"></div>
+          <p class="note" id="note"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><span class="lbl">Your ledger</span></div>
+      <div class="panel-b">
+        <div class="big" id="agree">&mdash;</div>
+        <div class="lbl" style="margin-bottom:14px">agreement with the rule</div>
+        <div class="stat"><span>Hands drilled</span><b id="n">0</b></div>
+        <div class="stat"><span>You kept</span><b id="youkeep">0</b></div>
+        <div class="stat"><span>Rule would keep</span><b id="rulekeep">0</b></div>
+        <div class="stat"><span>Kept a hand the rule mulls</span><b id="overkeep" class="warn">0</b></div>
+        <div class="stat"><span>Mulled a hand the rule keeps</span><b id="overmull">0</b></div>
+
+        <div class="lbl" style="margin:18px 0 6px">By lands in hand</div>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Lands</th><th>Seen</th><th>You kept</th><th>Worked</th></tr></thead>
+            <tbody id="bylands"></tbody>
+          </table>
+        </div>
+        <p class="foot" style="margin:14px 0 0">&ldquo;Worked&rdquo; means the hand plus its draws had 3&ndash;5 lands by turn four &mdash; enough to cast your curve without flooding.</p>
+        <p style="margin:12px 0 0"><button class="linkish" id="reset">Reset this deck's ledger</button></p>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">The rule: <b>keep 2&ndash;5 lands, mulligan 0, 1, 6 or 7</b> — plus the Hares v2 bridge rule: <b>mulligan 2 lands + 2 stranded 4&ndash;5s with no finder/rock/Hare</b>, Nykthos/Lotus Field count half, no T1&ndash;T2 play mulls vs fast decks. It isn't always right &mdash; the ledger shows you exactly how often it beat your instinct, and how often it didn't.</p>
+</div>
+
+<script>
+const DECKS = [{"id":"boros-equipment","cmdr":null,"size":60,"lands":23,"cards":[{"n":"Zack Fair","q":1,"l":false,"c":1},{"n":"Warden of the Inner Sky","q":2,"l":false,"c":1},{"n":"Iron Hills Blacksmith","q":1,"l":false,"c":2},{"n":"Adelbert Steiner","q":1,"l":false,"c":2},{"n":"Dwarven Mauler","q":1,"l":false,"c":1},{"n":"K'un-Lun Warrior","q":1,"l":false,"c":2},{"n":"Brazen Blademaster","q":1,"l":false,"c":3},{"n":"Kellan, the Fae-Blooded","q":1,"l":false,"c":3},{"n":"Mabel, Heir to Cragflame","q":1,"l":false,"c":3},{"n":"Thorin Oakenshield","q":1,"l":false,"c":2},{"n":"D\u00e1in Ironfoot","q":1,"l":false,"c":3},{"n":"Anim Pakal, Thousandth Moon","q":2,"l":false,"c":3},{"n":"Caparocti Sunborn","q":2,"l":false,"c":4},{"n":"Sami, Ship's Engineer","q":1,"l":false,"c":4},{"n":"Iron Hills Stalwart","q":2,"l":false,"c":5},{"n":"S.H.I.E.L.D. Spy Kit","q":4,"l":false,"c":1},{"n":"Quick-Draw Katana","q":4,"l":false,"c":2},{"n":"Squire's Lightblade","q":2,"l":false,"c":1},{"n":"Dwarven Mattock","q":1,"l":false,"c":2},{"n":"Iron Man Armor","q":2,"l":false,"c":3},{"n":"Abrade","q":3,"l":false,"c":2},{"n":"Fiery Annihilation","q":2,"l":false,"c":3},{"n":"Sacred Foundry","q":1,"l":true,"c":0},{"n":"Sundown Pass","q":1,"l":true,"c":0},{"n":"Inspiring Vantage","q":3,"l":true,"c":0},{"n":"Raucous Carnival","q":4,"l":true,"c":0},{"n":"Plains","q":7,"l":true,"c":0},{"n":"Mountain","q":7,"l":true,"c":0}]},{"id":"boros-toys","cmdr":null,"size":60,"lands":23,"cards":[{"n":"Clockwork Percussionist","q":4,"l":false,"c":1},{"n":"Arabella, Abandoned Doll","q":4,"l":false,"c":2},{"n":"Splitskin Doll","q":4,"l":false,"c":2},{"n":"Ragged Playmate","q":4,"l":false,"c":2},{"n":"Acrobatic Cheerleader","q":4,"l":false,"c":2},{"n":"Friendly Teddy","q":4,"l":false,"c":2},{"n":"Glimmerlight","q":3,"l":false,"c":2},{"n":"Patched Plaything","q":4,"l":false,"c":3},{"n":"Living Phone","q":4,"l":false,"c":3},{"n":"Enduring Innocence","q":2,"l":false,"c":3},{"n":"Inspiring Vantage","q":3,"l":true,"c":0},{"n":"Raucous Carnival","q":3,"l":true,"c":0},{"n":"Sacred Foundry","q":1,"l":true,"c":0},{"n":"Secluded Courtyard","q":3,"l":true,"c":0},{"n":"Plains","q":9,"l":true,"c":0},{"n":"Mountain","q":4,"l":true,"c":0}]},{"id":"brawl-anzrag-gruul","cmdr":"Anzrag, the Quake-Mole","size":59,"lands":25,"cards":[{"n":"Llanowar Elves","q":1,"l":false,"c":1},{"n":"Hired Claw","q":1,"l":false,"c":1},{"n":"Snakeskin Veil","q":1,"l":false,"c":1},{"n":"Giant Growth","q":1,"l":false,"c":1},{"n":"Burst Lightning","q":1,"l":false,"c":1},{"n":"Shock","q":1,"l":false,"c":1},{"n":"Druid of the Cowl","q":1,"l":false,"c":2},{"n":"Jolene, Plundering Pugilist","q":1,"l":false,"c":3},{"n":"Nessian Hornbeetle","q":1,"l":false,"c":2},{"n":"Gnarlid Colony","q":1,"l":false,"c":2},{"n":"Scavenging Ooze","q":1,"l":false,"c":2},{"n":"Emberheart Challenger","q":1,"l":false,"c":2},{"n":"Manifold Mouse","q":1,"l":false,"c":2},{"n":"Abrade","q":1,"l":false,"c":2},{"n":"Bite Down","q":1,"l":false,"c":2},{"n":"Sunfire Torch","q":1,"l":false,"c":1},{"n":"Overgrown Zealot","q":1,"l":false,"c":2},{"n":"Spineseeker Centipede","q":1,"l":false,"c":3},{"n":"Outcaster Greenblade","q":1,"l":false,"c":3},{"n":"Mossborn Hydra","q":1,"l":false,"c":3},{"n":"Beast-Kin Ranger","q":1,"l":false,"c":3},{"n":"Tyvar, the Pummeler","q":1,"l":false,"c":3},{"n":"Garruk's Uprising","q":1,"l":false,"c":3},{"n":"Inspiring Call","q":1,"l":false,"c":3},{"n":"Monstrous Emergence","q":1,"l":false,"c":2},{"n":"Witchstalker Frenzy","q":1,"l":false,"c":4},{"n":"Slagstorm","q":1,"l":false,"c":3},{"n":"Cackling Prowler","q":1,"l":false,"c":4},{"n":"Bonehoard Dracosaur","q":1,"l":false,"c":5},{"n":"Needletooth Pack","q":1,"l":false,"c":5},{"n":"Elfsworn Giant","q":1,"l":false,"c":5},{"n":"Balustrade Wurm","q":1,"l":false,"c":5},{"n":"Trumpeting Carnosaur","q":1,"l":false,"c":6},{"n":"Altanak, the Thrice-Called","q":1,"l":false,"c":7},{"n":"Thornspire Verge","q":1,"l":true,"c":0},{"n":"Bleeding Woods","q":1,"l":true,"c":0},{"n":"Stomping Ground","q":1,"l":true,"c":0},{"n":"Rugged Highlands","q":1,"l":true,"c":0},{"n":"Temple of Abandon","q":1,"l":true,"c":0},{"n":"Rockface Village","q":1,"l":true,"c":0},{"n":"Crystal Grotto","q":1,"l":true,"c":0},{"n":"Starting Town","q":1,"l":true,"c":0},{"n":"Terramorphic Expanse","q":1,"l":true,"c":0},{"n":"Evolving Wilds","q":1,"l":true,"c":0},{"n":"Escape Tunnel","q":1,"l":true,"c":0},{"n":"Uncharted Haven","q":1,"l":true,"c":0},{"n":"Hidden Volcano","q":1,"l":true,"c":0},{"n":"Forest","q":7,"l":true,"c":0},{"n":"Mountain","q":5,"l":true,"c":0}]},{"id":"brawl-delney-lowcurve","cmdr":"Delney, Streetwise Lookout","size":59,"lands":23,"cards":[{"n":"Hare Apparent","q":18,"l":false,"c":2},{"n":"Novice Inspector","q":1,"l":false,"c":1},{"n":"Hinterland Sanctifier","q":1,"l":false,"c":1},{"n":"Healer's Hawk","q":1,"l":false,"c":1},{"n":"Savannah Lions","q":1,"l":false,"c":1},{"n":"Flowerfoot Swordmaster","q":1,"l":false,"c":1},{"n":"Miner's Guidewing","q":1,"l":false,"c":1},{"n":"Ajani's Pridemate","q":1,"l":false,"c":2},{"n":"Lifecreed Duo","q":1,"l":false,"c":2},{"n":"Valley Questcaller","q":1,"l":false,"c":2},{"n":"Warden of the Inner Sky","q":1,"l":false,"c":1},{"n":"Acrobatic Cheerleader","q":1,"l":false,"c":2},{"n":"Splitskin Doll","q":1,"l":false,"c":2},{"n":"Giada, Font of Hope","q":1,"l":false,"c":2},{"n":"S.H.I.E.L.D. Spy Kit","q":1,"l":false,"c":1},{"n":"Squire's Lightblade","q":1,"l":false,"c":1},{"n":"Elspeth's Smite","q":1,"l":false,"c":1},{"n":"Get Lost","q":1,"l":false,"c":2},{"n":"Parting Gust","q":1,"l":false,"c":2},{"n":"Cavern of Souls","q":1,"l":true,"c":0},{"n":"Secluded Courtyard","q":1,"l":true,"c":0},{"n":"Fountainport","q":1,"l":true,"c":0},{"n":"Plains","q":20,"l":true,"c":0}]},{"id":"brawl-elspeth-hares","cmdr":"Elspeth, Storm Slayer","size":59,"lands":23,"cards":[{"n":"Hare Apparent","q":16,"l":false,"c":2},{"n":"Caretaker's Talent","q":1,"l":false,"c":3},{"n":"Delney, Streetwise Lookout","q":1,"l":false,"c":3},{"n":"Ajani, Caller of the Pride","q":1,"l":false,"c":3},{"n":"Okoye, Dora Milaje Leader","q":1,"l":false,"c":4},{"n":"Felidar Retreat","q":1,"l":false,"c":4},{"n":"Hop to It","q":1,"l":false,"c":3},{"n":"Three Blind Mice","q":1,"l":false,"c":3},{"n":"Resolute Reinforcements","q":1,"l":false,"c":2},{"n":"Toby, Beastie Befriender","q":1,"l":false,"c":3},{"n":"Dauntless Veteran","q":1,"l":false,"c":3},{"n":"On the Job","q":1,"l":false,"c":4},{"n":"Split Up","q":1,"l":false,"c":3},{"n":"Make a Stand","q":1,"l":false,"c":3},{"n":"Valorous Stance","q":1,"l":false,"c":2},{"n":"Elspeth's Smite","q":1,"l":false,"c":1},{"n":"Get Lost","q":1,"l":false,"c":2},{"n":"Exorcise","q":1,"l":false,"c":2},{"n":"Parting Gust","q":1,"l":false,"c":2},{"n":"Sheltered by Ghosts","q":1,"l":false,"c":2},{"n":"Swiftfoot Boots","q":1,"l":false,"c":2},{"n":"Cavern of Souls","q":1,"l":true,"c":0},{"n":"Secluded Courtyard","q":1,"l":true,"c":0},{"n":"Fountainport","q":1,"l":true,"c":0},{"n":"Plains","q":20,"l":true,"c":0}]},{"id":"brawl-kaito-dimir","cmdr":"Kaito, Bane of Nightmares","size":59,"lands":25,"cards":[{"n":"Faerie Dreamthief","q":1,"l":false,"c":1},{"n":"Spectral Sailor","q":1,"l":false,"c":1},{"n":"Three Steps Ahead","q":1,"l":false,"c":1},{"n":"Deep-Cavern Bat","q":1,"l":false,"c":2},{"n":"Floodpits Drowner","q":1,"l":false,"c":2},{"n":"Brineborn Cutthroat","q":1,"l":false,"c":2},{"n":"Nashi, Searcher in the Dark","q":1,"l":false,"c":2},{"n":"Emergent Haunting","q":1,"l":false,"c":2},{"n":"Winter's Intervention","q":1,"l":false,"c":2},{"n":"Fell","q":1,"l":false,"c":2},{"n":"Nowhere to Run","q":1,"l":false,"c":2},{"n":"Dark Deed","q":1,"l":false,"c":2},{"n":"Don't Make a Sound","q":1,"l":false,"c":2},{"n":"Essence Scatter","q":1,"l":false,"c":2},{"n":"Abhorrent Oculus","q":1,"l":false,"c":3},{"n":"Ninja of the Hand","q":1,"l":false,"c":3},{"n":"Thought-Stalker Warlock","q":1,"l":false,"c":3},{"n":"Steamcore Scholar","q":1,"l":false,"c":3},{"n":"Withering Torment","q":1,"l":false,"c":3},{"n":"Hero's Downfall","q":1,"l":false,"c":3},{"n":"Murder","q":1,"l":false,"c":3},{"n":"Twist Reality","q":1,"l":false,"c":3},{"n":"Stock Up","q":1,"l":false,"c":3},{"n":"Diresight","q":1,"l":false,"c":3},{"n":"Lunar Insight","q":1,"l":false,"c":3},{"n":"Seize the Secrets","q":1,"l":false,"c":3},{"n":"Enduring Curiosity","q":1,"l":false,"c":4},{"n":"Talion, the Kindly Lord","q":1,"l":false,"c":4},{"n":"Kang, Temporal Tyrant","q":1,"l":false,"c":4},{"n":"Consuming Ashes","q":1,"l":false,"c":4},{"n":"Overlord of the Balemurk","q":1,"l":false,"c":5},{"n":"Overlord of the Floodpits","q":1,"l":false,"c":5},{"n":"Live or Die","q":1,"l":false,"c":5},{"n":"Cerebral Download","q":1,"l":false,"c":5},{"n":"Gloomlake Verge","q":1,"l":true,"c":0},{"n":"Undercity Sewers","q":1,"l":true,"c":0},{"n":"Dismal Backwater","q":1,"l":true,"c":0},{"n":"Murky Sewer","q":1,"l":true,"c":0},{"n":"Soured Springs","q":1,"l":true,"c":0},{"n":"Temple of Deceit","q":1,"l":true,"c":0},{"n":"Watery Grave","q":1,"l":true,"c":0},{"n":"Conduit Pylons","q":1,"l":true,"c":0},{"n":"Surveillance Room","q":1,"l":true,"c":0},{"n":"Crystal Grotto","q":1,"l":true,"c":0},{"n":"Starting Town","q":1,"l":true,"c":0},{"n":"Terramorphic Expanse","q":1,"l":true,"c":0},{"n":"Evolving Wilds","q":1,"l":true,"c":0},{"n":"Rogue's Passage","q":1,"l":true,"c":0},{"n":"Island","q":5,"l":true,"c":0},{"n":"Swamp","q":6,"l":true,"c":0}]},{"id":"brawl-madame-hydra-rakdos","cmdr":"Madame Hydra","size":59,"lands":24,"cards":[{"n":"Whiplash, Vengeful Engineer","q":1,"l":false,"c":1},{"n":"Agents of HYDRA","q":1,"l":false,"c":2},{"n":"Red Room Recruit","q":1,"l":false,"c":2},{"n":"Yellowjacket, Heartless Marauder","q":1,"l":false,"c":2},{"n":"HYDRA Assault Robot","q":1,"l":false,"c":2},{"n":"Loki Laufeyson","q":1,"l":false,"c":2},{"n":"A.I.M. Synthoids","q":1,"l":false,"c":2},{"n":"The Ruinous Wrecking Crew","q":1,"l":false,"c":2},{"n":"Doom Reigns Supreme","q":1,"l":false,"c":2},{"n":"Dark Deed","q":1,"l":false,"c":2},{"n":"Widow's Bite","q":1,"l":false,"c":2},{"n":"Swarm, Being of Bees","q":1,"l":false,"c":3},{"n":"Arnim Zola, Bio-Fanatic","q":1,"l":false,"c":3},{"n":"Baron Strucker, HYDRA Overlord","q":1,"l":false,"c":3},{"n":"HYDRA Troopers","q":1,"l":false,"c":3},{"n":"Kingpin's Enforcers","q":1,"l":false,"c":3},{"n":"Ninja of the Hand","q":1,"l":false,"c":3},{"n":"Machinesmith Automaton","q":1,"l":false,"c":3},{"n":"Ares, God of War","q":1,"l":false,"c":3},{"n":"Bullseye, Death Dealer","q":1,"l":false,"c":3},{"n":"Ultron, Artificial Malevolence","q":1,"l":false,"c":3},{"n":"Ultron Drone","q":1,"l":false,"c":3},{"n":"Construct a Cosmic Cube","q":1,"l":false,"c":3},{"n":"Hire a Crew","q":1,"l":false,"c":3},{"n":"Visions of Villainy","q":1,"l":false,"c":3},{"n":"Crossbones, Malicious Mercenary","q":1,"l":false,"c":4},{"n":"Elektra, Daughter of the Hand","q":1,"l":false,"c":4},{"n":"Moonstone, Harsh Mistress","q":1,"l":false,"c":4},{"n":"Unliving Legionnaire","q":1,"l":false,"c":4},{"n":"Crimson Operative","q":1,"l":false,"c":4},{"n":"Avengers: Under Siege","q":1,"l":false,"c":4},{"n":"Hour of Defeat","q":1,"l":false,"c":4},{"n":"Madame Masque","q":1,"l":false,"c":5},{"n":"M.O.D.O.K.","q":1,"l":false,"c":5},{"n":"The Masters of Evil","q":1,"l":false,"c":6},{"n":"Blazemire Verge","q":1,"l":true,"c":0},{"n":"Bloodfell Caves","q":1,"l":true,"c":0},{"n":"Rakdos Guildgate","q":1,"l":true,"c":0},{"n":"Razortrap Gorge","q":1,"l":true,"c":0},{"n":"Raucous Theater","q":1,"l":true,"c":0},{"n":"Temple of Malice","q":1,"l":true,"c":0},{"n":"Hell's Kitchen","q":1,"l":true,"c":0},{"n":"Dark Fortress","q":1,"l":true,"c":0},{"n":"Castle Doom","q":1,"l":true,"c":0},{"n":"Villainous Hideout","q":1,"l":true,"c":0},{"n":"Crystal Grotto","q":1,"l":true,"c":0},{"n":"Starting Town","q":1,"l":true,"c":0},{"n":"Terramorphic Expanse","q":1,"l":true,"c":0},{"n":"Evolving Wilds","q":1,"l":true,"c":0},{"n":"Swamp","q":6,"l":true,"c":0},{"n":"Mountain","q":4,"l":true,"c":0}]},{"id":"brawl-zimone-simic","cmdr":"Zimone, All-Questioning","size":59,"lands":26,"cards":[{"n":"Llanowar Elves","q":1,"l":false,"c":1},{"n":"Bushwhack","q":1,"l":false,"c":1},{"n":"Druid of the Cowl","q":1,"l":false,"c":2},{"n":"Three Tree Rootweaver","q":1,"l":false,"c":2},{"n":"Bristly Bill, Spine Sower","q":1,"l":false,"c":2},{"n":"Sazh's Chocobo","q":1,"l":false,"c":1},{"n":"Tifa Lockhart","q":1,"l":false,"c":2},{"n":"Scavenging Ooze","q":1,"l":false,"c":2},{"n":"Three Steps Ahead","q":1,"l":false,"c":1},{"n":"Overgrown Zealot","q":1,"l":false,"c":2},{"n":"Spineseeker Centipede","q":1,"l":false,"c":3},{"n":"Outcaster Greenblade","q":1,"l":false,"c":3},{"n":"Mossborn Hydra","q":1,"l":false,"c":3},{"n":"Loot, Exuberant Explorer","q":1,"l":false,"c":3},{"n":"Moon Girl and Devil Dinosaur","q":1,"l":false,"c":3},{"n":"Zimone, Paradox Sculptor","q":1,"l":false,"c":4},{"n":"Grow from the Ashes","q":1,"l":false,"c":3},{"n":"Stock Up","q":1,"l":false,"c":3},{"n":"Lunar Insight","q":1,"l":false,"c":3},{"n":"Into the Roil","q":1,"l":false,"c":2},{"n":"Essence Scatter","q":1,"l":false,"c":2},{"n":"An Offer You Can't Refuse","q":1,"l":false,"c":1},{"n":"Bite Down","q":1,"l":false,"c":2},{"n":"Broken Wings","q":1,"l":false,"c":3},{"n":"Elfsworn Giant","q":1,"l":false,"c":5},{"n":"Overlord of the Hauntwoods","q":1,"l":false,"c":5},{"n":"Hedge Shredder","q":1,"l":false,"c":4},{"n":"Tatyova, Benthic Druid","q":1,"l":false,"c":5},{"n":"Prime Speaker Zegana","q":1,"l":false,"c":6},{"n":"Bonny Pall, Clearcutter","q":1,"l":false,"c":6},{"n":"Quandrix, the Proof","q":1,"l":false,"c":6},{"n":"Altanak, the Thrice-Called","q":1,"l":false,"c":7},{"n":"Koma, World-Eater","q":1,"l":false,"c":7},{"n":"Botanical Sanctum","q":1,"l":true,"c":0},{"n":"Hedge Maze","q":1,"l":true,"c":0},{"n":"Guadosalam, Farplane Gateway","q":1,"l":true,"c":0},{"n":"Breeding Pool","q":1,"l":true,"c":0},{"n":"Thornwood Falls","q":1,"l":true,"c":0},{"n":"Temple of Mystery","q":1,"l":true,"c":0},{"n":"Crystal Grotto","q":1,"l":true,"c":0},{"n":"Starting Town","q":1,"l":true,"c":0},{"n":"Terramorphic Expanse","q":1,"l":true,"c":0},{"n":"Evolving Wilds","q":1,"l":true,"c":0},{"n":"Escape Tunnel","q":1,"l":true,"c":0},{"n":"Fountainport","q":1,"l":true,"c":0},{"n":"Uncharted Haven","q":1,"l":true,"c":0},{"n":"Forest","q":8,"l":true,"c":0},{"n":"Island","q":5,"l":true,"c":0}]},{"id":"brawl100-gix-mono-black","cmdr":"Gix, Yawgmoth Praetor","size":99,"lands":36,"cards":[{"n":"Faerie Dreamthief","q":1,"l":false,"c":1},{"n":"Vampire of the Dire Moon","q":1,"l":false,"c":1},{"n":"Typhoid Rats","q":1,"l":false,"c":1},{"n":"Diregraf Ghoul","q":1,"l":false,"c":1},{"n":"Bonecache Overseer","q":1,"l":false,"c":1},{"n":"Ashnod, Flesh Mechanist","q":1,"l":false,"c":1},{"n":"Tinybones, the Pickpocket","q":1,"l":false,"c":1},{"n":"Deep-Cavern Bat","q":1,"l":false,"c":2},{"n":"Vengeful Bloodwitch","q":1,"l":false,"c":2},{"n":"Vampire Interloper","q":1,"l":false,"c":2},{"n":"Skullcap Snail","q":1,"l":false,"c":2},{"n":"Burglar Rat","q":1,"l":false,"c":2},{"n":"Agents of HYDRA","q":1,"l":false,"c":2},{"n":"Red Room Recruit","q":1,"l":false,"c":2},{"n":"Innocuous Rat","q":1,"l":false,"c":2},{"n":"Infestation Sage","q":1,"l":false,"c":1},{"n":"Vampire Gourmand","q":1,"l":false,"c":2},{"n":"Tenacious Underdog","q":1,"l":false,"c":2},{"n":"Malakir Cullblade","q":1,"l":false,"c":2},{"n":"Zul Ashur, Lich Lord","q":1,"l":false,"c":2},{"n":"Vraan, Executioner Thane","q":1,"l":false,"c":2},{"n":"Vadmir, New Blood","q":1,"l":false,"c":2},{"n":"Reassembling Skeleton","q":1,"l":false,"c":2},{"n":"Hungry Ghoul","q":1,"l":false,"c":2},{"n":"Crypt Feaster","q":1,"l":false,"c":4},{"n":"Gutless Plunderer","q":1,"l":false,"c":3},{"n":"High-Society Hunter","q":1,"l":false,"c":5},{"n":"Vampire Soulcaller","q":1,"l":false,"c":5},{"n":"Nezumi Linkbreaker","q":1,"l":false,"c":1},{"n":"Thornplate Intimidator","q":1,"l":false,"c":4},{"n":"Cackling Slasher","q":1,"l":false,"c":4},{"n":"Ninja of the Hand","q":1,"l":false,"c":3},{"n":"Sengir Vampire","q":1,"l":false,"c":5},{"n":"Baron Helmut Zemo","q":1,"l":false,"c":3},{"n":"Cut Down","q":1,"l":false,"c":1},{"n":"Bitter Triumph","q":1,"l":false,"c":2},{"n":"Fell","q":1,"l":false,"c":2},{"n":"Dark Deed","q":1,"l":false,"c":2},{"n":"Go for the Throat","q":1,"l":false,"c":2},{"n":"Withering Torment","q":1,"l":false,"c":3},{"n":"Hero's Downfall","q":1,"l":false,"c":3},{"n":"Murder","q":1,"l":false,"c":3},{"n":"Bleeding Edge","q":1,"l":false,"c":3},{"n":"Eaten Alive","q":1,"l":false,"c":1},{"n":"Final Vengeance","q":1,"l":false,"c":1},{"n":"Deadly Derision","q":1,"l":false,"c":4},{"n":"Hour of Defeat","q":1,"l":false,"c":4},{"n":"Duress","q":1,"l":false,"c":1},{"n":"Ruthless Negotiation","q":1,"l":false,"c":1},{"n":"Pilfer","q":1,"l":false,"c":2},{"n":"Diresight","q":1,"l":false,"c":3},{"n":"Visions of Villainy","q":1,"l":false,"c":3},{"n":"Bandit's Talent","q":1,"l":false,"c":2},{"n":"Phyrexian Arena","q":1,"l":false,"c":3},{"n":"Vampiric Rites","q":1,"l":false,"c":1},{"n":"Macabre Waltz","q":1,"l":false,"c":2},{"n":"Corrupted Conviction","q":1,"l":false,"c":1},{"n":"Liliana of the Veil","q":1,"l":false,"c":3},{"n":"Liliana, Dreadhorde General","q":1,"l":false,"c":6},{"n":"Sephiroth, Fabled SOLDIER","q":1,"l":false,"c":3},{"n":"Exsanguinate","q":1,"l":false,"c":2},{"n":"Marauding Blight-Priest","q":1,"l":false,"c":3},{"n":"My Precious","q":1,"l":false,"c":3},{"n":"Cavern of Souls","q":1,"l":true,"c":0},{"n":"Rogue's Passage","q":1,"l":true,"c":0},{"n":"Field of Ruin","q":1,"l":true,"c":0},{"n":"Hidden Necropolis","q":1,"l":true,"c":0},{"n":"Pit of Offerings","q":1,"l":true,"c":0},{"n":"Swamp","q":31,"l":true,"c":0}]},{"id":"brawl100-ironman-artifacts","cmdr":"Iron Man, Futurist Paragon","size":99,"lands":36,"cards":[{"n":"Bear Trap","q":1,"l":false,"c":1},{"n":"Found Footage","q":1,"l":false,"c":1},{"n":"Ghost Vacuum","q":1,"l":false,"c":1},{"n":"Chromatic Star","q":1,"l":false,"c":1},{"n":"Candlestick","q":1,"l":false,"c":1},{"n":"Springleaf Drum","q":1,"l":false,"c":1},{"n":"Giant's Boulder","q":1,"l":false,"c":1},{"n":"Aerial Doombot","q":1,"l":false,"c":1},{"n":"Barrow-Blade","q":1,"l":false,"c":1},{"n":"Excalibur II","q":1,"l":false,"c":1},{"n":"Spider-Suit","q":1,"l":false,"c":1},{"n":"Adventuring Gear","q":1,"l":false,"c":1},{"n":"Fishing Pole","q":1,"l":false,"c":1},{"n":"Hunter's Blowgun","q":1,"l":false,"c":1},{"n":"Well-Worn Spatula","q":1,"l":false,"c":1},{"n":"Futurist Forge","q":1,"l":false,"c":2},{"n":"A.I.M. Synthoids","q":1,"l":false,"c":2},{"n":"Friendly Teddy","q":1,"l":false,"c":2},{"n":"Gleaming Barrier","q":1,"l":false,"c":2},{"n":"Campus Guide","q":1,"l":false,"c":2},{"n":"Contested Game Ball","q":1,"l":false,"c":2},{"n":"Glimmerlight","q":1,"l":false,"c":2},{"n":"Goldvein Pick","q":1,"l":false,"c":2},{"n":"Lembas","q":1,"l":false,"c":2},{"n":"Marvin, Murderous Mimic","q":1,"l":false,"c":2},{"n":"Simulacrum Synthesizer","q":1,"l":false,"c":3},{"n":"Iron Man Armor","q":1,"l":false,"c":3},{"n":"Ultron Drone","q":1,"l":false,"c":3},{"n":"Tezzeret, Cruel Captain","q":1,"l":false,"c":3},{"n":"Magnifying Glass","q":1,"l":false,"c":3},{"n":"Sai, Master Thopterist","q":1,"l":false,"c":3},{"n":"Shuri, Wakandan Inventor","q":1,"l":false,"c":2},{"n":"Forensic Gadgeteer","q":1,"l":false,"c":3},{"n":"Tetsuko Umezawa, Fugitive","q":1,"l":false,"c":2},{"n":"Iron Lad, Diverging Destiny","q":1,"l":false,"c":3},{"n":"Ironheart, Clever Champion","q":1,"l":false,"c":5},{"n":"Zahid, Djinn of the Lamp","q":1,"l":false,"c":6},{"n":"Curator of Destinies","q":1,"l":false,"c":6},{"n":"Riddlemaster Sphinx","q":1,"l":false,"c":6},{"n":"Kang the Conqueror","q":1,"l":false,"c":4},{"n":"Ultron, Machine Overlord","q":1,"l":false,"c":5},{"n":"Ultron, Artificial Malevolence","q":1,"l":false,"c":3},{"n":"Sire of Seven Deaths","q":1,"l":false,"c":7},{"n":"Juggernaut","q":1,"l":false,"c":4},{"n":"The Prima Vista","q":1,"l":false,"c":5},{"n":"Steamcore Scholar","q":1,"l":false,"c":3},{"n":"Unable to Scream","q":1,"l":false,"c":1},{"n":"Witness Protection","q":1,"l":false,"c":1},{"n":"Frozen in Ice","q":1,"l":false,"c":3},{"n":"Retro-Mutation","q":1,"l":false,"c":3},{"n":"Enchanted River's Grasp","q":1,"l":false,"c":3},{"n":"Flood the Engine","q":1,"l":false,"c":3},{"n":"Duskmourn's Domination","q":1,"l":false,"c":6},{"n":"Sting, Bilbo's Sword","q":1,"l":false,"c":2},{"n":"Housemeld","q":1,"l":false,"c":4},{"n":"The Black Arrow","q":1,"l":false,"c":3},{"n":"Faerie Slumber Party","q":1,"l":false,"c":6},{"n":"Opt","q":1,"l":false,"c":1},{"n":"Stock Up","q":1,"l":false,"c":3},{"n":"Three Steps Ahead","q":1,"l":false,"c":1},{"n":"Thirst for Knowledge","q":1,"l":false,"c":3},{"n":"Cerebral Download","q":1,"l":false,"c":5},{"n":"Lunar Insight","q":1,"l":false,"c":3},{"n":"Cavern of Souls","q":1,"l":true,"c":0},{"n":"Castle Doom","q":1,"l":true,"c":0},{"n":"Rogue's Passage","q":1,"l":true,"c":0},{"n":"Field of Ruin","q":1,"l":true,"c":0},{"n":"Lilypad Village","q":1,"l":true,"c":0},{"n":"Hidden Cataract","q":1,"l":true,"c":0},{"n":"Island","q":30,"l":true,"c":0}]},{"id":"brawl100-nissa-mono-green","cmdr":"Nissa, Resurgent Animist","size":99,"lands":37,"cards":[{"n":"Llanowar Elves","q":1,"l":false,"c":1},{"n":"Druid of the Cowl","q":1,"l":false,"c":2},{"n":"Three Tree Rootweaver","q":1,"l":false,"c":2},{"n":"Overgrown Zealot","q":1,"l":false,"c":2},{"n":"Springbloom Druid","q":1,"l":false,"c":3},{"n":"Elvish Rejuvenator","q":1,"l":false,"c":3},{"n":"Circuitous Route","q":1,"l":false,"c":4},{"n":"Grow from the Ashes","q":1,"l":false,"c":3},{"n":"Spineseeker Centipede","q":1,"l":false,"c":3},{"n":"Outcaster Greenblade","q":1,"l":false,"c":3},{"n":"Wolfwillow Haven","q":1,"l":false,"c":2},{"n":"Loot, Exuberant Explorer","q":1,"l":false,"c":3},{"n":"Bristly Bill, Spine Sower","q":1,"l":false,"c":2},{"n":"Tifa Lockhart","q":1,"l":false,"c":2},{"n":"Sazh's Chocobo","q":1,"l":false,"c":1},{"n":"Mossborn Hydra","q":1,"l":false,"c":3},{"n":"Elfsworn Giant","q":1,"l":false,"c":5},{"n":"Ride the Shoopuf","q":1,"l":false,"c":2},{"n":"Overlord of the Hauntwoods","q":1,"l":false,"c":5},{"n":"Hedge Shredder","q":1,"l":false,"c":4},{"n":"Scavenging Ooze","q":1,"l":false,"c":2},{"n":"Nessian Hornbeetle","q":1,"l":false,"c":2},{"n":"Insidious Fungus","q":1,"l":false,"c":1},{"n":"Wildwood Scourge","q":1,"l":false,"c":1},{"n":"Mild-Mannered Librarian","q":1,"l":false,"c":1},{"n":"Beast-Kin Ranger","q":1,"l":false,"c":3},{"n":"Cackling Prowler","q":1,"l":false,"c":4},{"n":"Needletooth Pack","q":1,"l":false,"c":5},{"n":"Balustrade Wurm","q":1,"l":false,"c":5},{"n":"Slavering Branchsnapper","q":1,"l":false,"c":6},{"n":"Altanak, the Thrice-Called","q":1,"l":false,"c":7},{"n":"Ghalta, Primal Hunger","q":1,"l":false,"c":12},{"n":"Gigantosaurus","q":1,"l":false,"c":5},{"n":"Aggressive Mammoth","q":1,"l":false,"c":6},{"n":"Yorvo, Lord of Garenbrig","q":1,"l":false,"c":3},{"n":"Tyvar, the Pummeler","q":1,"l":false,"c":3},{"n":"Quilled Greatwurm","q":1,"l":false,"c":6},{"n":"Colossal Rattlewurm","q":1,"l":false,"c":4},{"n":"Vorinclex, Voice of Hunger","q":1,"l":false,"c":8},{"n":"Ambush Wolf","q":1,"l":false,"c":3},{"n":"Spinner of Souls","q":1,"l":false,"c":3},{"n":"Treetop Snarespinner","q":1,"l":false,"c":4},{"n":"Anthropede","q":1,"l":false,"c":4},{"n":"Bashful Beastie","q":1,"l":false,"c":5},{"n":"Railway Brawler","q":1,"l":false,"c":5},{"n":"Bite Down","q":1,"l":false,"c":2},{"n":"Broken Wings","q":1,"l":false,"c":3},{"n":"Pawpatch Formation","q":1,"l":false,"c":2},{"n":"Epic Fight","q":1,"l":false,"c":3},{"n":"Snakeskin Veil","q":1,"l":false,"c":1},{"n":"Giant Growth","q":1,"l":false,"c":1},{"n":"Titanic Growth","q":1,"l":false,"c":2},{"n":"Garruk's Uprising","q":1,"l":false,"c":3},{"n":"Inspiring Call","q":1,"l":false,"c":3},{"n":"Genesis Wave","q":1,"l":false,"c":3},{"n":"Collected Company","q":1,"l":false,"c":4},{"n":"Heroic Intervention","q":1,"l":false,"c":2},{"n":"Vivien Reid","q":1,"l":false,"c":5},{"n":"Nature's Rhythm","q":1,"l":false,"c":2},{"n":"Monstrous Emergence","q":1,"l":false,"c":2},{"n":"Blossoming Defense","q":1,"l":false,"c":1},{"n":"Return to Nature","q":1,"l":false,"c":2},{"n":"Cavern of Souls","q":1,"l":true,"c":0},{"n":"Rogue's Passage","q":1,"l":true,"c":0},{"n":"Field of Ruin","q":1,"l":true,"c":0},{"n":"Escape Tunnel","q":1,"l":true,"c":0},{"n":"Terramorphic Expanse","q":1,"l":true,"c":0},{"n":"Evolving Wilds","q":1,"l":true,"c":0},{"n":"Forest","q":31,"l":true,"c":0}]},{"id":"brawl100-sai-mono-blue","cmdr":"Sai, Master Thopterist","size":99,"lands":36,"cards":[{"n":"Iron Man, Futurist Paragon","q":1,"l":false,"c":6},{"n":"Mercurial Spelldancer","q":1,"l":false,"c":2},{"n":"Ghost Vacuum","q":1,"l":false,"c":1},{"n":"Uncharted Voyage","q":1,"l":false,"c":4},{"n":"Unable to Scream","q":1,"l":false,"c":1},{"n":"Zahid, Djinn of the Lamp","q":1,"l":false,"c":6},{"n":"Juggernaut","q":1,"l":false,"c":4},{"n":"Friendly Teddy","q":1,"l":false,"c":2},{"n":"The Prima Vista","q":1,"l":false,"c":5},{"n":"Futurist Forge","q":1,"l":false,"c":2},{"n":"A.I.M. Synthoids","q":1,"l":false,"c":2},{"n":"Curator of Destinies","q":1,"l":false,"c":6},{"n":"Ultron, Machine Overlord","q":1,"l":false,"c":5},{"n":"Sire of Seven Deaths","q":1,"l":false,"c":7},{"n":"Super Suit","q":1,"l":false,"c":2},{"n":"Veteran Ice Climber","q":1,"l":false,"c":2},{"n":"Retro-Mutation","q":1,"l":false,"c":3},{"n":"Malevolent Chandelier","q":1,"l":false,"c":6},{"n":"Faerie Slumber Party","q":1,"l":false,"c":6},{"n":"Tetsuko Umezawa, Fugitive","q":1,"l":false,"c":2},{"n":"Iron Man Armor","q":1,"l":false,"c":3},{"n":"Simulacrum Synthesizer","q":1,"l":false,"c":3},{"n":"Ultron, Artificial Malevolence","q":1,"l":false,"c":3},{"n":"Ultron Drone","q":1,"l":false,"c":3},{"n":"Marvin, Murderous Mimic","q":1,"l":false,"c":2},{"n":"Aerial Doombot","q":1,"l":false,"c":1},{"n":"Hydraulic Helper","q":1,"l":false,"c":2},{"n":"H.E.R.B.I.E. Scout Unit","q":1,"l":false,"c":4},{"n":"Meteor Golem","q":1,"l":false,"c":7},{"n":"Tezzeret, Cruel Captain","q":1,"l":false,"c":3},{"n":"Opt","q":1,"l":false,"c":1},{"n":"Spectral Sailor","q":1,"l":false,"c":1},{"n":"Three Steps Ahead","q":1,"l":false,"c":1},{"n":"Consult the Star Charts","q":1,"l":false,"c":2},{"n":"Stock Up","q":1,"l":false,"c":3},{"n":"Brineborn Cutthroat","q":1,"l":false,"c":2},{"n":"Duskmourn's Domination","q":1,"l":false,"c":6},{"n":"Enchanted River's Grasp","q":1,"l":false,"c":3},{"n":"Flood the Engine","q":1,"l":false,"c":3},{"n":"Vanish from Sight","q":1,"l":false,"c":4},{"n":"Frozen in Ice","q":1,"l":false,"c":3},{"n":"Exclusion Mage","q":1,"l":false,"c":3},{"n":"Floodpits Drowner","q":1,"l":false,"c":2},{"n":"Into the Roil","q":1,"l":false,"c":2},{"n":"Unsummon","q":1,"l":false,"c":1},{"n":"Uneasy Partings","q":1,"l":false,"c":4},{"n":"Witness Protection","q":1,"l":false,"c":1},{"n":"Dungeon Geists","q":1,"l":false,"c":4},{"n":"Cloudkin Seer","q":1,"l":false,"c":3},{"n":"Steamcore Scholar","q":1,"l":false,"c":3},{"n":"Forensic Gadgeteer","q":1,"l":false,"c":3},{"n":"Sphinx of Forgotten Lore","q":1,"l":false,"c":4},{"n":"Tolarian Terror","q":1,"l":false,"c":7},{"n":"Kang the Conqueror","q":1,"l":false,"c":4},{"n":"Namor the Sub-Mariner","q":1,"l":false,"c":3},{"n":"Ms. Marvel, Kamala Khan","q":1,"l":false,"c":3},{"n":"Kitsa, Otterball Elite","q":1,"l":false,"c":2},{"n":"Loki, God of Mischief","q":1,"l":false,"c":2},{"n":"Lunar Insight","q":1,"l":false,"c":3},{"n":"Cerebral Download","q":1,"l":false,"c":5},{"n":"Thirst for Knowledge","q":1,"l":false,"c":3},{"n":"Ironheart, Clever Champion","q":1,"l":false,"c":5},{"n":"Riddlemaster Sphinx","q":1,"l":false,"c":6},{"n":"Cavern of Souls","q":1,"l":true,"c":0},{"n":"Rogue's Passage","q":1,"l":true,"c":0},{"n":"Field of Ruin","q":1,"l":true,"c":0},{"n":"Castle Doom","q":1,"l":true,"c":0},{"n":"Lilypad Village","q":1,"l":true,"c":0},{"n":"Island","q":31,"l":true,"c":0}]},{"id":"dimir-control","cmdr":null,"size":60,"lands":24,"cards":[{"n":"Deep-Cavern Bat","q":4,"l":false,"c":2},{"n":"Fell","q":4,"l":false,"c":2},{"n":"Winter's Intervention","q":4,"l":false,"c":2},{"n":"Overlord of the Balemurk","q":3,"l":false,"c":5},{"n":"Twist Reality","q":4,"l":false,"c":3},{"n":"Diresight","q":3,"l":false,"c":3},{"n":"Withering Torment","q":2,"l":false,"c":3},{"n":"Overlord of the Floodpits","q":2,"l":false,"c":5},{"n":"Hero's Downfall","q":3,"l":false,"c":3},{"n":"Kaito, Bane of Nightmares","q":4,"l":false,"c":4},{"n":"Consuming Ashes","q":3,"l":false,"c":4},{"n":"Gloomlake Verge","q":3,"l":true,"c":0},{"n":"Murky Sewer","q":4,"l":true,"c":0},{"n":"Undercity Sewers","q":1,"l":true,"c":0},{"n":"Dismal Backwater","q":4,"l":true,"c":0},{"n":"Soured Springs","q":3,"l":true,"c":0},{"n":"Watery Grave","q":1,"l":true,"c":0},{"n":"Island","q":4,"l":true,"c":0},{"n":"Swamp","q":4,"l":true,"c":0}]},{"id":"golgari-dailies","cmdr":null,"size":60,"lands":23,"cards":[{"n":"Deep-Cavern Bat","q":4,"l":false,"c":2},{"n":"Scavenging Ooze","q":4,"l":false,"c":2},{"n":"Nessian Hornbeetle","q":4,"l":false,"c":2},{"n":"Fell","q":4,"l":false,"c":2},{"n":"Bite Down","q":2,"l":false,"c":2},{"n":"Mossborn Hydra","q":4,"l":false,"c":3},{"n":"Tyvar, the Pummeler","q":4,"l":false,"c":3},{"n":"Thornplate Intimidator","q":4,"l":false,"c":4},{"n":"Cackling Prowler","q":4,"l":false,"c":4},{"n":"Needletooth Pack","q":3,"l":false,"c":5},{"n":"Strangled Cemetery","q":4,"l":true,"c":0},{"n":"Jungle Hollow","q":4,"l":true,"c":0},{"n":"Golgari Guildgate","q":2,"l":true,"c":0},{"n":"Underground Mortuary","q":1,"l":true,"c":0},{"n":"Temple of Malady","q":1,"l":true,"c":0},{"n":"Forest","q":7,"l":true,"c":0},{"n":"Swamp","q":4,"l":true,"c":0}]},{"id":"izzet-iron-man-artifacts","cmdr":null,"size":60,"lands":23,"cards":[{"n":"Aerial Doombot","q":4,"l":false,"c":1},{"n":"Futurist Forge","q":4,"l":false,"c":2},{"n":"Hydraulic Helper","q":4,"l":false,"c":2},{"n":"HYDRA Assault Robot","q":4,"l":false,"c":2},{"n":"Shuri, Wakandan Inventor","q":3,"l":false,"c":2},{"n":"Friendly Teddy","q":4,"l":false,"c":2},{"n":"Machinesmith Automaton","q":3,"l":false,"c":3},{"n":"A.I.M. Synthoids","q":3,"l":false,"c":2},{"n":"Simulacrum Synthesizer","q":1,"l":false,"c":3},{"n":"Ultron, Artificial Malevolence","q":1,"l":false,"c":3},{"n":"Tezzeret, Cruel Captain","q":2,"l":false,"c":3},{"n":"Iron Man, Master of Machines","q":3,"l":false,"c":4},{"n":"Ironheart, Clever Champion","q":1,"l":false,"c":5},{"n":"Riverpyre Verge","q":2,"l":true,"c":0},{"n":"Spirebluff Canal","q":1,"l":true,"c":0},{"n":"Steam Vents","q":1,"l":true,"c":0},{"n":"Temple of Epiphany","q":1,"l":true,"c":0},{"n":"Swiftwater Cliffs","q":2,"l":true,"c":0},{"n":"Stormcarved Coast","q":2,"l":true,"c":0},{"n":"Castle Doom","q":1,"l":true,"c":0},{"n":"Island","q":7,"l":true,"c":0},{"n":"Mountain","q":6,"l":true,"c":0}]},{"id":"mono-black-hand-attack","cmdr":null,"size":60,"lands":23,"cards":[{"n":"Ruthless Negotiation","q":4,"l":false,"c":1},{"n":"Faerie Dreamthief","q":4,"l":false,"c":1},{"n":"Deep-Cavern Bat","q":4,"l":false,"c":2},{"n":"Bandit's Talent","q":4,"l":false,"c":2},{"n":"Vengeful Bloodwitch","q":4,"l":false,"c":2},{"n":"Fell","q":4,"l":false,"c":2},{"n":"Pilfer","q":2,"l":false,"c":2},{"n":"Tinybones, Bauble Burglar","q":1,"l":false,"c":2},{"n":"Thought-Stalker Warlock","q":3,"l":false,"c":3},{"n":"Hero's Downfall","q":3,"l":false,"c":3},{"n":"Thornplate Intimidator","q":4,"l":false,"c":4},{"n":"Swamp","q":22,"l":true,"c":0},{"n":"Rogue's Passage","q":1,"l":true,"c":0}]},{"id":"rakdos-hydra-villains","cmdr":null,"size":60,"lands":23,"cards":[{"n":"Agents of HYDRA","q":4,"l":false,"c":2},{"n":"Red Room Recruit","q":4,"l":false,"c":2},{"n":"HYDRA Assault Robot","q":4,"l":false,"c":2},{"n":"Doom Reigns Supreme","q":2,"l":false,"c":2},{"n":"Madame Hydra","q":4,"l":false,"c":4},{"n":"Construct a Cosmic Cube","q":3,"l":false,"c":3},{"n":"Baron Strucker, HYDRA Overlord","q":2,"l":false,"c":3},{"n":"Hire a Crew","q":3,"l":false,"c":3},{"n":"Avengers: Under Siege","q":3,"l":false,"c":4},{"n":"Visions of Villainy","q":4,"l":false,"c":3},{"n":"Dark Deed","q":2,"l":false,"c":2},{"n":"The Masters of Evil","q":2,"l":false,"c":6},{"n":"Blazemire Verge","q":3,"l":true,"c":0},{"n":"Razortrap Gorge","q":4,"l":true,"c":0},{"n":"Bloodfell Caves","q":4,"l":true,"c":0},{"n":"Rakdos Guildgate","q":2,"l":true,"c":0},{"n":"Swamp","q":6,"l":true,"c":0},{"n":"Mountain","q":4,"l":true,"c":0}]},{"id":"brawl100-elspeth-hares-v21c","cmdr":"Elspeth, Storm Slayer","size":99,"lands":37,"cards":[{"n":"Hare Apparent","q":20,"l":false,"c":2,"t":["bridge"],"m":"{1}{W}","y":"Creature \u2014 Rabbit Noble","k":"creature","ki":"\ud83d\udc07","r":"hare","ri":"\ud83d\udc07"},{"n":"Anointed Procession","q":1,"l":false,"c":4,"m":"{3}{W}","y":"Enchantment","k":"enchantment","ki":"\u2728","r":"token","ri":"\ud83d\udc6f"},{"n":"Mondrak, Glory Dominus","q":1,"l":false,"c":4,"t":["stranded"],"m":"{2}{W}{W}","y":"Legendary Creature \u2014 Phyrexian Horror","k":"creature","ki":"\ud83d\udc07","r":"payoff","ri":"\ud83d\udca5"},{"n":"Ojer Taq, Deepest Foundation // Temple of Civilization","q":1,"l":false,"c":6,"t":["stranded","tdfc","stranded"],"m":"{4}{W}{W}","y":"Legendary Creature \u2014 God // Land","k":"creature","ki":"\ud83d\udc07","r":"payoff","ri":"\ud83d\udca5"},{"n":"Intangible Virtue","q":1,"l":false,"c":2,"m":"{1}{W}","y":"Enchantment","k":"enchantment","ki":"\u2728","r":"token","ri":"\ud83d\udc6f"},{"n":"Caretaker's Talent","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Enchantment \u2014 Class","k":"enchantment","ki":"\u2728","r":"token","ri":"\ud83d\udc6f"},{"n":"Enduring Innocence","q":1,"l":false,"c":3,"m":"{1}{W}{W}","y":"Enchantment Creature \u2014 Sheep Glimmer","k":"creature","ki":"\ud83d\udc07","r":"draw","ri":"\ud83d\udcd6"},{"n":"Delney, Streetwise Lookout","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Legendary Creature \u2014 Human Scout","k":"creature","ki":"\ud83d\udc07","r":"payoff","ri":"\ud83d\udca5"},{"n":"Roaming Throne","q":1,"l":false,"c":4,"t":["stranded"],"m":"{4}","y":"Artifact Creature \u2014 Golem","k":"creature","ki":"\ud83d\udc07","r":"payoff","ri":"\ud83d\udca5"},{"n":"Oketra's Monument","q":1,"l":false,"c":3,"m":"{3}","y":"Legendary Artifact","k":"artifact","ki":"\u2699\ufe0f","r":"token","ri":"\ud83d\udc6f"},{"n":"Adeline, Resplendent Cathar","q":1,"l":false,"c":3,"m":"{1}{W}{W}","y":"Legendary Creature \u2014 Human Knight","k":"creature","ki":"\ud83d\udc07","r":"token","ri":"\ud83d\udc6f"},{"n":"Three Blind Mice","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Enchantment \u2014 Saga","k":"enchantment","ki":"\u2728","r":"token","ri":"\ud83d\udc6f"},{"n":"Hop to It","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Sorcery","k":"sorcery","ki":"\ud83d\udd2e","r":"token","ri":"\ud83d\udc6f"},{"n":"Toby, Beastie Befriender","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Legendary Creature \u2014 Human Wizard","k":"creature","ki":"\ud83d\udc07","r":"token","ri":"\ud83d\udc6f"},{"n":"Archangel Elspeth","q":1,"l":false,"c":4,"t":["stranded"],"m":"{2}{W}{W}","y":"Legendary Planeswalker \u2014 Elspeth","k":"planeswalker","ki":"\ud83d\udc51","r":"payoff","ri":"\ud83d\udca5"},{"n":"Cathars' Crusade","q":1,"l":false,"c":5,"t":["stranded"],"m":"{3}{W}{W}","y":"Enchantment","k":"enchantment","ki":"\u2728","r":"payoff","ri":"\ud83d\udca5"},{"n":"Divine Visitation","q":1,"l":false,"c":5,"t":["stranded"],"m":"{3}{W}{W}","y":"Enchantment","k":"enchantment","ki":"\u2728","r":"payoff","ri":"\ud83d\udca5"},{"n":"The Queen of Dale","q":1,"l":false,"c":2,"m":"{1}{W}","y":"Legendary Creature \u2014 Human Noble","k":"creature","ki":"\ud83d\udc07","r":"token","ri":"\ud83d\udc6f"},{"n":"Waystone's Guidance","q":1,"l":false,"c":2,"m":"{1}{W}","y":"Enchantment","k":"enchantment","ki":"\u2728","r":"token","ri":"\ud83d\udc6f"},{"n":"Crashing Drawbridge","q":1,"l":false,"c":2,"t":["bridge"],"m":"{2}","y":"Artifact Creature \u2014 Wall","k":"creature","ki":"\ud83d\udc07","r":"bridge","ri":"\ud83c\udf09"},{"n":"Esper Sentinel","q":1,"l":false,"c":1,"t":["bridge"],"m":"{W}","y":"Artifact Creature \u2014 Human Soldier","k":"creature","ki":"\ud83d\udc07","r":"draw","ri":"\ud83d\udcd6"},{"n":"The One Ring","q":1,"l":false,"c":4,"t":["stranded"],"m":"{4}","y":"Legendary Artifact","k":"artifact","ki":"\u2699\ufe0f","r":"payoff","ri":"\ud83d\udca5"},{"n":"Eerie Interlude","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Instant","k":"instant","ki":"\u26a1","r":"protect","ri":"\ud83d\udee1\ufe0f"},{"n":"Mentor of the Meek","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Creature \u2014 Human Soldier","k":"creature","ki":"\ud83d\udc07","r":"draw","ri":"\ud83d\udcd6"},{"n":"Smothering Tithe","q":1,"l":false,"c":4,"t":["stranded"],"m":"{3}{W}","y":"Enchantment","k":"enchantment","ki":"\u2728","r":"ramp","ri":"\ud83d\udca7"},{"n":"Pearl Medallion","q":1,"l":false,"c":2,"t":["bridge"],"m":"{2}","y":"Artifact","k":"artifact","ki":"\u2699\ufe0f","r":"bridge","ri":"\ud83c\udf09"},{"n":"Arcane Signet","q":1,"l":false,"c":2,"t":["bridge"],"m":"{2}","y":"Artifact","k":"artifact","ki":"\u2699\ufe0f","r":"bridge","ri":"\ud83c\udf09"},{"n":"The Mind Stone","q":1,"l":false,"c":2,"t":["bridge"],"m":"{1}{W}","y":"Legendary Artifact \u2014 Infinity Stone","k":"artifact","ki":"\u2699\ufe0f","r":"bridge","ri":"\ud83c\udf09"},{"n":"Knight of the White Orchid","q":1,"l":false,"c":2,"t":["bridge"],"m":"{W}{W}","y":"Creature \u2014 Human Knight","k":"creature","ki":"\ud83d\udc07","r":"bridge","ri":"\ud83c\udf09"},{"n":"Loyal Warhound","q":1,"l":false,"c":2,"t":["bridge"],"m":"{1}{W}","y":"Creature \u2014 Dog","k":"creature","ki":"\ud83d\udc07","r":"bridge","ri":"\ud83c\udf09"},{"n":"Ambitious Farmhand // Seasoned Cathar","q":1,"l":false,"c":2,"t":["bridge"],"m":"{1}{W}","y":"Creature \u2014 Human Peasant // Creature \u2014 Human Knight","k":"creature","ki":"\ud83d\udc07","r":"bridge","ri":"\ud83c\udf09"},{"n":"Teferi's Protection","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Instant","k":"instant","ki":"\u26a1","r":"protect","ri":"\ud83d\udee1\ufe0f"},{"n":"Galadriel's Dismissal","q":1,"l":false,"c":1,"m":"{W}","y":"Instant","k":"instant","ki":"\u26a1","r":"protect","ri":"\ud83d\udee1\ufe0f"},{"n":"Tocasia's Welcome","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Enchantment","k":"enchantment","ki":"\u2728","r":"draw","ri":"\ud83d\udcd6"},{"n":"Akroma's Will","q":1,"l":false,"c":4,"m":"{3}{W}","y":"Instant","k":"instant","ki":"\u26a1","r":"protect","ri":"\ud83d\udee1\ufe0f"},{"n":"Brave the Elements","q":1,"l":false,"c":1,"m":"{W}","y":"Instant","k":"instant","ki":"\u26a1","r":"protect","ri":"\ud83d\udee1\ufe0f"},{"n":"Grand Abolisher","q":1,"l":false,"c":2,"m":"{W}{W}","y":"Creature \u2014 Human Cleric","k":"creature","ki":"\ud83d\udc07","r":"protect","ri":"\ud83d\udee1\ufe0f"},{"n":"Lay Down Arms","q":1,"l":false,"c":1,"m":"{W}","y":"Sorcery","k":"sorcery","ki":"\ud83d\udd2e","r":"removal","ri":"\ud83d\udd25"},{"n":"Get Lost","q":1,"l":false,"c":2,"m":"{1}{W}","y":"Instant","k":"instant","ki":"\u26a1","r":"removal","ri":"\ud83d\udd25"},{"n":"Exorcise","q":1,"l":false,"c":2,"m":"{1}{W}","y":"Sorcery","k":"sorcery","ki":"\ud83d\udd2e","r":"removal","ri":"\ud83d\udd25"},{"n":"Parting Gust","q":1,"l":false,"c":2,"m":"{W}{W}","y":"Instant","k":"instant","ki":"\u26a1","r":"removal","ri":"\ud83d\udd25"},{"n":"Expel the Interlopers","q":1,"l":false,"c":5,"m":"{3}{W}{W}","y":"Sorcery","k":"sorcery","ki":"\ud83d\udd2e","r":"removal","ri":"\ud83d\udd25"},{"n":"Cavern of Souls","q":1,"l":true,"c":0,"y":"Land","k":"land","ki":"\ud83d\udfeb","r":"land","ri":"\ud83d\udfeb"},{"n":"Command Tower","q":1,"l":true,"c":0,"y":"Land","k":"land","ki":"\ud83d\udfeb","r":"land","ri":"\ud83d\udfeb"},{"n":"Secluded Courtyard","q":1,"l":true,"c":0,"y":"Land","k":"land","ki":"\ud83d\udfeb","r":"land","ri":"\ud83d\udfeb"},{"n":"Fabled Passage","q":1,"l":true,"c":0,"t":["half"],"y":"Land","k":"land","ki":"\ud83d\udfeb","r":"land","ri":"\ud83d\udfeb"},{"n":"Lotus Field","q":1,"l":true,"c":0,"t":["half"],"y":"Land","k":"land","ki":"\ud83d\udfeb","r":"land","ri":"\ud83d\udfeb"},{"n":"Nykthos, Shrine to Nyx","q":1,"l":true,"c":0,"t":["half"],"y":"Legendary Land","k":"land","ki":"\ud83d\udfeb","r":"land","ri":"\ud83d\udfeb"},{"n":"Field of Ruin","q":1,"l":true,"c":0,"t":["colorless"],"y":"Land","k":"land","ki":"\ud83d\udfeb","r":"land","ri":"\ud83d\udfeb"},{"n":"Plains","q":30,"l":true,"c":0,"y":"Basic Land \u2014 Plains","k":"land","ki":"\ud83d\udfeb","r":"land","ri":"\ud83d\udfeb"},{"n":"Flawless Maneuver","q":1,"l":false,"c":3,"m":"{2}{W}","y":"Instant","k":"instant","ki":"\u26a1","r":"protect","ri":"\ud83d\udee1\ufe0f"}],"rule":"hares-v2"},{"id":"brawl100-emrakul-exigent-doom-v1b","cmdr":"Emrakul, the Exigent Doom","size":99,"lands":40,"cards":[{"n":"Wastes","q":28,"l":true,"c":0},{"n":"Ash Barrens","q":1,"l":true,"c":0},{"n":"Buried Ruin","q":1,"l":true,"c":0},{"n":"Castle Doom","q":1,"l":true,"c":0},{"n":"Cavern of Souls","q":1,"l":true,"c":0},{"n":"Demolition Field","q":1,"l":true,"c":0},{"n":"Echoing Deeps","q":1,"l":true,"c":0},{"n":"Emergence Zone","q":1,"l":true,"c":0},{"n":"Field of Ruin","q":1,"l":true,"c":0},{"n":"Fountainport","q":1,"l":true,"c":0},{"n":"Mirrex","q":1,"l":true,"c":0},{"n":"Muraganda Raceway","q":1,"l":true,"c":0},{"n":"Reliquary Tower","q":1,"l":true,"c":0},{"n":"Mind Stone","q":1,"l":false,"c":2},{"n":"Page, Loose Leaf","q":1,"l":false,"c":2},{"n":"The Irencrag","q":1,"l":false,"c":2},{"n":"Springleaf Drum","q":1,"l":false,"c":1},{"n":"Ornithopter of Paradise","q":1,"l":false,"c":2},{"n":"Wayfarer's Bauble","q":1,"l":false,"c":1},{"n":"Burnished Hart","q":1,"l":false,"c":3},{"n":"Solemn Simulacrum","q":1,"l":false,"c":4},{"n":"Runecarved Obelisk","q":1,"l":false,"c":4},{"n":"Arc Reactor","q":1,"l":false,"c":5},{"n":"Ashnod's Altar","q":1,"l":false,"c":3},{"n":"Weather Maker","q":1,"l":false,"c":3},{"n":"Hot Dog Cart","q":1,"l":false,"c":3},{"n":"Magnifying Glass","q":1,"l":false,"c":3},{"n":"Interdimensional Web Watch","q":1,"l":false,"c":4},{"n":"Careening Mine Cart","q":1,"l":false,"c":3},{"n":"Redrock Sentinel","q":1,"l":false,"c":3},{"n":"Treasure Map // Treasure Cove","q":1,"l":false,"c":2},{"n":"Sire of Seven Deaths","q":1,"l":false,"c":7},{"n":"Ugin, Eye of the Storms","q":1,"l":false,"c":7},{"n":"Krang, Utrom Warlord","q":1,"l":false,"c":9},{"n":"Ultron, Artificial Malevolence","q":1,"l":false,"c":3},{"n":"Ultron, Machine Overlord","q":1,"l":false,"c":5},{"n":"The Vision","q":1,"l":false,"c":4},{"n":"Traxos, Scourge Eternal","q":1,"l":false,"c":4},{"n":"Meteor Golem","q":1,"l":false,"c":7},{"n":"Archive Arbiter","q":1,"l":false,"c":6},{"n":"The Echoverse Fulcrum","q":1,"l":false,"c":2},{"n":"Hoverstone Pilgrim","q":1,"l":false,"c":5},{"n":"Rooftop Percher","q":1,"l":false,"c":5},{"n":"H.E.R.B.I.E. Scout Unit","q":1,"l":false,"c":4},{"n":"Buster Sword","q":1,"l":false,"c":3},{"n":"Genji Glove","q":1,"l":false,"c":5},{"n":"Lightning Greaves","q":1,"l":false,"c":2},{"n":"Lavaspur Boots","q":1,"l":false,"c":1},{"n":"Crashing Drawbridge","q":1,"l":false,"c":2},{"n":"The One Ring","q":1,"l":false,"c":4},{"n":"Lembas","q":1,"l":false,"c":2},{"n":"Guidelight Matrix","q":1,"l":false,"c":2},{"n":"Found Footage","q":1,"l":false,"c":1},{"n":"Thr\u00f3r's Map","q":1,"l":false,"c":2},{"n":"Chromatic Star","q":1,"l":false,"c":1},{"n":"Prophetic Prism","q":1,"l":false,"c":2},{"n":"Murmuring Volume","q":1,"l":false,"c":3},{"n":"Ghost Vacuum","q":1,"l":false,"c":1},{"n":"Soul-Guide Lantern","q":1,"l":false,"c":1},{"n":"Scrap Compactor","q":1,"l":false,"c":1},{"n":"Thaumaton Torpedo","q":1,"l":false,"c":1},{"n":"Gleaming Barrier","q":1,"l":false,"c":2},{"n":"Goldvein Pick","q":1,"l":false,"c":2},{"n":"Ultron Drone","q":1,"l":false,"c":3},{"n":"A.I.M. Synthoids","q":1,"l":false,"c":2},{"n":"Afterthought Sentry","q":1,"l":false,"c":2},{"n":"Living Library","q":1,"l":false,"c":2},{"n":"Campus Guide","q":1,"l":false,"c":2},{"n":"Wild-Field Scarecrow","q":1,"l":false,"c":3},{"n":"Three Bowls of Porridge","q":1,"l":false,"c":2},{"n":"Ravenous Amulet","q":1,"l":false,"c":2},{"n":"Supply Drop","q":1,"l":false,"c":3}]}];
+const KEY = id => "mullDrill.v3." + id;
+let deck = DECKS[0], onPlay = true, hand = [], rest = [], called = null;
+
+const $ = s => document.querySelector(s);
+const sel = $("#deck");
+DECKS.forEach((d,i)=>{ const o=document.createElement("option"); o.value=i;
+  o.textContent = d.cmdr ? d.id + "  ·  " + d.cmdr : d.id; sel.appendChild(o); });
+
+function library(d){ const out=[]; d.cards.forEach(c=>{ for(let i=0;i<c.q;i++) out.push(c); }); return out; }
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+// Hares v2 rule — per memory_2565 (2026-10-06), refined: Hare is a body,
+// not a land bridge. Fail-mode override counts FUNCTIONAL lands (Nykthos
+// half, Field colorless-risk) and requires a LAND-finder/rock, not just Hare.
+const landVal = c => {
+  if (!c.l) return 0;
+  const t = c.t || [];
+  if (c.n === "Fabled Passage") return 0.5; // swap-land is tapped — half-land regardless
+  if (t.includes("half")) return 0.5;      // Nykthos needs devotion
+  return 1;
+};
+const isLandBridge = c => !c.l && ["Ambitious Farmhand","Knight of the White Orchid","Loyal Warhound","Arcane Signet","The Mind Stone","Pearl Medallion"].includes(c.n.split(" // ")[0]);
+const isBridge = c => isLandBridge(c) || (!c.l && (c.n === "Hare Apparent" || c.n === "Esper Sentinel"));
+const isStranded = c => !c.l && ((c.t || []).includes("stranded"));
+const earlyPlay = c => !c.l && (c.c <= 2 || isBridge(c)); // castable T1-T2 or finder/rock/Hare
+const ruleKeepV2 = hand => {
+  const lands = hand.filter(c => c.l).length;
+  const f = hand.reduce((s, c) => s + landVal(c), 0);
+  if (lands <= 1 || lands >= 6) return { keep: false, why: lands + " lands — base rule mulls 0/1/6/7" };
+  const stranded = hand.filter(isStranded).length;
+  const landBridge = hand.some(isLandBridge);
+  const early = hand.some(earlyPlay);
+  const colorlessRisk = hand.some(c => c.l && ((c.t || []).includes("colorless")));
+  if (f < 2) return { keep: false, why: "only " + f + " functional lands (Nykthos/Lotus Field count half)" };
+  if (stranded >= 2 && !landBridge)
+    return { keep: false, why: "fail-mode: " + stranded + " stranded 4-5s with no land-finder/rock (Hare is a body, not a bridge)" };
+  if (!early)
+    return { keep: false, why: "no play before turn 3 — dead vs token/ramp curves" };
+  if (colorlessRisk && f <= 2)
+    return { keep: true, why: "keep, thin: Field of Ruin is colorless toward WW-by-5 — find white by T3", warn: true };
+  return { keep: lands >= 2 && lands <= 5, why: lands + " lands with bridge/early action" };
+};
+// dispatch: v21b hares entry uses V2, every other deck keeps the legacy land rule
+const ruleKeep = handOrN => {
+  if (typeof handOrN === "number") return handOrN >= 2 && handOrN <= 5;
+  if (deck && deck.rule === "hares-v2") return ruleKeepV2(handOrN).keep;
+  const lands = handOrN.filter(c => c.l).length;
+  return lands >= 2 && lands <= 5;
+};
+const ruleWhy = hand => {
+  if (deck && deck.rule === "hares-v2") return ruleKeepV2(hand);
+  const lands = hand.filter(c => c.l).length;
+  const k = lands >= 2 && lands <= 5;
+  return { keep: k, why: lands + " lands — base 2-5 rule" };
+};
+
+const drawsByT4 = () => onPlay ? 3 : 4;
+
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY(deck.id))) || []; }catch(e){ return []; } }
+function save(r){ try{ localStorage.setItem(KEY(deck.id), JSON.stringify(r)); }catch(e){} }
+
+function deal(){
+  const lib = shuffle(library(deck));
+  hand = lib.slice(0,7); rest = lib.slice(7);
+  called = null;
+  $("#reveal").hidden = true;
+  $("#bkeep").disabled = false; $("#bmull").disabled = false;
+  const h = $("#hand"); h.innerHTML = "";
+  hand.forEach(c=>{
+    const el = document.createElement("div");
+    el.className = "card" + (c.l ? " land" : "");
+    el.innerHTML = '<div class="nm"></div><div class="tag"></div>';
+    el.querySelector(".nm").textContent = c.n;
+    el.querySelector(".tag").textContent = (c.ri ? c.ri + " " : "") + (c.l ? ((c.t && c.t.includes("half")) ? "½ Land" : "Land") : (c.m || (c.c + " mana")));
+    el.querySelector(".nm").textContent = (c.ki ? c.ki + " " : "") + c.n;
+    if (c.y) el.title = c.y + (c.m ? "  " + c.m : "") + (c.r ? "  [" + c.r + "]" : "");
+    if (c.r) { const b = document.createElement("div"); b.className = "role"; b.textContent = c.r; el.appendChild(b); }
+    const kindBorder = {land:"var(--land)",creature:"var(--keep)",artifact:"#8A6A1F",enchantment:"#7E5AA7",instant:"#C2543A",sorcery:"#C2543A",planeswalker:"#B8860B"}[c.k];
+    if (kindBorder) el.style.borderLeft = "4px solid " + kindBorder;
+    if (c.t && c.t.includes("bridge")) el.style.boxShadow = "inset 0 0 0 2px var(--keep)";
+    if (c.t && c.t.includes("stranded")) el.style.boxShadow = "inset 0 0 0 2px var(--mull)";
+    if (c.n === "Hare Apparent") el.style.outline = "2px solid var(--keep)";
+    if (c.t && c.t.includes("half")) { el.classList.add("half"); el.style.outline = "2px dashed var(--half)"; el.style.outlineOffset = "1px"; }
+    h.appendChild(el);
+  });
+  const lv = hand.filter(c=>c.l).length, fv = hand.reduce((s,c)=>s+landVal(c),0);
+  $("#handcount").textContent = lv + " lands" + (fv !== lv ? " (" + fv + " functional)" : "") + " · " + (7-lv) + " spells";
+}
+
+function call(userKeep){
+  if(called !== null) return;
+  called = userKeep;
+  $("#bkeep").disabled = true; $("#bmull").disabled = true;
+  const lands = hand.filter(c=>c.l).length;
+  const why = (typeof ruleWhy === "function") ? ruleWhy(hand) : {keep: ruleKeep(hand), why: ""};
+  const rk = why.keep;
+  const nd = drawsByT4();
+  const landsT4 = lands + rest.slice(0,nd).filter(c=>c.l).length;
+  const worked = landsT4 >= 3 && landsT4 <= 5;
+
+  const v = $("#verdict"); v.innerHTML = "";
+  const pill = (t,cls)=>{ const s=document.createElement("span"); s.className="pill "+(cls||""); s.textContent=t; v.appendChild(s); };
+  pill("You: " + (userKeep ? "keep" : "mulligan"), userKeep?"ok":"no");
+  pill("Rule: " + (rk ? "keep" : "mulligan"), rk?"ok":"no");
+  if (why.why) pill(why.why);
+  const fv = hand.reduce((s,c)=>s+landVal(c),0);
+  pill(lands + " lands in hand" + (fv !== lands ? " -- " + fv + " functional" : ""));
+  pill(landsT4 + " lands by turn 4", worked ? "ok" : "no");
+
+  const d = $("#draws"); d.innerHTML = "";
+  rest.slice(0,5).forEach((c,i)=>{
+    const s = document.createElement("span");
+    s.className = "draw" + (c.l ? " l" : "");
+    s.textContent = (i+1) + ". " + c.n;
+    d.appendChild(s);
+  });
+
+  const agreed = (userKeep === rk);
+  let msg;
+  if(userKeep && !worked && landsT4 < 3) msg = "That keep stalled on " + landsT4 + " lands. This is the shape the rule is trying to save you from." + (agreed ? "" : " (You disagreed with the rule here — the ledger's agreement score is what matters, not this one draw.)");
+  else if(userKeep && !worked) msg = "That keep flooded — " + landsT4 + " lands by turn four." + (agreed ? "" : " (You disagreed with the rule here.)");
+  else if(userKeep && worked && agreed) msg = "Good keep, and the draws cooperated: " + landsT4 + " lands by turn four is the working range.";
+  else if(userKeep && worked && !agreed) msg = "Lucky, not right: the rule mulls this hand and " + landsT4 + " lands by turn four doesn't change that. You kept against the rule and got bailed out by draws — the agreement score keeps you honest here.";
+  else if(!userKeep && worked && agreed) msg = "Right mull — the rule agrees. It would have drawn to " + landsT4 + " lands, but a 1-lander needs two topdecks to function and most don't get there. Process over outcome.";
+  else if(!userKeep && worked && !agreed) msg = "You mulled a hand the rule keeps, and it would have drawn to " + landsT4 + " lands. Worth reviewing — but one draw doesn't overturn the rule.";
+  else msg = "Right call. That hand would have ended on " + landsT4 + " lands by turn four.";
+  $("#note").textContent = msg;
+  $("#reveal").hidden = false;
+
+  const rows = load();
+  rows.push({l:lands, u:userKeep?1:0, r:rk?1:0, w:worked?1:0});
+  save(rows); render();
+}
+
+function render(){
+  const rows = load(), n = rows.length;
+  $("#n").textContent = n;
+  $("#youkeep").textContent = rows.filter(r=>r.u).length;
+  $("#rulekeep").textContent = rows.filter(r=>r.r).length;
+  const ok = rows.filter(r=>r.u===r.r).length;
+  $("#agree").textContent = n ? Math.round(100*ok/n) + "%" : "—";
+  const over = rows.filter(r=>r.u===1 && r.r===0).length;
+  const under = rows.filter(r=>r.u===0 && r.r===1).length;
+  $("#overkeep").textContent = over;
+  $("#overmull").textContent = under;
+  const tb = $("#bylands"); tb.innerHTML = "";
+  for(let l=0;l<=7;l++){
+    const s = rows.filter(r=>r.l===l); if(!s.length) continue;
+    const kept = s.filter(r=>r.u).length, worked = s.filter(r=>r.w).length;
+    const tr = document.createElement("tr");
+    const pct = Math.round(100*worked/s.length);
+    tr.innerHTML = "<td>"+l+"</td><td>"+s.length+"</td><td>"+kept+"</td>"+
+      '<td class="'+(pct>=60?"good":(pct<40?"warn":""))+'">'+pct+"%</td>";
+    tb.appendChild(tr);
+  }
+  const d = deck;
+  $("#deckmeta").innerHTML = "<b>"+d.size+"</b> cards · <b>"+d.lands+"</b> lands · <b>"+
+    Math.round(100*d.lands/d.size)+"%</b>";
+}
+
+sel.onchange = e => { deck = DECKS[+e.target.value]; deal(); render(); };
+$("#onplay").onclick = ()=>{ onPlay=true; $("#onplay").setAttribute("aria-pressed","true"); $("#ondraw").setAttribute("aria-pressed","false"); };
+$("#ondraw").onclick = ()=>{ onPlay=false; $("#ondraw").setAttribute("aria-pressed","true"); $("#onplay").setAttribute("aria-pressed","false"); };
+$("#bdeal").onclick = deal;
+$("#bkeep").onclick = ()=>call(true);
+$("#bmull").onclick = ()=>call(false);
+$("#reset").onclick = ()=>{ if(confirm("Clear the ledger for "+deck.id+"?")){ save([]); render(); } };
+document.addEventListener("keydown", e=>{
+  if(e.key==="k"||e.key==="K") $("#bkeep").click();
+  if(e.key==="m"||e.key==="M") $("#bmull").click();
+  if(e.key==="d"||e.key==="D") $("#bdeal").click();
+});
+
+const hares = DECKS.findIndex(d=>d.id==="brawl100-elspeth-hares-v21c");
+if(hares>=0){ deck = DECKS[hares]; sel.value = hares; }
+deal(); render();
+</script>

@@ -1,0 +1,164 @@
+161 card(s) you are MISSING, ranked by play frequency
+
+  rank  cost         name                                R  CI  type
+   171  {4}{W}{W}    Austere Command                     M  W   Sorcery
+   311  {4}{W}{W}    Sun Titan                           M  W   Creature
+   414               Minas Tirith                        M  W   Legendary Land
+   434  {W}          Ephemerate                          M  W   Instant
+   610  {3}{W}       Mangara, the Diplomat               M  W   Legendary Creature
+   625  {2}{W}{W}    Trouble in Pairs                    M  W   Enchantment
+   753  {2}{W}       Idyllic Tutor                       M  W   Sorcery
+   762  {5}{W}{W}{W} Avacyn, Angel of Hope               M  W   Legendary Creature
+   798  {1}{W}{W}    Ranger-Captain of Eos               M  W   Creature
+   817  {4}{W}{W}    Elspeth, Sun's Champion             M  W   Legendary Planeswalker
+   858  {5}{W}{W}    Elesh Norn, Grand Cenobite          M  W   Legendary Creature
+   976  {6}{W}       Approach of the Second Sun          M  W   Sorcery
+   988  {3}{W}       Teleportation Circle                M  W   Enchantment
+  1023  {2}{W}       Heliod, Sun-Crowned                 M  W   Legendary Enchantment 
+  1026  {W}          Steelshaper's Gift                  M  W   Sorcery
+  1038  {4}{W}       Elesh Norn, Mother of Machines      M  W   Legendary Creature
+  1093  {1}{W}       Stoneforge Mystic                   M  W   Creature
+  1100  {W}          Ocelot Pride                        M  W   Creature
+  1159  {2}{W}       Recruiter of the Guard              M  W   Creature
+  1165  {2}{W}{W}    Luminous Broodmoth                  M  W   Creature
+  1193  {5}{W}{W}{W} Moonshaker Cavalry                  M  W   Creature
+  1329  {3}{W}{W}    Archangel of Thune                  M  W   Creature
+  1335  {3}{W}{W}    Exalted Sunborn                     M  W   Creature
+  1560  {2}{W}       Monastery Mentor                    M  W   Creature
+  1610               Adagia, Windswept Bastion           M  W   Land
+  1638  {4}{W}{W}    Felidar Sovereign                   M  W   Creature
+  1866  {2}{W}{W}    Wedding Ring                        M  W   Artifact
+  1896  {3}{W}{W}    Divine Visitation                   M  W   Enchantment
+  1897  {2}{W}       Halo Fountain                       M  W   Artifact
+  1966  {W}          Deafening Silence                   M  W   Enchantment
+  1968  {1}{W}       Winds of Abandon                    M  W   Sorcery
+  1973  {1}{W}{W}    Resplendent Angel                   M  W   Creature
+  1986  {X}{W}       Mikaeus, the Lunarch                M  W   Legendary Creature
+  2143  {5}{W}{W}    Ancient Gold Dragon                 M  W   Creature
+  2164  {1}{W}{W}{W} Archangel of Tithes                 M  W   Creature
+  2182  {6}{W}{W}    Summon: Knights of Round            M  W   Enchantment Creature
+  2383               Halvar, God of Battle // Sword of   M  W   Legendary Creature
+  2396  {1}{W}       Greater Auramancy                   M  W   Enchantment
+  2424  {3}{W}{W}    God-Eternal Oketra                  M  W   Legendary Creature
+  2479  {1}{W} // {4}{W}{W}Dollmaker's Shop // Porcelain Gall  M  W   Enchantment
+  2526  {4}{W}{W}{W} Serra's Emissary                    M  W   Creature
+  2561  {2}{W}{W}    Gisela, the Broken Blade            M  W   Legendary Creature
+  2606  {2}{W}{W}    Linvala, Keeper of Silence          M  W   Legendary Creature
+  2692  {3}{W}{W}    Gandalf the White                   M  W   Legendary Creature
+  2790               Emeria's Call // Emeria, Shattered  M  W   Sorcery // Land
+  2812  {3}{W}{W}    Tragic Arrogance                    M  W   Sorcery
+  2874  {X}{W}{W}    Finale of Glory                     M  W   Sorcery
+  2937  {3}{W}{W}    Angel of Destiny                    M  W   Creature
+  2997  {3}{W}       Comeuppance                         M  W   Instant
+  3022  {1}{W}{W}    Brimaz, King of Oreskos             M  W   Legendary Creature
+  3038  {1}{W}       Robe of Stars                       M  W   Artifact
+  3042  {2}{W}{W}    Appa, Steadfast Guardian            M  W   Legendary Creature
+  3117  {2}{W}{W}    Ajani, Strength of the Pride        M  W   Legendary Planeswalker
+  3178  {W}{W}{W}{W} Phyrexian Vindicator                M  W   Creature
+  3210  {2}{W}{W}    Hallowed Haunting                   M  W   Enchantment
+  3252  {2}{W}       Cosmogrand Zenith                   M  W   Creature
+  3258  {5}{W}{W}{W} Wakening Sun's Avatar               M  W   Creature
+  3391  {3}{W}       Heliod, God of the Sun              M  W   Legendary Enchantment 
+  3416  {2}{W}{W}    Serra Paragon                       M  W   Creature
+  3616  {W}{W}{W}    The Book of Exalted Deeds           M  W   Legendary Artifact
+  3692  {2}{W}       Oltec Matterweaver                  M  W   Creature
+  4124  {2}{W}{W}    Beza, the Bounding Spring           M  W   Legendary Creature
+  4129  {4}{W}{W}{W} Herald of Eternal Dawn              M  W   Creature
+  4133  {3}{W}{W}    Crested Sunmare                     M  W   Creature
+  4174               Elesh Norn // The Argent Etchings   M  W   Legendary Creature
+  4227  {3}{W}{W}    Angel of Invention                  M  W   Creature
+  4341               The Legend of Yangchen // Avatar Y  M  W   Enchantment
+  4354  {3}{W}{W}    Ao, the Dawn Sky                    M  W   Legendary Creature
+  4434  {5}{W}{W}    Restoration Seminar                 M  W   Sorcery
+  4441  {2}{W}       Light of Promise                    M  W   Enchantment
+  4518  {W}{W}{W}{W}{W}Anti-Venom, Horrifying Healer       M  W   Legendary Creature
+  4671  {W}          Condemn                             M  W   Instant
+  4835  {4}{W}       Aang, Airbending Master             M  W   Legendary Creature
+  4846  {2}{W}{W}    Warren Warleader                    M  W   Creature
+  4931  {3}{W}{W}    Baneslayer Angel                    M  W   Creature
+  4944  {W}{W}       Brought Back                        M  W   Instant
+  5098  {3}{W}       Ajani Steadfast                     M  W   Legendary Planeswalker
+  5316  {3}{W}{W}    Cataclysmic Gearhulk                M  W   Artifact Creature
+  5340  {3}{W}{W}    Elspeth Resplendent                 M  W   Legendary Planeswalker
+  5460  {X}{W}{W}    United Front                        M  W   Sorcery
+  5577  {2}{W}{W}    The Wandering Emperor               M  W   Legendary Planeswalker
+  5685  {2}{W}{W}{W} Cavalier of Dawn                    M  W   Creature
+  5764  {2}{W}{W}    Serra the Benevolent                M  W   Legendary Planeswalker
+  6329  {1}{W}{W}    Nine Lives                          M  W   Enchantment
+  6787  {3}{W}       Kinsbaile Cavalier                  M  W   Creature
+  7011  {1}{W}{W}    Basri Ket                           M  W   Legendary Planeswalker
+  7102  {1}{W}{W} // {W}Emeritus of Truce // Swords to Plo  M  W   Creature
+  7142  {4}{W}{W}{W} Valor's Flagship                    M  W   Legendary Artifact
+  7182  {5}{W}{W} // {3}{W}{W}Realm-Cloaked Giant // Cast Off     M  W   Creature
+  7576  {3}{W}       Release to Memory                   M  W   Instant
+  7720  {1}{W}{W}    Godsend                             M  W   Legendary Artifact
+  7783  {3}{W}{W}    Don't Move                          M  W   Sorcery
+  7876  {4}{W}{W}    Sanctuary Warden                    M  W   Creature
+  8049  {3}{W}       Oketra the True                     M  W   Legendary Creature
+  8060  {2}{W}{W}    Ajani, Adversary of Tyrants         M  W   Legendary Planeswalker
+  8659  {6}{W}{W}    Overwhelming Splendor               M  W   Enchantment
+  8688  {5}{W}{W}    Curious Colossus                    M  W   Creature
+  8732  {1}{W}{W}    Gideon Blackblade                   M  W   Legendary Planeswalker
+  8785  {3}{W}{W}    Angel of Sanctions                  M  W   Creature
+  8786  {3}{W}{W}    Wingmate Roc                        M  W   Creature
+  8976  {2}{W}       Lita, Mechanical Engineer           M  W   Legendary Artifact Cre
+  8984  {2}{W}{W}    Gideon, Ally of Zendikar            M  W   Legendary Planeswalker
+  9146  {2}{W}{W}    Starnheim Unleashed                 M  W   Sorcery
+  9234  {3}{W}{W}    Trapjaw Tyrant                      M  W   Creature
+  9625  {1}{W}{W}    In the Trenches                     M  W   Enchantment
+  9759               Enduring Angel // Angelic Enforcer  M  W   Creature
+ 10049  {4}{W}       Three Dreams                        M  W   Sorcery
+ 10278  {5}{W}       Leyline Binding                     M  W   Enchantment
+ 10429  {2}{W}       Mavinda, Students' Advocate         M  W   Legendary Creature
+ 10456  {1}{W}{W}    History of Benalia                  M  W   Enchantment
+ 10524  {2}{W}{W}    Cemetery Protector                  M  W   Creature
+ 10541  {5}          Platoon Dispenser                   M  W   Artifact Creature
+ 10721  {1}{W}{W}    Gideon of the Trials                M  W   Legendary Planeswalker
+ 10727  {X}{W}{W}    Return to the Ranks                 M  W   Sorcery
+ 10903  {1}{W}{W}    Ajani, Outland Chaperone            M  W   Legendary Planeswalker
+ 11006  {1}{W}       Intrepid Adversary                  M  W   Creature
+ 11134  {2}{W}{W}    Icingdeath, Frost Tyrant            M  W   Legendary Creature
+ 11275  {6}{W}{W}{W} Triumphant Reckoning                M  W   Sorcery
+ 11455               Faithbound Judge // Sinner's Judgm  M  W   Creature
+ 11471  {4}{W}{W}    Axis of Mortality                   M  W   Enchantment
+ 11472  {1}{W}       Collector's Cage                    M  W   Artifact
+ 11488               Kytheon, Hero of Akros // Gideon,   M  W   Legendary Creature
+ 12341  {1}{W}{W}    Resplendent Marshal                 M  W   Creature
+ 12666  {2}{W}{W}    Concerted Effort                    M  W   Enchantment
+ 12713  {4}{W}{W}    Descend upon the Sinful             M  W   Sorcery
+ 12983  {2}{W}{W}    Thurid, Mare of Destiny             M  W   Legendary Creature
+ 13837  {3}{W}       Leonardo, Sewer Samurai             M  W   Legendary Creature
+ 13927  {X}{W}       Prismatic Ending                    M  W   Sorcery
+ 14055  {W}          Scout's Warning                     M  W   Instant
+ 14105  {2}{W}       Sokka, Swordmaster                  M  W   Legendary Creature
+ 14352  {3}{W}{W}    Ajani, Wise Counselor               M  W   Legendary Planeswalker
+ 14415  {X}{X}{W}{W} Triceraton Commander                M  W   Creature
+ 14422  {4}{W}{W}    Harmonious Archon                   M  W   Creature
+ 14703  {2}{W}{W}    Aurelia's Vindicator                M  W   Creature
+ 14727  {2}{W}{W}    Elspeth, Sun's Nemesis              M  W   Legendary Planeswalker
+ 15146  {4}{W}{W}    Ajani, Inspiring Leader             M  W   Legendary Planeswalker
+ 15510  {3}          Urza's Sylex                        M  W   Legendary Artifact
+ 15986  {3}{W}{W}    Angel of Grace                      M  W   Creature
+ 16333  {2}{W}{W}    Ojutai Exemplars                    M  W   Creature
+ 16421  {5}{W}{W}    Captain Marvel, Shooting Star       M  W   Legendary Creature
+ 17427  {W}          Empty City Ruse                     M  W   Sorcery
+ 17855  {4}{W}{W}    Gideon, the Oathsworn               M  W   Legendary Planeswalker
+ 18089  {1}{W}{W}    Savior of Ollenbock                 M  W   Creature
+ 18132  {4}{W}{W}{W} Hyperion, Supreme Hero              M  W   Legendary Creature
+ 18360  {2}{W}{W}    Grand Master of Flowers             M  W   Legendary Planeswalker
+ 20225  {2}{W}{W}{W} Elspeth, Undaunted Hero             M  W   Legendary Planeswalker
+ 21293  {4}{W}{W}    Righteous Fury                      M  W   Sorcery
+ 21598  {2}{W}       Black Panther, Claws of Bast        M  W   Legendary Creature
+ 21948  {3}{W}{W}    Sigardian Savior                    M  W   Creature
+ 22615  {4}{W}{W}    Basri, Devoted Paladin              M  W   Legendary Planeswalker
+999999               Brisela, Voice of Nightmares        M  W   Legendary Creature
+999999  {1}{W}       Captain Eberhart                    M  W   Legendary Creature
+999999  {2}{W}{W}    Champions of Tyr                    M  W   Creature
+999999  {2}{W}       Ethereal Escort                     M  W   Creature
+999999  {1}{W}{W}    Ethrimik, Imagined Fiend            M  W   Legendary Creature
+999999  {1}{W}{W}    Ghalma the Shaper                   M  W   Legendary Creature
+999999  {2}{W}{W}    Lam, Storm Crane Elder              M  W   Legendary Creature
+999999  {2}{W}{W}    Mothrider Cavalry                   M  W   Creature
+999999  {4}{W}{W}{W} Saint Elenda                        M  W   Legendary Creature
+999999  {4}{W}{W}    Sworn to the Legion                 M  W   Enchantment
+999999  {2}{W}{W}    Teyo, Aegis Adept                   M  W   Legendary Planeswalker
