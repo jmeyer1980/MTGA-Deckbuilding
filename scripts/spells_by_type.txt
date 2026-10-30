@@ -1,0 +1,253 @@
+=== Enchantments in pool ===
+  A Killer Among Us                                  Enchantment
+  Additive Evolution                                 Enchantment
+  Airtight Alibi                                     Enchantment ù Aura
+  Ajani's Anguish                                    Enchantment
+  Alien Invasion                                     Enchantment
+  All-Out Assault                                    Enchantment
+  Along the Crooked Way                              Enchantment
+  An Unexpected Party // At the Door                 Enchantment // Sorcery ù Adventure
+  Angelic Destiny                                    Enchantment ù Aura
+  Anthem of Champions                                Enchantment
+  Appendage Amalgam                                  Enchantment Creature ù Horror
+  Assemble the Players                               Enchantment
+  Authority of the Consuls                           Enchantment
+  Avengers Assemble!                                 Enchantment
+  Avengers: Under Siege                              Enchantment ù Saga
+  Bandit's Talent                                    Enchantment ù Class
+  Banishing Light                                    Enchantment
+  Beorn's Hospitality                                Enchantment
+  Bestial Bloodline                                  Enchantment ù Aura
+  Bioengineered Future                               Enchantment
+  Bitter Chill                                       Enchantment ù Aura
+  Bitter Work                                        Enchantment
+  Blanchwood Armor                                   Enchantment ù Aura
+  Blood Spatter Analysis                             Enchantment
+  Blossombind                                        Enchantment ù Aura
+  Boggart Mischief                                   Kindred Enchantment ù Goblin
+  Breaching Dragonstorm                              Enchantment
+  Burn, Burn, Tree and Fern                          Enchantment ù Saga
+  Caretaker's Talent                                 Enchantment ù Class
+  Case of the Burning Masks                          Enchantment ù Case
+  Case of the Crimson Pulse                          Enchantment ù Case
+  Case of the Filched Falcon                         Enchantment ù Case
+  Case of the Gorgon's Kiss                          Enchantment ù Case
+  Case of the Locked Hothouse                        Enchantment ù Case
+  Case of the Ransacked Lab                          Enchantment ù Case
+  Case of the Shattered Pact                         Enchantment ù Case
+  Case of the Stashed Skeleton                       Enchantment ù Case
+  Celebrate the Mountain-king                        Enchantment
+  Chalk Outline                                      Enchantment
+  Claim the Kingdom                                  Enchantment ù Plan
+  Clammy Prowler                                     Enchantment Creature ù Horror
+  Comforting Counsel                                 Enchantment
+  Connecting the Dots                                Enchantment
+  Construct a Cosmic Cube                            Enchantment ù Plan
+  Cooped Up                                          Enchantment ù Aura
+  Corroding Dragonstorm                              Enchantment
+  Cracked Skull                                      Enchantment ù Aura
+  Crescent Island Temple                             Legendary Enchantment ù Shrine
+  Cryoshatter                                        Enchantment ù Aura
+  Dancing from Dark to Dawn                          Enchantment
+  Dead Weight                                        Enchantment ù Aura
+  Death to Our Enemies                               Enchantment ù Plan
+  Deeproot Pilgrimage                                Enchantment
+  Demonic Ruckus                                     Enchantment ù Aura
+  Disturbing Mirth                                   Enchantment
+  Does Machines                                      Enchantment ù Class
+  Doom Reigns Supreme                                Enchantment ù Plan
+  Doubling Season                                    Enchantment
+  Down in the Valley                                 Enchantment ù Saga
+  Down, Down to Goblin-town                          Enchantment ù Saga
+  Dragonback Assault                                 Enchantment
+  Dramatic Accusation                                Enchantment ù Aura
+  Due Diligence                                      Enchantment ù Aura
+  Duskmourn's Domination                             Enchantment ù Aura
+  Eagle's Rescue                                     Enchantment ù Aura
+  Eaten by Piranhas                                  Enchantment ù Aura
+  Emergent Haunting                                  Enchantment
+  Enchanted River's Grasp                            Enchantment ù Aura
+  Encroaching Dragonstorm                            Enchantment
+  Enduring Courage                                   Enchantment Creature ù Dog Glimmer
+  Enduring Curiosity                                 Enchantment Creature ù Cat Glimmer
+  Enduring Innocence                                 Enchantment Creature ù Sheep Glimmer
+  Enduring Tenacity                                  Enchantment Creature ù Snake Glimmer
+  Enduring Vitality                                  Enchantment Creature ù Elk Glimmer
+  Etali's Favor                                      Enchantment ù Aura
+  Ethereal Armor                                     Enchantment ù Aura
+  Eusocial Engineering                               Enchantment
+  Evershrike's Gift                                  Enchantment ù Aura
+  Expedited Inheritance                              Enchantment
+  Extraordinary Journey                              Enchantment
+  Extravagant Replication                            Enchantment
+  Fated Firepower                                    Enchantment
+  Fateful Discovery                                  Enchantment
+  Fear of Abduction                                  Enchantment Creature ù Nightmare
+  Fear of Being Hunted                               Enchantment Creature ù Nightmare
+  Fear of Burning Alive                              Enchantment Creature ù Nightmare
+  Fear of Exposure                                   Enchantment Creature ù Nightmare
+  Fear of Immobility                                 Enchantment Creature ù Nightmare
+  Fear of Impostors                                  Enchantment Creature ù Nightmare
+  Fear of Infinity                                   Enchantment Creature ù Nightmare
+  Fear of Isolation                                  Enchantment Creature ù Nightmare
+  Fear of Lost Teeth                                 Enchantment Creature ù Nightmare
+  Fear of Missing Out                                Enchantment Creature ù Nightmare
+  Fear of Surveillance                               Enchantment Creature ù Nightmare
+  Fear of the Dark                                   Enchantment Creature ù Nightmare
+  Feather of Flight                                  Enchantment ù Aura
+  Felidar Retreat                                    Enchantment
+  Ferocification                                     Enchantment
+  Ferocity of the Hunt                               Enchantment ù Aura
+  Fire-Rim Form                                      Enchantment ù Aura
+  Firebender Ascension                               Enchantment
+  Flood the Engine                                   Enchantment ù Aura
+  Frantic Strength                                   Enchantment ù Aura
+  Fresh Start                                        Enchantment ù Aura
+  Frozen in Ice                                      Enchantment ù Aura
+  Garruk's Uprising                                  Enchantment
+  Gilt-Leaf's Embrace                                Enchantment ù Aura
+  Gleaming Splendor                                  Enchantment
+  Goblin Oriflamme                                   Enchantment
+  Gossip's Talent                                    Enchantment ù Class
+  Grasping Longneck                                  Enchantment Creature ù Horror
+  Grievous Wound                                     Enchantment ù Aura
+  Growing Dread                                      Enchantment
+  HYDRA Infiltration                                 Enchantment
+  Heroic Feast                                       Enchantment
+  Honest Work                                        Enchantment ù Aura
+  Impact Tremors                                     Enchantment
+  Imprisoned in the Moon                             Enchantment ù Aura
+  Infinite Coursework                                Enchantment ù Aura
+  Innkeeper's Talent                                 Enchantment ù Class
+  Inquisitive Glimmer                                Enchantment Creature ù Fox Glimmer
+  Intimidation Campaign                              Enchantment
+  Jecht, Reluctant Guardian // Braska's Final Aeon   Legendary Creature ù Human Warrior // Legendary En
+  Kitnap                                             Enchantment ù Aura
+  Last Light of Durin's Day                          Enchantment
+  Leader's Talent                                    Enchantment ù Class
+  Leyline of Hope                                    Enchantment
+  Leyline of Mutation                                Enchantment
+  Leyline of Resonance                               Enchantment
+  Leyline of Transformation                          Enchantment
+  Leyline of the Void                                Enchantment
+  Lionheart Glimmer                                  Enchantment Creature ù Cat Glimmer
+  Lofty Dreams                                       Enchantment ù Aura
+  Lost in the Maze                                   Enchantment
+  Makeshift Binding                                  Enchantment
+  Meathook Massacre II                               Legendary Enchantment
+  Meltstrider's Resolve                              Enchantment ù Aura
+  Memory Trap                                        Enchantment
+  Midnight Snack                                     Enchantment
+  Might of the Ancestors                             Enchantment
+  Momentum Breaker                                   Enchantment
+  Morcant's Eyes                                     Kindred Enchantment ù Elf
+  Mystical Tether                                    Enchantment
+  Night of the Sweets' Revenge                       Enchantment
+  Ninja Teen                                         Enchantment ù Class
+  Nowhere to Run                                     Enchantment
+  Obsessive Pursuit                                  Enchantment
+  Old Fat Spider Can't See Me                        Enchantment ù Saga
+  Omnipresence                                       Enchantment
+  Omniscience                                        Enchantment
+  Ordeal of Nylea                                    Enchantment ù Aura
+  Origin of Spider-Man                               Enchantment ù Saga
+  Origin of the Avengers                             Enchantment ù Saga
+  Overlord of the Balemurk                           Enchantment Creature ù Avatar Horror
+  Overlord of the Boilerbilges                       Enchantment Creature ù Avatar Horror
+  Overlord of the Floodpits                          Enchantment Creature ù Avatar Horror
+  Overlord of the Hauntwoods                         Enchantment Creature ù Avatar Horror
+  Overlord of the Mistmoors                          Enchantment Creature ù Avatar Horror
+  Pacifism                                           Enchantment ù Aura
+  Painful Quandary                                   Enchantment
+  Parker Luck                                        Enchantment
+  Part in Friendship                                 Enchantment
+  Petrify                                            Enchantment ù Aura
+  Phyrexian Arena                                    Enchantment
+  Pitiless Fists                                     Enchantment ù Aura
+  Plan for All Outcomes                              Enchantment
+  Point the Way                                      Enchantment
+  Political Triumph                                  Enchantment ù Plan
+  Primeval Bounty                                    Enchantment
+  Prismatic Undercurrents                            Enchantment
+  Puppet Crafting                                    Enchantment ù Aura
+  Rakish Crew                                        Enchantment
+  Reach for the Sky                                  Enchantment ù Aura
+  Rent Is Due                                        Enchantment
+  Rest in Peace                                      Enchantment
+  Retro-Mutation                                     Enchantment ù Aura
+  Revival of the Ancestors                           Enchantment ù Saga
+  Rewrite History                                    Enchantment ù Plan
+  Ride the Shoopuf                                   Enchantment
+  Ringing Strike Mastery                             Enchantment ù Aura
+  Rite of the Dragoncaller                           Enchantment
+  Roads Go Ever, Ever On                             Enchantment ù Saga
+  Roadside Assistance                                Enchantment ù Aura
+  Robot Domination                                   Enchantment ù Plan
+  Robotics Mastery                                   Enchantment ù Aura
+  Roiling Dragonstorm                                Enchantment
+  Roll-Roll-Roll-Roll                                Enchantment ù Saga
+  Scavenger's Talent                                 Enchantment ù Class
+  Seam Rip                                           Enchantment
+  Shadow of the Goblin                               Enchantment
+  Shardmage's Rescue                                 Enchantment ù Aura
+  Sheltered by Ghosts                                Enchantment ù Aura
+  Sidequest: Card Collection // Magicked Card        Enchantment // Artifact ù Vehicle
+  Sidequest: Play Blitzball // World Champion, Celestial Weapon Enchantment // Legendary Artifact ù Equipment
+  Smile at Death                                     Enchantment
+  Southern Air Temple                                Legendary Enchantment ù Shrine
+  Spelunking                                         Enchantment
+  Spiral into Solitude                               Enchantment ù Aura
+  Sporogenic Infection                               Enchantment ù Aura
+  Starlight Snare                                    Enchantment ù Aura
+  Stasis Snare                                       Enchantment
+  Static Snare                                       Enchantment
+  Sugar Coat                                         Enchantment ù Aura
+  Summon: Shiva                                      Enchantment Creature ù Saga Elemental
+  Super Intelligence                                 Enchantment ù Aura
+  Super Speed                                        Enchantment ù Aura
+  Super Strength                                     Enchantment ù Aura
+  Super Villain Lockup                               Enchantment
+  Super-Soldier Serum                                Enchantment ù Aura
+  Sylvan Scavenging                                  Enchantment
+  Team Avatar                                        Enchantment
+  The Coming of Galactus                             Enchantment ù Saga
+  The Huntsman's Redemption                          Enchantment ù Saga
+  The Last Ronin                                     Enchantment ù Saga
+  The Legend of Kyoshi // Avatar Kyoshi              Enchantment ù Saga // Legendary Creature ù Avatar
+  The Mindskinner                                    Legendary Enchantment Creature ù Nightmare
+  The Misty Mountains Cold                           Enchantment ù Saga
+  The Mountain-king's Return                         Enchantment ù Saga
+  The Rollercrusher Ride                             Legendary Enchantment
+  The Tale of Tamiyo                                 Legendary Enchantment ù Saga
+  Thousand-Year Storm                                Enchantment
+  Threats Around Every Corner                        Enchantment
+  Three Blind Mice                                   Enchantment ù Saga
+  Tractor Beam                                       Enchantment ù Aura
+  Training Regimen                                   Enchantment
+  Trapped in the Screen                              Enchantment
+  Twinblade Blessing                                 Enchantment ù Aura
+  Twists and Turns // Mycoid Maze                    Enchantment // Land ù Cave
+  Unable to Scream                                   Enchantment ù Aura
+  Uncover the Moon-Letters                           Enchantment
+  Unflinching Courage                                Enchantment ù Aura
+  Valgavoth's Lair                                   Enchantment Land
+  Valkyrie's Call                                    Enchantment
+  Vampiric Rites                                     Enchantment
+  Virtue of Loyalty // Ardenvale Fealty              Enchantment // Instant ù Adventure
+  Virtue of Strength // Garenbrig Growth             Enchantment // Sorcery ù Adventure
+  Warleader's Call                                   Enchantment
+  Way of the Cryomancer                              Legendary Enchantment
+  Way of the Deathbringer                            Legendary Enchantment
+  Way of the Healer                                  Legendary Enchantment
+  Way of the Mentor                                  Legendary Enchantment
+  Way of the Mind Sculptor                           Legendary Enchantment
+  Way of the Necromancer                             Legendary Enchantment
+  Way of the Paradox                                 Legendary Enchantment
+  Way of the Pyromancer                              Legendary Enchantment
+  Way of the Warlord                                 Legendary Enchantment
+  Way of the Wildspeaker                             Legendary Enchantment
+  Web Up                                             Enchantment
+  Witness Protection                                 Enchantment ù Aura
+  World War Hulk                                     Enchantment ù Saga
+
+=== Counters in pool ===

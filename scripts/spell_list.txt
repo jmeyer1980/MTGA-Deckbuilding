@@ -1,0 +1,1043 @@
+Total spells: 1042
+A Killer Among Us                                  Enchantment
+Abrade                                             Instant
+Academic Ascent                                    Instant
+Accumulate Wisdom                                  Instant ù Lesson
+Acrobatic Leap                                     Instant
+Additive Evolution                                 Enchantment
+Adventuring Gear                                   Artifact ù Equipment
+Aether Syphon                                      Artifact
+Agate Assault                                      Sorcery
+Airtight Alibi                                     Enchantment ù Aura
+Ajani Resolute                                     Legendary Planeswalker ù Ajani
+Ajani Unrelenting                                  Legendary Planeswalker ù Ajani
+Ajani's Anguish                                    Enchantment
+Ajani's Response                                   Instant
+Ajani, Caller of the Pride                         Legendary Planeswalker ù Ajani
+Alacrian Armory                                    Artifact
+Alesha's Legacy                                    Instant
+Alien Invasion                                     Enchantment
+All-Fates Scroll                                   Artifact
+All-Out Assault                                    Enchantment
+Along the Crooked Way                              Enchantment
+Amazing Acrobatics                                 Instant
+An Offer You Can't Refuse                          Instant
+An Unexpected Party // At the Door                 Enchantment // Sorcery ù Adventure
+Ancestors' Aid                                     Instant
+Ancestral Reminiscence                             Sorcery
+Ancient Vendetta                                   Sorcery
+Angelic Destiny                                    Enchantment ù Aura
+Annul                                              Instant
+Another Chance                                     Instant
+Anthem of Champions                                Enchantment
+Applied Geometry                                   Sorcery
+Arc Reactor                                        Artifact
+Arcane Epiphany                                    Instant
+Archenemy's Charm                                  Instant
+Archon's Glory                                     Instant
+Artifist Acumen                                    Sorcery
+Ashling's Command                                  Kindred Instant ù Elemental
+Assassin's Trophy                                  Instant
+Assemble the Players                               Enchantment
+Assert Perfection                                  Sorcery
+Assimilation Aegis                                 Artifact ù Equipment
+Atlantis Attacks                                   Sorcery
+Audience with Trostani                             Sorcery
+Auntie's Sentence                                  Sorcery
+Auroral Procession                                 Instant
+Auspicious Arrival                                 Instant
+Authority of the Consuls                           Enchantment
+Auxiliary Boosters                                 Artifact ù Equipment
+Avatar's Wrath                                     Sorcery
+Avengers Assemble!                                 Enchantment
+Avengers Disassembled                              Sorcery
+Avengers: Under Siege                              Enchantment ù Saga
+Awaken the Inferno                                 Sorcery
+Azula Always Lies                                  Instant ù Lesson
+Back for Seconds                                   Sorcery
+Bake into a Pie                                    Instant
+Bandit's Talent                                    Enchantment ù Class
+Banishing Betrayal                                 Instant
+Banishing Light                                    Enchantment
+Banner of Kinship                                  Artifact
+Bard's Bow                                         Artifact ù Equipment
+Barrels of Blasting Jelly                          Artifact
+Baseball Bat                                       Artifact ù Equipment
+Basilisk Collar                                    Artifact ù Equipment
+Battle Menu                                        Instant
+Bear Trap                                          Artifact
+Beastie Beatdown                                   Sorcery
+Beorn's Hospitality                                Enchantment
+Beseech the Mirror                                 Sorcery
+Bestial Bloodline                                  Enchantment ù Aura
+Bestial Incursion                                  Sorcery
+Betrayal at the Vault                              Instant
+Betrayer's Bargain                                 Instant
+Bilbo's Deadly Slice                               Instant
+Bilbo's Gambit                                     Instant
+Bioengineered Future                               Enchantment
+Biogenic Upgrade                                   Sorcery
+Bite Down                                          Instant
+Bitter Chill                                       Enchantment ù Aura
+Bitter Triumph                                     Instant
+Bitter Work                                        Enchantment
+Blanchwood Armor                                   Enchantment ù Aura
+Blasphemous Edict                                  Sorcery
+Blazing Crescendo                                  Instant
+Blight Rot                                         Instant
+Blitzball Shot                                     Instant
+Blood Spatter Analysis                             Enchantment
+Bloodthorn Flail                                   Artifact ù Equipment
+Blossombind                                        Enchantment ù Aura
+Blossoming Defense                                 Instant
+Boggart Mischief                                   Kindred Enchantment ù Goblin
+Boltwave                                           Sorcery
+Boros Charm                                        Instant
+Borough Backup                                     Sorcery
+Borrowed Knowledge                                 Sorcery
+Bot Bashing Time                                   Sorcery
+Boulder Dash                                       Sorcery
+Bounce Off                                         Instant
+Bovine Intervention                                Instant
+Brass's Bounty                                     Sorcery
+Breaching Dragonstorm                              Enchantment
+Break Down the Door                                Instant
+Break Out                                          Sorcery
+Break Under Pressure                               Instant
+Break the Spell                                    Instant
+Broadside Barrage                                  Instant
+Broken Wings                                       Instant
+Brush Off                                          Instant
+Bulk Up                                            Instant
+Buried Treasure                                    Artifact ù Treasure
+Burn, Burn, Tree and Fern                          Enchantment ù Saga
+Burner Rocket                                      Artifact ù Vehicle
+Burning Curiosity                                  Sorcery
+Burrog Barrage                                     Instant
+Burst Lightning                                    Instant
+Bushwhack                                          Sorcery
+Buster Sword                                       Artifact ù Equipment
+Cache Grab                                         Instant
+Call Damage Control                                Sorcery
+Call a Surprise Witness                            Sorcery
+Cancel                                             Instant
+Candlestick                                        Artifact ù Clue Equipment
+Careening Mine Cart                                Artifact ù Vehicle
+Caretaker's Talent                                 Enchantment ù Class
+Cargo Ship                                         Artifact ù Vehicle
+Carrot Cake                                        Artifact ù Food
+Case of the Burning Masks                          Enchantment ù Case
+Case of the Crimson Pulse                          Enchantment ù Case
+Case of the Filched Falcon                         Enchantment ù Case
+Case of the Gorgon's Kiss                          Enchantment ù Case
+Case of the Locked Hothouse                        Enchantment ù Case
+Case of the Ransacked Lab                          Enchantment ù Case
+Case of the Shattered Pact                         Enchantment ù Case
+Case of the Stashed Skeleton                       Enchantment ù Case
+Cast Away Doubt                                    Sorcery
+Cathartic Parting                                  Sorcery
+Celebrate the Mountain-king                        Enchantment
+Celestial Armor                                    Artifact ù Equipment
+Cemetery Recruitment                               Sorcery
+Cerebral Confiscation                              Sorcery
+Cerebral Download                                  Instant
+Chainsaw                                           Artifact ù Equipment
+Chalk Outline                                      Enchantment
+Chandra, Chill of Compliance                       Legendary Planeswalker ù Chandra
+Chandra, Flameshaper                               Legendary Planeswalker ù Chandra
+Chandra, Torch of Defiance                         Legendary Planeswalker ù Chandra
+Channeled Dragonfire                               Sorcery
+Charge the Sanctum                                 Instant
+Chart a Course                                     Sorcery
+Chase Inspiration                                  Instant
+Chelonian Tackle                                   Sorcery
+Cinder Strike                                      Sorcery
+Circle of Power                                    Sorcery
+Circuitous Route                                   Sorcery
+Claim the Kingdom                                  Enchantment ù Plan
+Clamorous Ironclad                                 Artifact ù Vehicle
+Clash of Elements                                  Instant
+Claws Out                                          Instant
+Coiling Rebirth                                    Sorcery
+Combustion Technique                               Instant ù Lesson
+Come Back Wrong                                    Sorcery
+Comforting Counsel                                 Enchantment
+Command the Stage                                  Sorcery
+Commune with Evil                                  Sorcery
+Commune with Nature                                Sorcery
+Compel Brutality                                   Instant
+Conduct Electricity                                Instant
+Conductive Machete                                 Artifact ù Equipment
+Confounding Riddle                                 Instant
+Confusticate and Bebother                          Instant
+Connecting the Dots                                Enchantment
+Construct a Cosmic Cube                            Enchantment ù Plan
+Consult the Star Charts                            Instant
+Consuming Ashes                                    Instant
+Contested Game Ball                                Artifact
+Cooped Up                                          Enchantment ù Aura
+Coordinated Clobbering                             Sorcery
+Coordinated Maneuver                               Instant
+Coral Sword                                        Artifact ù Equipment
+Corroding Dragonstorm                              Enchantment
+Corrupted Conviction                               Instant
+Cosmic Cube                                        Artifact
+Cost of Brilliance                                 Sorcery
+Costume Closet                                     Artifact
+Countersculpt                                      Instant
+Cracked Skull                                      Enchantment ù Aura
+Crash Through                                      Sorcery
+Crescent Island Temple                             Legendary Enchantment ù Shrine
+Crude Bent Blade                                   Artifact ù Equipment
+Cruel Alliance                                     Sorcery
+Crumb and Get It                                   Instant
+Cryogen Relic                                      Artifact
+Cryoshatter                                        Enchantment ù Aura
+Cryptcaller Chariot                                Artifact ù Vehicle
+Cryptic Coat                                       Artifact ù Equipment
+Cunning Maneuver                                   Instant
+Cursed Recording                                   Artifact
+Cursed Windbreaker                                 Artifact ù Equipment
+Cut Propulsion                                     Instant
+Cycle of Renewal                                   Instant ù Lesson
+Dai Li Indoctrination                              Sorcery ù Lesson
+Dance of the Tumbleweeds                           Sorcery
+Dancing from Dark to Dawn                          Enchantment
+Daring Discovery                                   Sorcery
+Dark Deed                                          Instant
+Darkness Descends                                  Sorcery
+Dawn-Blessed Pennant                               Artifact
+Day of Black Sun                                   Sorcery
+Day of Judgment                                    Sorcery
+Dazzling Denial                                    Instant
+Dead Weight                                        Enchantment ù Aura
+Deadly Complication                                Sorcery
+Deadly Cover-Up                                    Sorcery
+Deadly Plot                                        Instant
+Deadly Precision                                   Sorcery
+Deadly Riposte                                     Instant
+Death Begets Life                                  Sorcery
+Death in the Family                                Instant
+Death to Our Enemies                               Enchantment ù Plan
+Deconstruction Hammer                              Artifact ù Equipment
+Decoy Ploy                                         Instant
+Deduce                                             Instant
+Deeproot Pilgrimage                                Enchantment
+Defend the Rider                                   Instant
+Defossilize                                        Sorcery
+Demand Answers                                     Instant
+Demonic Ruckus                                     Enchantment ù Aura
+Dependable Quinjet                                 Artifact ù Vehicle
+Depower                                            Instant
+Desert's Due                                       Instant
+Desolation of Smaug                                Sorcery
+Detective's Satchel                                Artifact
+Dig Site Inventory                                 Sorcery
+Diplomatic Relations                               Instant
+Dire Flail // Dire Blunderbuss                     Artifact ù Equipment // Artifact ù Equipment
+Diresight                                          Sorcery
+Disdainful Stroke                                  Instant
+Disenchant                                         Instant
+Dispelling Exhale                                  Instant
+Dissection Practice                                Instant
+Dissection Tools                                   Artifact ù Equipment
+Disturbed Slumber                                  Instant
+Disturbing Mirth                                   Enchantment
+Dive Down                                          Instant
+Divine Resilience                                  Instant
+Does Machines                                      Enchantment ù Class
+Don't Make a Sound                                 Instant
+Doom Reigns Supreme                                Enchantment ù Plan
+Doppelgang                                         Sorcery
+Doubling Season                                    Enchantment
+Down in the Valley                                 Enchantment ù Saga
+Down, Down to Goblin-town                          Enchantment ù Saga
+Drag the Canal                                     Instant
+Drag to the Roots                                  Instant
+Dragon Fodder                                      Sorcery
+Dragonback Assault                                 Enchantment
+Dragonclaw Strike                                  Sorcery
+Dramatic Accusation                                Enchantment ù Aura
+Dreadmaw's Ire                                     Instant
+Dream Harvest                                      Sorcery
+Drill Too Deep                                     Instant
+Dual-Sun Technique                                 Instant
+Due Diligence                                      Enchantment ù Aura
+Duel Tactics                                       Sorcery
+Dune Drifter                                       Artifact ù Vehicle
+Duress                                             Sorcery
+Dusk Rose Reliquary                                Artifact
+Duskmourn's Domination                             Enchantment ù Aura
+Dwarven Mattock                                    Artifact ù Equipment
+Dwarven Shortsword                                 Artifact ù Equipment
+Eagle's Rescue                                     Enchantment ù Aura
+Eaten Alive                                        Sorcery
+Eaten by Piranhas                                  Enchantment ù Aura
+Electro's Bolt                                     Sorcery
+Electroduplicate                                   Sorcery
+Eliminate the Impossible                           Instant
+Elspeth's Smite                                    Instant
+Elspeth, Storm Slayer                              Legendary Planeswalker ù Elspeth
+Embrace Oblivion                                   Sorcery
+Embrace the Paradox                                Instant
+Emerge from the Cocoon                             Sorcery
+Emergent Haunting                                  Enchantment
+Enchanted River's Grasp                            Enchantment ù Aura
+Encroaching Dragonstorm                            Enchantment
+End-Blaze Epiphany                                 Instant
+Enter the Enigma                                   Sorcery
+Entropic Battlecruiser                             Artifact ù Spacecraft
+Entrust the Spark                                  Sorcery
+Epic Fight                                         Sorcery
+Eriette's Lullaby                                  Sorcery
+Eriette's Tempting Apple                           Legendary Artifact ù Food
+Eriette's Whisper                                  Sorcery
+Erode                                              Instant
+Essence Burn                                       Instant
+Essence Scatter                                    Instant
+Etali's Favor                                      Enchantment ù Aura
+Ethereal Armor                                     Enchantment ù Aura
+Eusocial Engineering                               Enchantment
+Evershrike's Gift                                  Enchantment ù Aura
+Evil's Thrall                                      Sorcery
+Excalibur II                                       Legendary Artifact ù Equipment
+Exorcise                                           Sorcery
+Expedited Inheritance                              Enchantment
+Expedition Map                                     Artifact
+Expel the Interlopers                              Sorcery
+Explosive Getaway                                  Sorcery
+Expose the Culprit                                 Instant
+Exsanguinate                                       Sorcery
+Extended Absence                                   Instant
+Extract a Confession                               Sorcery
+Extraordinary Journey                              Enchantment
+Extrapolate the Impossible                         Sorcery
+Extravagant Replication                            Enchantment
+Eye of Jace                                        Artifact
+Face Yourself                                      Sorcery
+Faebloom Trick                                     Instant
+Faerie Fencing                                     Instant
+Faerie Slumber Party                               Sorcery
+Failed Fording                                     Instant
+Fake Your Own Death                                Instant
+Falcon's Wing Harness                              Artifact ù Equipment
+Family Reunion                                     Instant
+Fanatical Offering                                 Instant
+Fanatical Strength                                 Instant
+Fated Firepower                                    Enchantment
+Fateful Discovery                                  Enchantment
+Fatehold Charm                                     Instant
+Feather of Flight                                  Enchantment ù Aura
+Feed the Cauldron                                  Instant
+Feed the Flames                                    Instant
+Feed the Swarm                                     Sorcery
+Felidar Retreat                                    Enchantment
+Fell                                               Sorcery
+Fell Gravship                                      Artifact ù Spacecraft
+Felling Blow                                       Sorcery
+Ferocification                                     Enchantment
+Ferocity of the Hunt                               Enchantment ù Aura
+Fiery Annihilation                                 Instant
+Final Showdown                                     Instant
+Final Vengeance                                    Sorcery
+Firdoch Core                                       Kindred Artifact ù Shapeshifter
+Fire Nation Attacks                                Instant
+Fire-Rim Form                                      Enchantment ù Aura
+Firebender Ascension                               Enchantment
+Fishing Pole                                       Artifact ù Equipment
+Fleeting Distraction                               Instant
+Fleeting Flight                                    Instant
+Fleeting Reflection                                Instant
+Flick a Coin                                       Instant
+Flood the Engine                                   Enchantment ù Aura
+Flourishing Grapple                                Instant
+Flow State                                         Sorcery
+Focus the Mind                                     Instant
+Follow the Lumarets                                Sorcery
+For the Common Good                                Sorcery
+Form a Posse                                       Sorcery
+Found Footage                                      Artifact ù Clue
+Fractalize                                         Instant
+Frantic Strength                                   Enchantment ù Aura
+Freeze in Place                                    Sorcery
+Fresh Start                                        Enchantment ù Aura
+Frontline Rush                                     Instant
+Frozen in Ice                                      Enchantment ù Aura
+Fuel the Flames                                    Instant
+Full Steam Ahead                                   Sorcery
+Fulminous Forte                                    Instant
+Futurist Forge                                     Artifact
+Galvanize                                          Instant
+Garruk's Uprising                                  Enchantment
+Garruk, Curse Breaker                              Legendary Planeswalker ù Garruk
+Garruk, Veiled Butcher                             Legendary Planeswalker ù Garruk
+Gathering Stone                                    Artifact
+Gathering of Darkness                              Sorcery
+Generous Revival                                   Sorcery
+Genesis Wave                                       Sorcery
+Genji Glove                                        Artifact ù Equipment
+Germinate Recruits                                 Instant
+Get Lost                                           Instant
+Get Out                                            Instant
+Getaway Barrel                                     Artifact
+Ghost Vacuum                                       Artifact
+Giant Growth                                       Instant
+Giant's Boulder                                    Artifact
+Gideon's Memorial                                  Legendary Artifact
+Gilt-Leaf's Embrace                                Enchantment ù Aura
+Give In to Violence                                Instant
+Glamdring, Foe-hammer // Gleam of Death            Legendary Artifact ù Equipment // Sorcery ù Adventure
+Glass Casket                                       Artifact
+Gleaming Splendor                                  Enchantment
+Glimmerburst                                       Instant
+Glimmerlight                                       Artifact ù Equipment
+Glimpse the Core                                   Sorcery
+Glowcap Lantern                                    Artifact ù Equipment
+Gnashing of Teeth                                  Sorcery
+Gnawing Crescendo                                  Instant
+Go Nuts!                                           Sorcery
+Goblin Negotiation                                 Sorcery
+Goblin Oriflamme                                   Enchantment
+Goblin Plate Mail                                  Artifact ù Equipment
+Goblin Surprise                                    Instant
+Goldvein Pick                                      Artifact ù Equipment
+Gossip's Talent                                    Enchantment ù Class
+Grab the Prize                                     Sorcery
+Graceful Takedown                                  Sorcery
+Grapple with Death                                 Sorcery
+Great Gilded Boat                                  Artifact ù Vehicle
+Great Train Heist                                  Instant
+Grievous Wound                                     Enchantment ù Aura
+Group Project                                      Sorcery
+Grow Extra Arms                                    Instant
+Grow from the Ashes                                Sorcery
+Growing Dread                                      Enchantment
+Guac & Marshmallow Pizza                           Artifact ù Food
+Guidelight Matrix                                  Artifact
+HULK SMASH!                                        Instant
+HYDRA Infiltration                                 Enchantment
+Hard-Hitting Question                              Sorcery
+Harmonized Crescendo                               Instant
+Haste Magic                                        Instant
+Haunted Screen                                     Artifact
+Hawkeye's Bow                                      Artifact ù Equipment
+Hazel's Nocturne                                   Instant
+Heated Argument                                    Instant
+Hedge Shredder                                     Artifact ù Vehicle
+Helicarrier Strike                                 Instant
+Hell to Pay                                        Sorcery
+Helping Hand                                       Sorcery
+Heritage Reclamation                               Instant
+Hero's Downfall                                    Instant
+Heroic Feast                                       Enchantment
+Heroic Reinforcements                              Sorcery
+Hex Magic                                          Sorcery ù Arcane
+Hexhaven Battalion                                 Sorcery
+Hidetsugu's Second Rite                            Instant
+Hire a Crew                                        Instant
+Hit the Mother Lode                                Sorcery
+Homesickness                                       Instant
+Honest Work                                        Enchantment ù Aura
+Hop to It                                          Sorcery
+Horrid Vigor                                       Instant
+Hot Dog Cart                                       Artifact
+Hour of Defeat                                     Instant
+Huatli's Final Strike                              Instant
+Hulldrifter                                        Artifact ù Vehicle
+Hunter's Axe                                       Artifact ù Equipment
+Hunter's Blowgun                                   Artifact ù Equipment
+Hurl into History                                  Instant
+Hylderblade                                        Artifact ù Equipment
+I Am Iron Man                                      Instant
+Icy Reception                                      Instant
+Idol of the Deep King // Sovereign's Macuahuitl    Artifact // Artifact ù Equipment
+Ill-Timed Explosion                                Sorcery
+Impact Tremors                                     Enchantment
+Impolite Entrance                                  Sorcery
+Impossible Inferno                                 Instant
+Imprisoned in the Moon                             Enchantment ù Aura
+Improvisation Capstone                             Sorcery ù Lesson
+In the Presence of Ages                            Instant
+Incinerating Blast                                 Sorcery
+Infinite Coursework                                Enchantment ù Aura
+Innkeeper's Talent                                 Enchantment ù Class
+Inside Information                                 Sorcery
+Inspiration from Beyond                            Sorcery
+Inspiring Call                                     Instant
+Interdimensional Web Watch                         Artifact
+Interjection                                       Instant
+Intimidation Campaign                              Enchantment
+Intimidation Tactics                               Sorcery
+Into the Fae Court                                 Sorcery
+Into the Roil                                      Instant
+Invasive Maneuvers                                 Instant
+Involuntary Employment                             Sorcery
+Iroh's Demonstration                               Sorcery ù Lesson
+Iron Man Armor                                     Artifact ù Equipment
+It Doesn't Add Up                                  Instant
+Jace's Machinations                                Instant
+Jace, Reality Sculptor                             Legendary Planeswalker ù Jace
+Jailbreak Scheme                                   Sorcery
+Jeskai Monument                                    Artifact
+Jeskai Revelation                                  Instant
+Joust Through                                      Instant
+Jump Scare                                         Instant
+Kaito, Bane of Nightmares                          Legendary Planeswalker ù Kaito
+Kellan's Lightblades                               Instant
+Key to the Side-Door                               Artifact
+Keys to the House                                  Artifact
+Killer's Mask                                      Artifact ù Equipment
+Kin-Tree Severance                                 Instant
+Kindle the Inner Flame                             Kindred Sorcery ù Elemental
+Kindled Heroism                                    Instant
+Kitnap                                             Enchantment ù Aura
+Knife                                              Artifact ù Clue Equipment
+Konstrari Charm                                    Instant
+Last Gasp                                          Instant
+Last Light of Durin's Day                          Enchantment
+Lavaspur Boots                                     Artifact ù Equipment
+Lead Pipe                                          Artifact ù Clue Equipment
+Leader's Talent                                    Enchantment ù Class
+Leaping Ambush                                     Instant
+Let's Play a Game                                  Sorcery
+Leyline Axe                                        Artifact ù Equipment
+Leyline of Hope                                    Enchantment
+Leyline of Mutation                                Enchantment
+Leyline of Resonance                               Enchantment
+Leyline of Transformation                          Enchantment
+Leyline of the Void                                Enchantment
+Lich's Relic                                       Artifact ù Equipment
+Lich-Knights' Conquest                             Sorcery
+Lightning Helix                                    Instant
+Lightning Strike                                   Instant
+Liliana, Dreadhorde General                        Legendary Planeswalker ù Liliana
+Lithobraking                                       Instant
+Live or Die                                        Instant
+Lively Dirge                                       Sorcery
+Locust Spray                                       Instant
+Lofty Dreams                                       Enchantment ù Aura
+Longstalk Brawl                                    Sorcery
+Lost in the Maze                                   Enchantment
+Louisoix's Sacrifice                               Instant
+Loyal Tutor                                        Instant
+Luminous Rebuke                                    Instant
+Lunar Insight                                      Sorcery
+Luxurious Locomotive                               Artifact ù Vehicle
+Macabre Reconstruction                             Sorcery
+Macabre Waltz                                      Sorcery
+Machinist's Arsenal                                Artifact ù Equipment
+Maelstrom Pulse                                    Sorcery
+Magitek Armor                                      Artifact ù Vehicle
+Magnificent End                                    Instant
+Magnifying Glass                                   Artifact
+Make Your Move                                     Instant
+Make a Stand                                       Instant
+Makeshift Binding                                  Enchantment
+Malamet Scythe                                     Artifact ù Equipment
+Malicious Eclipse                                  Sorcery
+Mana Sculpt                                        Instant
+Manifest Dread                                     Sorcery
+Map the Frontier                                   Sorcery
+Marina Vendrell's Grimoire                         Legendary Artifact ù Book
+Marshals' Pathcruiser                              Artifact ù Vehicle
+Masterful Flourish                                 Instant
+Mathemagics                                        Sorcery
+Meathook Massacre II                               Legendary Enchantment
+Medic's Kitesail                                   Artifact ù Equipment
+Meltstrider's Gear                                 Artifact ù Equipment
+Meltstrider's Resolve                              Enchantment ù Aura
+Memorial Vault                                     Artifact
+Memory Trap                                        Enchantment
+Metamorphic Blast                                  Instant
+Midnight Mayhem                                    Sorcery
+Midnight Snack                                     Enchantment
+Midnight Tilling                                   Instant
+Might of the Ancestors                             Enchantment
+Might of the Meek                                  Instant
+Mind Transfer Protocol                             Instant
+Mj÷lnir, Hammer of Thor                            Legendary Artifact ù Equipment
+Mobile Homestead                                   Artifact ù Vehicle
+Molten Exhale                                      Sorcery
+Moment of Craving                                  Instant
+Moment of Glory                                    Sorcery
+Moment of Triumph                                  Instant
+Moment of Valor                                    Instant
+Momentum Breaker                                   Enchantment
+Monstrous Emergence                                Sorcery
+Morcant's Eyes                                     Kindred Enchantment ù Elf
+Morningtide's Light                                Sorcery
+Mortify                                            Instant
+Mourner's Surprise                                 Sorcery
+Multiply by Zero                                   Instant
+Murder                                             Instant
+Murdock's Crusade                                  Sorcery
+Murmuring Volume                                   Artifact ù Book
+My Precious // Allure of Power                     Legendary Artifact ù Equipment // Instant ù Adventure
+Mystical Tether                                    Enchantment
+Nameless Inversion                                 Kindred Instant ù Shapeshifter
+Nature's Rhythm                                    Sorcery
+Negate                                             Instant
+Neutralize the Guards                              Instant
+Nibelheim Aflame                                   Sorcery
+Night of the Sweets' Revenge                       Enchantment
+Ninja Teen                                         Enchantment ù Class
+No Admittance                                      Sorcery
+No More Lies                                       Instant
+No Witnesses                                       Sorcery
+Nowhere to Run                                     Enchantment
+Obsessive Pursuit                                  Enchantment
+Octopus Form                                       Instant ù Lesson
+Offer Immortality                                  Instant
+Officious Interrogation                            Instant
+Old Fat Spider Can't See Me                        Enchantment ù Saga
+Omnipresence                                       Enchantment
+Omniscience                                        Enchantment
+On the Job                                         Instant
+One Last Job                                       Sorcery
+Opt                                                Instant
+Oracle's Restoration                               Sorcery
+Orbital Plunge                                     Sorcery
+Orcrist, Goblin-cleaver                            Legendary Artifact ù Equipment
+Ordeal of Nylea                                    Enchantment ù Aura
+Origin of Spider-Man                               Enchantment ù Saga
+Origin of the Avengers                             Enchantment ù Saga
+Osseous Exhale                                     Instant
+Otterball Antics                                   Sorcery
+Out Cold                                           Instant
+Out of Air                                         Instant
+Outlaws' Fury                                      Instant
+Over the Edge                                      Sorcery
+Overwrite the Multiverse                           Sorcery
+Pacifism                                           Enchantment ù Aura
+Pain 101                                           Instant
+Painful Quandary                                   Enchantment
+Paladin's Arms                                     Artifact ù Equipment
+Panther Pounce                                     Instant
+Parker Luck                                        Enchantment
+Part in Friendship                                 Enchantment
+Parting Gust                                       Instant
+Patchwork Banner                                   Artifact
+Pawpatch Formation                                 Instant
+Pearl of Wisdom                                    Sorcery
+Pedal to the Metal                                 Instant
+Peer Past the Veil                                 Instant
+Peerless Recycling                                 Instant
+Perfect Intimidation                               Sorcery
+Perfected Theory                                   Instant
+Petrify                                            Enchantment ù Aura
+Phantom Interference                               Instant
+Photon Blast Barrage                               Sorcery
+Phyrexian Arena                                    Enchantment
+Pick Your Poison                                   Sorcery
+Pictures of Spider-Man                             Artifact
+Piercing Exhale                                    Instant
+Pilfer                                             Sorcery
+Pillar Launch                                      Instant
+Pinecone Strike                                    Instant
+Pinnacle Starcage                                  Artifact
+Pitiless Fists                                     Enchantment ù Aura
+Plan for All Outcomes                              Enchantment
+Plasma Bolt                                        Sorcery
+Plunder the Trollshaws                             Instant
+Point the Way                                      Enchantment
+Poison the Waters                                  Sorcery
+Political Triumph                                  Enchantment ù Plan
+Polliwallop                                        Instant
+Polygraph Orb                                      Artifact
+Potioner's Trove                                   Artifact
+Pox Plague                                         Sorcery
+Practiced Offense                                  Sorcery
+Precise Redaction                                  Instant
+Predictive Preparations                            Sorcery
+Preposterous Proportions                           Sorcery
+Price of Freedom                                   Sorcery ù Lesson
+Primeval Bounty                                    Enchantment
+Prismatic Undercurrents                            Enchantment
+Procrastinate                                      Sorcery
+Proctor's Gaze                                     Instant
+Prophesied End                                     Instant
+Prophetic Prism                                    Artifact
+Protective Response                                Instant
+Protege's Awakening                                Sorcery
+Pull Through the Weft                              Sorcery
+Pull from the Grave                                Sorcery
+Punishing Punch                                    Instant
+Puppet Crafting                                    Enchantment ù Aura
+Pym Particles                                      Sorcery
+Pyroclasm                                          Sorcery
+Pyrrhic Strike                                     Instant
+Quag Feast                                         Sorcery
+Quarrel                                            Instant
+Quick Study                                        Instant
+Quick-Draw Katana                                  Artifact ù Equipment
+Quintessential Katana                              Artifact ù Equipment
+Quintorius Kand                                    Legendary Planeswalker ù Quintorius
+Rabbit Response                                    Instant
+Rabid Bite                                         Sorcery
+Rabid Gnaw                                         Instant
+Radiant Strike                                     Instant
+Rage into the Valley                               Sorcery
+Ragged Short Spear                                 Artifact ù Equipment
+Raise the Past                                     Sorcery
+Rakish Crew                                        Enchantment
+Ral Zarek, Guest Lecturer                          Legendary Planeswalker ù Ral
+Rangers' Aetherhive                                Artifact ù Vehicle
+Rankle's Prank                                     Sorcery
+Raphael's Technique                                Instant
+Rapid Rescue                                       Instant
+Rapturous Moment                                   Sorcery
+Rat Out                                            Instant
+Ravenous Amulet                                    Artifact
+Ray of Ruin                                        Sorcery
+Reach for the Sky                                  Enchantment ù Aura
+Reasonable Doubt                                   Instant
+Reckless Ransacking                                Instant
+Recursive Recruitment                              Sorcery
+Reenact the Crime                                  Instant
+Refute                                             Instant
+Refute Destiny                                     Sorcery
+Release the Dogs                                   Sorcery
+Relic's Roar                                       Instant
+Render Speechless                                  Sorcery
+Rent Is Due                                        Enchantment
+Repel Calamity                                     Instant
+Repulsive Mutation                                 Instant
+Repulsor Blast                                     Sorcery
+Repurposing Bay                                    Artifact
+Requisition Raid                                   Sorcery
+Resonating Lute                                    Artifact
+Rest in Peace                                      Enchantment
+Restoration Magic                                  Instant
+Restorative Technique                              Sorcery
+Restore with Empathy                               Instant
+Retro-Mutation                                     Enchantment ù Aura
+Return from the Wilds                              Sorcery
+Return the Favor                                   Instant
+Return to the Light Realms                         Sorcery
+Revenge of the Rats                                Sorcery
+Reverent Howl                                      Instant
+Revival of the Ancestors                           Enchantment ù Saga
+Rewrite History                                    Enchantment ù Plan
+Rewrite Regrets                                    Sorcery
+Rhino's Rampage                                    Sorcery
+Riddles in the Dark                                Instant
+Ride the Shoopuf                                   Enchantment
+Rig for War                                        Instant
+Rime Chill                                         Instant
+Ring of the Lucii                                  Legendary Artifact
+Ringing Strike Mastery                             Enchantment ù Aura
+Rise of the Dark Realms                            Sorcery
+Rise of the Deathbringer                           Instant
+Risky Shortcut                                     Sorcery
+Rite of Replication                                Sorcery
+Rite of the Dragoncaller                           Enchantment
+Rite of the Moth                                   Sorcery
+Riverwheel Sweep                                   Sorcery
+Roads Go Ever, Ever On                             Enchantment ù Saga
+Roadside Assistance                                Enchantment ù Aura
+Roamer's Routine                                   Sorcery
+Robot Domination                                   Enchantment ù Plan
+Robotics Mastery                                   Enchantment ù Aura
+Roiling Dragonstorm                                Enchantment
+Roll-Roll-Roll-Roll                                Enchantment ù Saga
+Romantic Rendezvous                                Sorcery
+Rope                                               Artifact ù Clue Equipment
+Royal Treatment                                    Instant
+Ruinous Waterbending                               Sorcery ù Lesson
+Rumbling Rockslide                                 Sorcery
+Run Away Together                                  Instant
+Run Behind                                         Instant
+Runaway Boulder                                    Artifact
+Rustler Rampage                                    Instant
+Ruthless Negotiation                               Sorcery
+S.H.I.E.L.D. Flying Car                            Artifact ù Vehicle
+S.H.I.E.L.D. Helicarrier                           Artifact ù Vehicle
+S.H.I.E.L.D. Spy Kit                               Artifact ù Equipment
+Sage's Nouliths                                    Artifact ù Equipment
+Salvation Engine                                   Artifact ù Vehicle
+Sami's Curiosity                                   Sorcery
+Samurai's Katana                                   Artifact ù Equipment
+Sarkhan's Resolve                                  Instant
+Saw                                                Artifact ù Equipment
+Say Its Name                                       Sorcery
+Sazacap's Brew                                     Instant
+Scales of Shale                                    Instant
+Scavenger's Talent                                 Enchantment ù Class
+School Daze                                        Instant
+Scorching Dragonfire                               Instant
+Scorching Shot                                     Sorcery
+Scout the City                                     Sorcery
+Scrap Compactor                                    Artifact
+Seam Rip                                           Enchantment
+Sear                                               Instant
+Season of Loss                                     Sorcery
+Season of the Bold                                 Sorcery
+Season of the Burrow                               Sorcery
+Secret of Bloodbending                             Sorcery ù Lesson
+Seeker's Folly                                     Sorcery
+Seismic Rupture                                    Sorcery
+Seize the Secrets                                  Sorcery
+Seize the Spoils                                   Sorcery
+Seized from Slumber                                Instant
+Self-Reflection                                    Sorcery
+Sephiroth's Intervention                           Instant
+Settle the Wreckage                                Instant
+Shadow of the Goblin                               Enchantment
+Shardmage's Rescue                                 Enchantment ù Aura
+Shared Roots                                       Sorcery ù Lesson
+Sheltered by Ghosts                                Enchantment ù Aura
+Shifting Grift                                     Sorcery
+Shock                                              Instant
+Shoot the Sheriff                                  Instant
+Shore Up                                           Instant
+Sidequest: Card Collection // Magicked Card        Enchantment // Artifact ù Vehicle
+Sidequest: Play Blitzball // World Champion, Celestial Weapon Enchantment // Legendary Artifact ù Equipment
+Silence the Echo                                   Sorcery
+Simulacrum Synthesizer                             Artifact
+Singularity Rupture                                Sorcery
+Skulduggery                                        Instant
+Skycrash                                           Instant
+Skyseer's Chariot                                  Artifact ù Vehicle
+Slagstorm                                          Sorcery
+Sleight of Hand                                    Sorcery
+Slick Sequence                                     Instant
+Smaug's Fury                                       Instant
+Smile at Death                                     Enchantment
+Smuggler's Surprise                                Instant
+Snakeskin Veil                                     Instant
+Snarl Song                                         Sorcery
+Solitary Cell                                      Artifact
+Solve for Disappointment                           Sorcery
+Something Worth Saving                             Instant
+Sonar Strike                                       Instant
+Song of Totentanz                                  Sorcery
+Soul Search                                        Sorcery
+Soul-Guide Lantern                                 Artifact
+Sound the Trumpets                                 Instant
+Southern Air Temple                                Legendary Enchantment ù Shrine
+Space-Time Anomaly                                 Sorcery
+Spectacular Tactics                                Instant
+Spell Pierce                                       Instant
+Spell Snare                                        Instant
+Spell Stutter                                      Instant
+Spelunking                                         Enchantment
+Sphinx's Approach                                  Instant
+Spider Food                                        Sorcery
+Spider-Suit                                        Artifact ù Equipment
+Spin Out                                           Instant
+Spiral into Solitude                               Enchantment ù Aura
+Splash Portal                                      Sorcery
+Split Up                                           Sorcery
+Sporogenic Infection                               Enchantment ù Aura
+Spotcycle Scouter                                  Artifact ù Vehicle
+Spring-Loaded Sawblades // Bladewheel Chariot      Artifact // Artifact ù Vehicle
+Springleaf Drum                                    Artifact
+Squire's Lightblade                                Artifact ù Equipment
+Squirming Emergence                                Sorcery
+Stab                                               Instant
+Stand Up for Yourself                              Instant
+Stargaze                                           Sorcery
+Starlight Snare                                    Enchantment ù Aura
+Stasis Snare                                       Enchantment
+Static Snare                                       Enchantment
+Steer Clear                                        Instant
+Step Between Worlds                                Sorcery
+Sting, Bilbo's Sword                               Legendary Artifact ù Equipment
+Stingerquill Charm                                 Instant
+Stir Up Trouble                                    Sorcery
+Stock Up                                           Sorcery
+Stolen Stark Tech                                  Artifact ù Equipment
+Stolen Uniform                                     Instant
+Stone by Sunlight                                  Instant
+Strategic Betrayal                                 Sorcery
+Strength of Will                                   Instant
+Strixhaven Skycoach                                Artifact ù Vehicle
+Stroke of Midnight                                 Instant
+Subway Train                                       Artifact ù Vehicle
+Succumb to the Cold                                Instant
+Sudden Strike                                      Instant
+Sugar Coat                                         Enchantment ù Aura
+Sugar Rush                                         Instant
+Sultai Monument                                    Artifact
+Sunfire Torch                                      Artifact ù Equipment
+Super Intelligence                                 Enchantment ù Aura
+Super Speed                                        Enchantment ù Aura
+Super Strength                                     Enchantment ù Aura
+Super Suit                                         Artifact ù Equipment
+Super Villain Lockup                               Enchantment
+Super-Soldier Serum                                Enchantment ù Aura
+Supper for Spiders                                 Instant
+Sure Strike                                        Instant
+Surgical Precision                                 Sorcery
+Suspend Aggression                                 Instant
+Susurian Dirgecraft                                Artifact ù Spacecraft
+Swashbuckler's Whip                                Artifact ù Equipment
+Swat Away                                          Instant
+Swiftfoot Boots                                    Artifact ù Equipment
+Sword of Wealth and Power                          Artifact ù Equipment
+Sylvan Scavenging                                  Enchantment
+Systems Override                                   Sorcery
+Tainted Treats                                     Instant
+Take Up the Shield                                 Instant
+Take for a Ride                                    Sorcery
+Taken by Nightmares                                Instant
+Tam's Resistance                                   Sorcery
+Team Avatar                                        Enchantment
+Team Tactics                                       Instant
+Tend the Sprigs                                    Sorcery
+Terminal Criticism                                 Instant
+Terrific Team-Up                                   Instant
+Tethermage's Advantage                             Instant
+Tezzeret, Cruel Captain                            Legendary Planeswalker ù Tezzeret
+Thaumaton Torpedo                                  Artifact
+The Arkenstone // Seek the Heart                   Legendary Artifact // Sorcery ù Adventure
+The Black Arrow                                    Legendary Artifact ù Equipment
+The Chase Is On                                    Instant
+The Coming of Galactus                             Enchantment ù Saga
+The Dominion Bracelet                              Legendary Artifact ù Equipment
+The Eagles Are Coming!                             Instant
+The Echoverse Fulcrum                              Legendary Artifact
+The Endstone                                       Legendary Artifact
+The Final Days                                     Sorcery
+The Huntsman's Redemption                          Enchantment ù Saga
+The Irencrag                                       Legendary Artifact
+The Key to the Vault                               Legendary Artifact ù Equipment
+The Last Ronin                                     Enchantment ù Saga
+The Mind Stone                                     Legendary Artifact ù Infinity Stone
+The Misty Mountains Cold                           Enchantment ù Saga
+The Mountain-king's Return                         Enchantment ù Saga
+The Ooze                                           Legendary Artifact
+The Prima Vista                                    Legendary Artifact ù Vehicle
+The Rollercrusher Ride                             Legendary Enchantment
+The Spot's Portal                                  Instant
+The Tale of Tamiyo                                 Legendary Enchantment ù Saga
+The Ten Rings                                      Legendary Artifact
+The Theorist, Jace Beleren                         Legendary Planeswalker ù Jace
+Theorix Charm                                      Instant
+They Went This Way                                 Sorcery
+Think Twice                                        Instant
+Thinking Cap                                       Artifact ù Equipment
+Thirst for Knowledge                               Instant
+Thorin's Last Stand                                Instant
+Thousand-Year Storm                                Enchantment
+Thranduil's Decree                                 Instant
+Threats Around Every Corner                        Enchantment
+Three Blind Mice                                   Enchantment ù Saga
+Three Bowls of Porridge                            Artifact ù Food
+Three Steps Ahead                                  Instant
+Thrill of Possibility                              Instant
+Through the Forest Gate                            Sorcery
+Throw from the Saddle                              Sorcery
+Thr≤r's Map                                        Legendary Artifact
+Thunder Lasso                                      Artifact ù Equipment
+Thunder Salvo                                      Instant
+Thwip!                                             Instant
+Tidings of War                                     Sorcery
+Time Stop                                          Instant
+Tinker's Tote                                      Artifact
+Titanic Growth                                     Instant
+Too Evil to Stay Dead                              Sorcery
+Torch the Witness                                  Sorcery
+Torpor Orb                                         Artifact
+Toxin Analysis                                     Instant
+Tractor Beam                                       Enchantment ù Aura
+Tragic Trajectory                                  Sorcery
+Training Regimen                                   Enchantment
+Transmutation Font                                 Artifact
+Trapped in the Screen                              Enchantment
+Trash the Town                                     Instant
+Trial of Agony                                     Sorcery
+Tribute to Hunger                                  Instant
+Trick Shot                                         Instant
+Trickster's Stratagem                              Sorcery
+Trip Up                                            Instant
+Troll Negotiations                                 Sorcery
+Truck Toss                                         Instant
+True Ancestry                                      Sorcery ù Lesson
+Tumbleweed Rising                                  Sorcery
+Tune Up                                            Sorcery
+Turn Inside Out                                    Instant
+Turtles Forever                                    Instant
+Turtles in Time                                    Sorcery
+Twin Bolt                                          Instant
+Twinblade Blessing                                 Enchantment ù Aura
+Twinned Vision                                     Instant
+Twist Reality                                      Instant
+Twisted Fates                                      Sorcery
+Ugin, Eye of the Storms                            Legendary Planeswalker ù Ugin
+Unable to Scream                                   Enchantment ù Aura
+Unbury                                             Instant
+Uncharted Voyage                                   Instant
+Uncover the Moon-Letters                           Enchantment
+Under the Skin                                     Sorcery
+Undying Malice                                     Instant
+Uneasy Partings                                    Instant
+Unexpected Assistance                              Instant
+Unflinching Courage                                Enchantment ù Aura
+Unforgiving Aim                                    Instant
+Unfortunate Accident                               Instant
+Unidentified Hovership                             Artifact ù Vehicle
+Unnerving Grasp                                    Sorcery
+Unsubtle Mockery                                   Instant
+Unsummon                                           Instant
+Untimely Malfunction                               Instant
+Valgavoth's Onslaught                              Sorcery
+Valkyrie's Call                                    Enchantment
+Valley Rally                                       Instant
+Valorous Stance                                    Instant
+Vampiric Rites                                     Enchantment
+Vanish from Sight                                  Instant
+Vengeful Possession                                Sorcery
+Vibranium Energy Daggers                           Artifact ù Equipment
+Vicious Rivalry                                    Sorcery
+Vigorbloom Charm                                   Instant
+Violent Urge                                       Instant
+Virtue of Loyalty // Ardenvale Fealty              Enchantment // Instant ù Adventure
+Virtue of Strength // Garenbrig Growth             Enchantment // Sorcery ù Adventure
+Vision Quest                                       Sorcery
+Vision of Love                                     Instant
+Visions of Villainy                                Instant
+Vivien Reid                                        Legendary Planeswalker ù Vivien
+Vow to Erebor                                      Instant
+Voyager Glidecar                                   Artifact ù Vehicle
+Waltz of Rage                                      Sorcery
+Warg Tactics                                       Instant
+Warleader's Call                                   Enchantment
+Warmaker Gunship                                   Artifact ù Spacecraft
+Warrior's Blades                                   Artifact ù Equipment
+Way of the Cryomancer                              Legendary Enchantment
+Way of the Deathbringer                            Legendary Enchantment
+Way of the Healer                                  Legendary Enchantment
+Way of the Mentor                                  Legendary Enchantment
+Way of the Mind Sculptor                           Legendary Enchantment
+Way of the Necromancer                             Legendary Enchantment
+Way of the Paradox                                 Legendary Enchantment
+Way of the Pyromancer                              Legendary Enchantment
+Way of the Warlord                                 Legendary Enchantment
+Way of the Wildspeaker                             Legendary Enchantment
+We Say Thee Nay!                                   Instant ù Arcane
+Wear Down                                          Sorcery
+Weather Maker                                      Artifact
+Web Up                                             Enchantment
+Web-Shooters                                       Artifact ù Equipment
+Well-Worn Spatula                                  Artifact ù Equipment
+White Auracite                                     Artifact
+Widow's Bite                                       Instant
+Wild Hypothesis                                    Sorcery
+Wilt in the Heat                                   Instant
+Winnowing                                          Sorcery
+Winter's Intervention                              Instant
+Witch's Mark                                       Sorcery
+Witchstalker Frenzy                                Instant
+Withering Curse                                    Sorcery
+Withering Torment                                  Instant
+Witness Protection                                 Enchantment ù Aura
+Wizard's Staff                                     Artifact ù Equipment
+World War Hulk                                     Enchantment ù Saga
+Worlds Within Worlds                               Sorcery
+Worthy Cost                                        Sorcery
+Wrath of the Bloodmane                             Instant
+Wurmwall Sweeper                                   Artifact ù Spacecraft
+You're Not Alone                                   Instant
+Your Fate Ends Here                                Instant
+Zombify                                            Sorcery

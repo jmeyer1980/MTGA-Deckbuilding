@@ -136,12 +136,13 @@ def build(counts):
             entry["any_number"] = any_number(card)
             leg = card.get("legalities", {})
             # 'brawl' is CASUAL 100-card Brawl's list; 'competitivebrawl' is
-            # the ranked ladder (commanders-only bans). Both are stored so
-            # consumers choose deliberately -- deck_check bans against the
-            # competitive field. 'standardbrawl' (60-card) has no ranked queue
-            # -- we do not track it. Fallback keeps a Scryfall schema gap from
-            # becoming a missing key.
+            # the ranked ladder (commanders-only bans). 'standardbrawl' is
+            # the 60-card singleton format with its own (more restrictive)
+            # ban list -- stored explicitly so Standard Brawl checks ban
+            # against the right list, not Standard's. Fallback keeps a
+            # Scryfall schema gap from becoming a missing key.
             entry["standard"] = leg.get("standard")
+            entry["standardbrawl"] = leg.get("standardbrawl")
             entry["brawl"] = leg.get("brawl")
             entry["competitivebrawl"] = (
                 leg.get("competitivebrawl") or leg.get("brawl")

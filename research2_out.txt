@@ -1,0 +1,126 @@
+
+====================================================================================================
+C. PROTECTION (GW competitivebrawl)
+  q: (o:"indestructible" OR o:"hexproof" OR o:"protection") id<=GW f:competitivebrawl -t:land
+   [legal] Airtight Alibi                                 {2}{G}         cmc=3.0 common   owned=2
+   [legal] Bark-Knuckle Boxer                             {1}{G}         cmc=2.0 uncommon owned=1
+   [legal] Barkhide Troll                                 {G}{G}         cmc=2.0 uncommon owned=1
+   [legal] Bassara Tower Archer                           {G}{G}         cmc=2.0 uncommon owned=1
+   [legal] Biosynthic Burst                               {1}{G}         cmc=2.0 common   owned=1
+   [legal] Adept Watershaper                              {2}{W}         cmc=3.0 rare     owned=1
+   [legal] Bilbo's Ring                                   {3}            cmc=3.0 rare     owned=1
+   [legal] Akroma's Will                                  {3}{W}         cmc=4.0 rare     owned=1
+   [legal] Blessed Hippogriff // Tyr's Blessing           {3}{W} // {W}  cmc=4.0 common   owned=1
+   [legal] Algorithmic Ferocity                           {G}            cmc=1.0 uncommon owned=0
+   [legal] Alseid of Life's Bounty                        {W}            cmc=1.0 uncommon owned=0
+   [legal] Basri, Tomorrow's Champion                     {W}            cmc=1.0 rare     owned=0
+   [legal] Blizzard Brawl                                 {G}            cmc=1.0 uncommon owned=0
+   [legal] Adamant Will                                   {1}{W}         cmc=2.0 common   owned=0
+   [legal] Adanto Vanguard                                {1}{W}         cmc=2.0 uncommon owned=0
+   [legal] Alpha Authority                                {1}{G}         cmc=2.0 uncommon owned=0
+   [legal] Angelic Intervention                           {1}{W}         cmc=2.0 common   owned=0
+   [legal] Apostle of Purifying Light                     {1}{W}         cmc=2.0 uncommon owned=0
+   [legal] Beaming Defiance                               {1}{W}         cmc=2.0 common   owned=0
+   [legal] Bladed Ambassador                              {1}{W}         cmc=2.0 uncommon owned=0
+   [legal] Accelerated Evolution                          {2}{G}         cmc=3.0 common   owned=0
+   [legal] Angelheart Protector                           {2}{W}         cmc=3.0 common   owned=0
+   [legal] Arwen, Mortal Queen                            {1}{G}{W}      cmc=3.0 mythic   owned=0
+   [legal] Basri Ket                                      {1}{W}{W}      cmc=3.0 mythic   owned=0
+   [legal] Blinding Fog                                   {2}{G}         cmc=3.0 common   owned=0
+   [legal] Aethershield Artificer                         {3}{W}         cmc=4.0 uncommon owned=0
+   [legal] Amaranthine Wall                               {4}            cmc=4.0 uncommon owned=0
+   [legal] Archon of Absolution                           {3}{W}         cmc=4.0 uncommon owned=0
+   [legal] Basri's Lieutenant                             {3}{W}         cmc=4.0 rare     owned=0
+   [legal] Bedrock Tortoise                               {3}{G}         cmc=4.0 rare     owned=0
+   [legal] Agonasaur Rex                                  {3}{G}{G}      cmc=5.0 rare     owned=0
+   [legal] Argentum Masticore                             {5}            cmc=5.0 rare     owned=0
+   [legal] Baneslayer Angel                               {3}{W}{W}      cmc=5.0 mythic   owned=0
+   [legal] Angelic Guardian                               {4}{W}{W}      cmc=6.0 rare     owned=0
+   [legal] Avabruck Caretaker // Hollowhenge Huntmaster                  cmc=6.0 mythic   owned=0
+   [legal] Akroma's Memorial                              {7}            cmc=7.0 mythic   owned=0
+   [legal] Assure // Assemble                             {G/W}{G/W} // {4}{G}{W} cmc=8.0 rare     owned=0
+   [legal] Avacyn, Angel of Hope                          {5}{W}{W}{W}   cmc=8.0 mythic   owned=0
+   [legal] Avatar Kyoshi, Earthbender                     {5}{G}{G}{G}   cmc=8.0 mythic   owned=0
+   [legal] Arboretum Elemental                            {7}{G}{G}      cmc=9.0 uncommon owned=0
+
+====================================================================================================
+D. TARGETED LAND REMOVAL (GW competitivebrawl)
+  q: o:"destroy target land" id<=GW f:competitivebrawl
+   [legal] Strip Mine                                                    cmc=0.0 rare     owned=1
+   [legal] Ghost Quarter                                                 cmc=0.0 uncommon owned=0
+
+====================================================================================================
+E. MASS LAND DENIAL (any color competitivebrawl)
+  q: o:"destroy all lands" OR o:"destroy each land" OR o:"all lands" f:competitivebrawl
+   [legal] Emrakul, the Exigent Doom                      {10}           cmc=10.0 mythic   owned=1
+   [not_legal] Impending Disaster                             {1}{R}         cmc=2.0 rare     owned=0
+   [not_legal] Strategy, Schmategy                            {1}{R}         cmc=2.0 rare     owned=0
+   [legal] Blood Sun                                      {2}{R}         cmc=3.0 rare     owned=0
+   [legal] Jill, Shiva's Dominant // Shiva, Warden of Ice                cmc=3.0 rare     owned=0
+   [legal] Life // Death                                  {G} // {1}{B}  cmc=3.0 uncommon owned=0
+   [legal] Sword of Feast and Famine                      {3}            cmc=3.0 mythic   owned=0
+   [legal] Sylvan Awakening                               {2}{G}         cmc=3.0 rare     owned=0
+   [not_legal] Ajani Vengeant                                 {2}{R}{W}      cmc=4.0 mythic   owned=0
+   [legal] Armageddon                                     {3}{W}         cmc=4.0 mythic   owned=0
+   [not_legal] Bend or Break                                  {3}{R}         cmc=4.0 rare     owned=0
+   [legal] Mistbind Clique                                {3}{U}         cmc=4.0 rare     owned=0
+   [legal] Nature's Will                                  {2}{G}{G}      cmc=4.0 rare     owned=0
+   [not_legal] Ravages of War                                 {3}{W}         cmc=4.0 rare     owned=0
+   [legal] Wilderness Reclamation                         {3}{G}         cmc=4.0 uncommon owned=0
+   [legal] Bumi, Unleashed                                {3}{R}{G}      cmc=5.0 mythic   owned=0
+   [not_legal] Desolation Angel                               {3}{B}{B}      cmc=5.0 rare     owned=0
+   [not_legal] Catastrophe                                    {4}{W}{W}      cmc=6.0 rare     owned=0
+   [legal] Fall of the Thran                              {5}{W}         cmc=6.0 rare     owned=0
+   [legal] Beledros Witherbloom                           {5}{B}{G}      cmc=7.0 mythic   owned=0
+   [not_legal] Boom // Bust                                   {1}{R} // {5}{R} cmc=8.0 rare     owned=0
+   [legal] Stormtide Leviathan                            {5}{U}{U}{U}   cmc=8.0 rare     owned=0
+   [legal] Zacama, Primal Calamity                        {6}{R}{G}{W}   cmc=9.0 mythic   owned=0
+   [not_legal] Decree of Annihilation                         {8}{R}{R}      cmc=10.0 rare     owned=0
+   [not_legal] Myojin of Infinite Rage                        {7}{R}{R}{R}   cmc=10.0 rare     owned=0
+
+====================================================================================================
+F. EXTRA TURNS (any color competitivebrawl)
+  q: o:"extra turn" f:competitivebrawl
+   [legal] Lost Isle Calling                              {1}{U}         cmc=2.0 rare     owned=1
+   [legal] Kang the Conqueror                             {2}{U}{U}      cmc=4.0 mythic   owned=1
+   [legal] Piece It Together                              {U}            cmc=1.0 uncommon owned=0
+   [legal] Timestream Navigator                           {1}{U}         cmc=2.0 mythic   owned=0
+   [legal] Alchemist's Gambit                             {1}{R}{R}      cmc=3.0 rare     owned=0
+   [legal] Chance for Glory                               {1}{R}{W}      cmc=3.0 mythic   owned=0
+   [legal] Ichormoon Gauntlet                             {2}{U}         cmc=3.0 mythic   owned=0
+   [legal] Magistrate's Scepter                           {3}            cmc=3.0 rare     owned=0
+   [legal] Teferi, Master of Time                         {2}{U}{U}      cmc=4.0 mythic   owned=0
+   [legal] The Legend of Kuruk // Avatar Kuruk                           cmc=4.0 mythic   owned=0
+   [legal] Trouble in Pairs                               {2}{W}{W}      cmc=4.0 rare     owned=0
+   [legal] Temporal Manipulation                          {3}{U}{U}      cmc=5.0 mythic   owned=0
+   [legal] Time Warp                                      {3}{U}{U}      cmc=5.0 rare     owned=0
+   [legal] Ugin's Nexus                                   {5}            cmc=5.0 mythic   owned=0
+   [legal] Ultimecia, Time Sorceress // Ultimecia, Omnipotent                cmc=5.0 uncommon owned=0
+   [legal] Karn's Temporal Sundering                      {4}{U}{U}      cmc=6.0 rare     owned=0
+   [legal] Medomai the Ageless                            {4}{W}{U}      cmc=6.0 mythic   owned=0
+   [legal] Part the Waterveil                             {4}{U}{U}      cmc=6.0 mythic   owned=0
+   [legal] Teferi, Timebender                             {4}{W}{U}      cmc=6.0 mythic   owned=0
+   [legal] Wanderwine Prophets                            {4}{U}{U}      cmc=6.0 rare     owned=0
+   [legal] Alrund's Epiphany                              {5}{U}{U}      cmc=7.0 mythic   owned=0
+   [legal] Nexus of Fate                                  {5}{U}{U}      cmc=7.0 mythic   owned=0
+   [legal] Expropriate                                    {7}{U}{U}      cmc=9.0 mythic   owned=0
+   [legal] Temporal Trespass                              {8}{U}{U}{U}   cmc=11.0 mythic   owned=0
+   [legal] Emrakul, the Promised End                      {13}           cmc=13.0 mythic   owned=0
+   [legal] Emrakul, the Aeons Torn                        {15}           cmc=15.0 mythic   owned=0
+
+====================================================================================================
+G. DOUBLERS / CRUSADE / COUNTER PAYOFFS
+  q: "doubling season" OR "cathars crusade" OR "branching evolution" OR "primal vigor" OR "hardened scales" f:competitivebrawl
+   [legal] Doubling Season                                {4}{G}         cmc=5.0 mythic   owned=2
+   [legal] Hardened Scales                                {G}            cmc=1.0 rare     owned=1
+   [legal] Branching Evolution                            {2}{G}         cmc=3.0 rare     owned=0
+   [legal] Primal Vigor                                   {4}{G}         cmc=5.0 rare     owned=0
+
+====================================================================================================
+H. ARTIFACT PAYOFFS
+  q: "walking ballista" OR "hangarback walker" OR "animation module" OR "metallic mimic" OR "the ozolith" f:competitivebrawl
+   [legal] Hangarback Walker                              {X}{X}         cmc=0.0 rare     owned=0
+   [not_legal] Walking Ballista                               {X}{X}         cmc=0.0 rare     owned=0
+   [legal] Animation Module                               {1}            cmc=1.0 rare     owned=0
+   [legal] The Ozolith                                    {1}            cmc=1.0 rare     owned=0
+   [legal] Metallic Mimic                                 {2}            cmc=2.0 rare     owned=0

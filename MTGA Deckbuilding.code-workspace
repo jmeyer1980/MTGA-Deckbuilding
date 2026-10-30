@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../MTGA_PlayByPlay"
+		},
+		{
+			"path": "../MTGA_Play-by"
+		}
+	],
+	"settings": {
+		"dotnet.defaultSolution": "MTGA_Play-by/MtgaPbp.slnx"
+	}
+}

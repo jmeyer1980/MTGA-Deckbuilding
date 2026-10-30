@@ -1,0 +1,426 @@
+rank,name,total,edhrec,edh_pts,mv_pts,engine_pts,depth,depth_pts,game_changer,mana_cost,cmc,colors,qty,rarity
+1,"Kutzil, Malamet Exemplar",57.7,396,13.4,13,4,1090,27.2,False,{1}{G}{W},3.0,GW,3,uncommon
+2,"Vraska, Soul of Stone",55.0,11362,0.0,13,12,1559,30.0,False,{U}{R}{W},3.0,RUW,1,rare
+3,The Ruinous Wrecking Crew,52.7,20184,0.0,15,12,1028,25.7,False,{X}{B}{R},2.0,BR,1,rare
+4,"Malcolm, the Eyes",52.2,7753,0.0,15,12,1007,25.2,False,{U}{R},2.0,RU,2,rare
+5,"Vraska, the Cutting Glare",51.8,21968,0.0,13,12,1070,26.8,False,{B}{B}{G},3.0,BG,4,rare
+6,"Greta, Sweettooth Scourge",51.8,5737,0.0,13,12,1070,26.8,False,{1}{B}{G},3.0,BG,1,uncommon
+7,"Alquist Proft, Master Sleuth",51.5,12843,0.0,13,12,1062,26.6,False,{1}{W}{U},3.0,UW,1,mythic
+8,"Jolene, Plundering Pugilist",50.6,9674,0.0,13,12,1025,25.6,False,{1}{R}{G},3.0,GR,2,uncommon
+9,"Tatyova, Benthic Druid",50.0,482,10.6,5,8,1056,26.4,False,{3}{G}{U},5.0,GU,4,uncommon
+10,The Astonishing Ant-Man,49.4,11461,0.0,15,8,1056,26.4,False,{G}{U},2.0,GU,2,rare
+11,Baron Bertram Graywater,48.1,4447,0.0,9,12,1083,27.1,False,{2}{W}{B},4.0,BW,1,uncommon
+12,The Jolly Balloon Man,47.6,2528,0.0,13,8,1063,26.6,False,{1}{R}{W},3.0,RW,1,rare
+13,"Niko, Light of Hope",47.5,8910,0.0,9,12,1062,26.6,False,{2}{W}{U},4.0,UW,2,mythic
+14,"Mikey & Leo, Chaos & Order",46.2,7074,0.0,15,4,1090,27.2,False,{G/W}{G/W},2.0,GW,1,rare
+15,"Spider-Girl, Legacy Hero",46.2,12159,0.0,15,4,1090,27.2,False,{G}{W},2.0,GW,1,uncommon
+16,"Edgar, Ancient Bloodlord",46.1,21713,0.0,15,4,1083,27.1,False,{W}{B},2.0,BW,1,uncommon
+17,The Sackville-Bagginses,46.0,8152,0.0,15,16,601,15.0,False,{1}{B},2.0,B,3,rare
+18,"Lluwen, Imperfect Naturalist",45.8,8985,0.0,15,4,1070,26.8,False,{B/G}{B/G},2.0,BG,1,rare
+19,"Taii Wakeen, Perfect Shot",45.6,8808,0.0,15,4,1063,26.6,False,{R}{W},2.0,RW,1,rare
+20,Zoyowa Lava-Tongue,44.7,7838,0.0,15,4,1028,25.7,False,{B}{R},2.0,BR,1,uncommon
+21,"Wylie Duke, Atiin Hero",44.2,7985,0.0,13,4,1090,27.2,False,{1}{G}{W},3.0,GW,1,rare
+22,Rufus Shinra,44.1,12943,0.0,13,4,1083,27.1,False,{1}{W}{B},3.0,BW,1,uncommon
+23,"Kambal, Profiteering Mayor",44.1,1181,0.0,13,4,1083,27.1,False,{1}{W}{B},3.0,BW,1,rare
+24,"Anim Pakal, Thousandth Moon",43.6,1110,0.0,13,4,1063,26.6,False,{1}{R}{W},3.0,RW,2,rare
+25,"Mabel, Heir to Cragflame",43.6,9078,0.0,13,4,1063,26.6,False,{1}{R}{W},3.0,RW,1,rare
+26,Bard the Bowman,43.5,14429,0.0,13,4,1062,26.6,False,{1}{W}{U},3.0,UW,4,uncommon
+27,"Ezrim, Agency Chief",43.5,14540,0.0,5,12,1062,26.6,False,{1}{W}{W}{U}{U},5.0,UW,1,rare
+28,"Zimone, All-Questioning",43.4,11762,0.0,13,4,1056,26.4,False,{1}{G}{U},3.0,GU,1,rare
+29,"Ant-Man, Colony Commander",43.4,16047,0.0,13,4,1056,26.4,False,{1}{G}{U},3.0,GU,3,uncommon
+30,Moon Girl and Devil Dinosaur,43.4,19997,0.0,13,4,1056,26.4,False,{1}{G}{U},3.0,GU,2,rare
+31,"Codie, Ravenous Codex",43.0,17098,0.0,13,0,2749,30.0,False,{3},3.0,BGRUW,1,rare
+32,"Choco, Seeker of Paradise",43.0,6164,0.0,9,4,1588,30.0,False,{1}{G}{W}{U},4.0,GUW,1,rare
+33,"Marchesa, Dealer of Death",43.0,11672,0.0,13,0,1512,30.0,False,{U}{B}{R},3.0,BRU,1,rare
+34,"Glarb, Calamity's Augur",43.0,3804,0.0,13,0,1567,30.0,False,{B}{G}{U},3.0,BGU,1,mythic
+35,"Winter, Misanthropic Guide",43.0,9689,0.0,9,4,1537,30.0,False,{1}{B}{R}{G},4.0,BGR,3,rare
+36,"Thanos, the Mad Titan",43.0,16359,0.0,13,0,2749,30.0,False,{R}{W}{B},3.0,BGRUW,3,mythic
+37,Ingris Stingerquill,42.7,12168,0.0,13,4,1028,25.7,False,{B}{R}{R},3.0,BR,3,mythic
+38,"Smaug, Wicked Worm",42.7,5752,0.0,5,12,1028,25.7,False,{3}{B}{R},5.0,BR,4,rare
+39,"Bullseye, Death Dealer",42.7,21650,0.0,13,4,1028,25.7,False,{2}{B/R},3.0,BR,2,uncommon
+40,"Totentanz, Swarm Piper",42.7,9351,0.0,13,4,1028,25.7,False,{1}{B}{R},3.0,BR,1,uncommon
+41,"Breeches, the Blastmaker",42.2,8328,0.0,13,4,1007,25.2,False,{1}{U}{R},3.0,RU,1,rare
+42,"Miriam, Herd Whisperer",42.2,12698,0.0,15,0,1090,27.2,False,{G}{W},2.0,GW,1,uncommon
+43,"Winter Soldier, Icy Assassin",42.1,20276,0.0,15,0,1083,27.1,False,{W}{B},2.0,BW,1,rare
+44,"Nick Fury, Agent of S.H.I.E.L.D.",42.0,14216,0.0,12,0,2749,30.0,False,{W},1.0,BGRUW,3,rare
+45,Thorin Oakenshield,41.6,8529,0.0,15,0,1063,26.6,False,{R}{W},2.0,RW,4,uncommon
+46,"Ash, Party Crasher",41.6,16189,0.0,15,0,1063,26.6,False,{R}{W},2.0,RW,1,uncommon
+47,"Dwalin, Weaponmaster",41.6,9530,0.0,15,0,1063,26.6,False,{1}{R/W},2.0,RW,4,rare
+48,"Nori, Teller of Tales",41.6,13216,0.0,15,0,1063,26.6,False,{1}{R/W},2.0,RW,4,common
+49,"Arabella, Abandoned Doll",41.6,2298,0.0,15,0,1063,26.6,False,{R}{W},2.0,RW,4,uncommon
+50,"Sygg, Wanderwine Wisdom // Sygg, Wanderbrine Shield",41.5,None,0.0,15,0,1062,26.6,False,,2.0,UW,1,rare
+51,"Doc Aurlock, Grizzled Genius",41.4,2536,0.0,15,0,1056,26.4,False,{G}{U},2.0,GU,2,uncommon
+52,"Magda, the Hoardmaster",41.1,2008,0.0,15,12,564,14.1,False,{1}{R},2.0,R,1,rare
+53,"Obyra, Dreaming Duelist",40.7,3435,0.0,15,0,1029,25.7,False,{U}{B},2.0,BU,2,uncommon
+54,"Vial Smasher, Gleeful Grenadier",40.7,10478,0.0,15,0,1028,25.7,False,{B}{R},2.0,BR,1,uncommon
+55,"Nashi, Searcher in the Dark",40.7,9412,0.0,15,0,1029,25.7,False,{U}{B},2.0,BU,2,rare
+56,Scientist Supreme of A.I.M.,40.7,16558,0.0,15,0,1029,25.7,False,{U}{B},2.0,BU,1,rare
+57,"Ruby, Daring Tracker",40.6,2164,0.0,15,0,1025,25.6,False,{R}{G},2.0,GR,5,uncommon
+58,"Itzquinth, Firstborn of Gishath",40.6,5963,0.0,15,0,1025,25.6,False,{R}{G},2.0,GR,2,uncommon
+59,"Agent 13, Sharon Carter",40.6,20191,0.0,13,12,625,15.6,False,{2}{W},3.0,W,1,uncommon
+60,"Ashling, Rekindled // Ashling, Rimebound",40.2,None,0.0,15,0,1007,25.2,False,,2.0,RU,1,rare
+61,Spider-Man 2099,40.2,7524,0.0,15,0,1007,25.2,False,{U}{R},2.0,RU,1,rare
+62,"Captain Storm, Cosmium Raider",40.2,6155,0.0,15,0,1007,25.2,False,{U}{R},2.0,RU,1,uncommon
+63,"Balmor, Battlemage Captain",40.2,2120,0.0,15,0,1007,25.2,False,{U}{R},2.0,RU,3,uncommon
+64,"Black Panther, Vanguard",40.2,21145,0.0,9,4,1090,27.2,False,{2}{G}{W},4.0,GW,4,uncommon
+65,"Karai, Future of the Foot",40.1,10453,0.0,13,0,1083,27.1,False,{1}{W}{B},3.0,BW,1,uncommon
+66,"Black Widow, Double Agent",40.1,18783,0.0,13,0,1083,27.1,False,{1}{W}{B},3.0,BW,2,uncommon
+67,"Victor, Valgavoth's Seneschal",40.1,5680,0.0,13,0,1083,27.1,False,{1}{W}{B},3.0,BW,2,rare
+68,"Koya, Death from Above",40.1,20299,0.0,13,0,1083,27.1,False,{2}{W},3.0,BW,4,uncommon
+69,"Cloak and Dagger, Entwined",40.1,19582,0.0,13,0,1083,27.1,False,{1}{W}{B},3.0,BW,1,rare
+70,"Tom, Bert, and William",39.8,10759,0.0,5,8,1070,26.8,False,{3}{B}{G},5.0,BG,3,rare
+71,The Chief Warg,39.8,16787,0.0,9,4,1070,26.8,False,{2}{B}{G},4.0,BG,4,uncommon
+72,Honest Rutstein,39.8,1852,0.0,13,0,1070,26.8,False,{1}{B}{G},3.0,BG,1,uncommon
+73,The Swarmweaver,39.8,6183,0.0,9,4,1070,26.8,False,{2}{B}{G},4.0,BG,2,rare
+74,"Lathril, Blade of the Elves",39.8,1994,0.0,9,4,1070,26.8,False,{2}{B}{G},4.0,BG,2,rare
+75,"Trystan, Callous Cultivator // Trystan, Penitent Culler",39.8,None,0.0,13,0,1070,26.8,False,,3.0,BG,1,rare
+76,"Pizza Face, Gastromancer",39.8,15671,0.0,5,8,1070,26.8,False,{3}{B}{G},5.0,BG,1,uncommon
+77,"Killmonger, Scourge of Wakanda",39.8,22543,0.0,9,4,1070,26.8,False,{2}{B}{G},4.0,BG,1,uncommon
+78,"Titania, Rugged Rumbler",39.8,27314,0.0,13,0,1070,26.8,False,{2}{B/G},3.0,BG,2,uncommon
+79,"Mabel, Valley Hero",39.6,22111,0.0,13,0,1063,26.6,False,{1}{R}{W},3.0,RW,2,uncommon
+80,"Kellan, the Fae-Blooded // Birthright Boon",39.6,None,0.0,13,0,1063,26.6,False,{2}{R} // {1}{W},3.0,RW,1,mythic
+81,Caparocti Sunborn,39.6,12575,0.0,9,4,1063,26.6,False,{2}{R}{W},4.0,RW,2,uncommon
+82,"Sami, Ship's Engineer",39.6,13029,0.0,9,4,1063,26.6,False,{2}{R}{W},4.0,RW,1,uncommon
+83,"Raph & Leo, Sibling Rivals",39.6,8544,0.0,13,0,1063,26.6,False,{1}{R/W}{R/W},3.0,RW,1,rare
+84,"Wraith, Vicious Vigilante",39.5,11594,0.0,13,0,1062,26.6,False,{1}{W}{U},3.0,UW,1,uncommon
+85,"Abuelo, Ancestral Echo",39.5,5916,0.0,13,0,1062,26.6,False,{1}{W}{U},3.0,UW,2,rare
+86,"Kykar, Zephyr Awakener",39.5,4169,0.0,9,4,1062,26.6,False,{2}{W}{U},4.0,UW,2,rare
+87,"Captain America, Living Legend",39.5,6925,0.0,13,0,1062,26.6,False,{1}{W}{U},3.0,UW,1,uncommon
+88,"Beast, Erudite Aerialist",39.4,22602,0.0,9,4,1056,26.4,False,{3}{G/U},4.0,GU,2,uncommon
+89,Absorbing Man,39.4,18273,0.0,13,0,1056,26.4,False,{1}{G}{U},3.0,GU,1,rare
+90,"Dori, Bearer of Friends",39.1,10187,0.0,13,12,564,14.1,False,{2}{R},3.0,R,4,common
+91,"Kotis, the Fangkeeper",39.0,5286,0.0,9,0,1567,30.0,False,{1}{B}{G}{U},4.0,BGU,1,rare
+92,"Thranduil, the Elvenking",39.0,10343,0.0,5,4,1567,30.0,False,{2}{B}{G}{U},5.0,BGU,4,rare
+93,"Eriette, the Beguiler",39.0,15129,0.0,9,0,1559,30.0,False,{1}{W}{U}{B},4.0,BUW,1,rare
+94,"Obeka, Splitter of Seconds",39.0,5924,0.0,9,0,1512,30.0,False,{1}{U}{B}{R},4.0,BRU,2,rare
+95,"Izoni, Center of the Web",38.8,12446,0.0,0,12,1070,26.8,False,{4}{B}{G},6.0,BG,2,rare
+96,"Carnage, Crimson Chaos",38.7,7066,0.0,9,4,1028,25.7,False,{2}{B}{R},4.0,BR,1,rare
+97,The Great Goblin,38.7,8936,0.0,13,0,1028,25.7,False,{1}{B/R}{B/R},3.0,BR,3,rare
+98,Bolg of the North,38.7,13395,0.0,5,8,1028,25.7,False,{3}{B}{R},5.0,BR,4,uncommon
+99,"Vren, the Relentless",38.7,5832,0.0,9,4,1029,25.7,False,{2}{U}{B},4.0,BU,1,rare
+100,The Infamous Cruelclaw,38.7,5436,0.0,13,0,1028,25.7,False,{1}{B}{R},3.0,BR,1,mythic
+101,"Talion, the Kindly Lord",38.7,1746,0.0,9,4,1029,25.7,False,{2}{U}{B},4.0,BU,1,mythic
+102,Laughing Jasper Flint,38.7,3821,0.0,13,0,1028,25.7,False,{1}{B}{R},3.0,BR,1,rare
+103,"Alesha, Who Laughs at Fate",38.7,1677,0.0,13,0,1028,25.7,False,{1}{B}{R},3.0,BR,4,rare
+104,"Garna, Bloodfist of Keld",38.7,3584,0.0,9,4,1028,25.7,False,{1}{B}{R}{R},4.0,BR,2,uncommon
+105,"Ares, God of War",38.7,10487,0.0,13,0,1028,25.7,False,{1}{B}{R},3.0,BR,1,rare
+106,"Kang, Temporal Tyrant",38.7,9546,0.0,9,4,1029,25.7,False,{2}{U}{B},4.0,BU,2,uncommon
+107,Madame Hydra,38.7,11385,0.0,9,4,1028,25.7,False,{2}{B}{R},4.0,BR,4,uncommon
+108,"Lita, Little Orphan Amphibian",38.6,8051,0.0,15,8,625,15.6,False,{1}{W},2.0,W,2,uncommon
+109,Belladonna Took,38.6,4078,0.0,15,8,625,15.6,False,{1}{W},2.0,W,2,rare
+110,The Queen of Dale,38.6,3180,0.0,15,8,625,15.6,False,{1}{W},2.0,W,4,mythic
+111,Uncle Iroh,38.6,8470,0.0,13,0,1025,25.6,False,{1}{R/G}{R/G},3.0,GR,1,uncommon
+112,"Saheeli, Jewel of Avishkar",38.2,16239,0.0,9,4,1007,25.2,False,{2}{U}{R},4.0,RU,1,uncommon
+113,"Spider-Ham, Peter Porker",38.2,5503,0.0,15,8,607,15.2,False,{1}{G},2.0,G,1,rare
+114,"Kraum, Violent Cacophony",38.2,9294,0.0,9,4,1007,25.2,False,{2}{U}{R},4.0,RU,1,uncommon
+115,"Iron Man, Master of Machines",38.2,11380,0.0,9,4,1007,25.2,False,{2}{U}{R},4.0,RU,3,uncommon
+116,"Speedball, New Warrior",38.2,22993,0.0,13,0,1007,25.2,False,{2}{U/R},3.0,RU,1,uncommon
+117,"Kitsa, Otterball Elite",37.4,2181,0.0,15,8,575,14.4,False,{1}{U},2.0,U,1,mythic
+118,"Sarkhan, Dragon Ascendant",37.1,7034,0.0,15,8,564,14.1,False,{1}{R},2.0,R,3,rare
+119,"Caradora, Heart of Alacria",36.2,11617,0.0,9,0,1090,27.2,False,{2}{G}{W},4.0,GW,1,rare
+120,"Rip, Spawn Hunter",36.2,10632,0.0,9,0,1090,27.2,False,{2}{G}{W},4.0,GW,1,rare
+121,"Haliya, Ascendant Cadet",36.2,9248,0.0,5,4,1090,27.2,False,{2}{G}{W}{W},5.0,GW,1,uncommon
+122,Rinoa Heartilly,36.2,14235,0.0,5,4,1090,27.2,False,{3}{G}{W},5.0,GW,1,uncommon
+123,"Syr Armont, the Redeemer",36.2,18144,0.0,5,4,1090,27.2,False,{3}{G}{W},5.0,GW,1,uncommon
+124,"Storm, Windrider",36.2,14448,0.0,9,0,1090,27.2,False,{1}{G}{W}{W},4.0,GW,2,rare
+125,"Neva, Stalked by Nightmares",36.1,10252,0.0,9,0,1083,27.1,False,{2}{W}{B},4.0,BW,2,uncommon
+126,"Elenda, Saint of Dusk",36.1,4849,0.0,9,0,1083,27.1,False,{2}{W}{B},4.0,BW,3,rare
+127,"Azula, On the Hunt",36.0,8817,0.0,9,12,601,15.0,False,{3}{B},4.0,B,1,uncommon
+128,Agent Venom,36.0,5958,0.0,13,8,601,15.0,False,{2}{B},3.0,B,1,rare
+129,"Azog, Moria's Ruin",36.0,10635,0.0,13,8,601,15.0,False,{2}{B},3.0,B,4,rare
+130,"Ygra, Eater of All",35.8,2755,0.0,5,4,1070,26.8,False,{3}{B}{G},5.0,BG,1,mythic
+131,Bre of Clan Stoutarm,35.6,7806,0.0,9,0,1063,26.6,False,{2}{R}{W},4.0,RW,1,rare
+132,"Old Hob, Alleycat Blues",35.6,23835,0.0,5,4,1063,26.6,False,{4}{R},5.0,RW,2,uncommon
+133,"Aurelia, the Law Above",35.6,1797,0.0,5,4,1063,26.6,False,{3}{R}{W},5.0,RW,2,rare
+134,"Momo, Playful Pet",35.6,8653,0.0,12,8,625,15.6,False,{W},1.0,W,1,uncommon
+135,Thor Odinson,35.6,14802,0.0,5,4,1063,26.6,False,{3}{R}{W},5.0,RW,3,uncommon
+136,"Sun-Spider, Nimble Webber",35.5,11521,0.0,9,0,1062,26.6,False,{3}{W/U},4.0,UW,1,uncommon
+137,"Spider-Woman, Secret Agent",35.5,19325,0.0,9,0,1062,26.6,False,{3}{W/U},4.0,UW,3,uncommon
+138,"Lyra, Tolarian Archangel",35.4,17194,0.0,13,8,575,14.4,False,{1}{U}{U},3.0,U,1,rare
+139,"Arni, Humble Scribe",35.4,22409,0.0,13,8,575,14.4,False,{2}{U},3.0,U,1,uncommon
+140,"Thranduil, Sindarin Liege // Silvan Rally",35.4,None,0.0,9,0,1056,26.4,False,{2}{G/U}{G/U} // {1}{G/U}{G/U},4.0,GU,4,uncommon
+141,"Bristly Bill, Spine Sower",35.4,918,1.2,15,4,607,15.2,False,{1}{G},2.0,G,2,mythic
+142,"Kiora, the Rising Tide",35.4,3552,0.0,13,8,575,14.4,False,{2}{U},3.0,U,2,rare
+143,"Zimone, Paradox Sculptor",35.4,3161,0.0,9,0,1056,26.4,False,{2}{G}{U},4.0,GU,2,mythic
+144,"Venus, Torn Between Worlds",35.4,16098,0.0,5,4,1056,26.4,False,{4}{G},5.0,GU,1,uncommon
+145,"Mikey & Don, Party Planners",35.4,11591,0.0,9,0,1056,26.4,False,{2}{G/U}{G/U},4.0,GU,1,rare
+146,Kwia Vigorbloom,35.2,12359,0.0,0,8,1090,27.2,False,{3}{G}{W}{W},6.0,GW,2,mythic
+147,"Breeches, Eager Pillager",35.1,3220,0.0,13,8,564,14.1,False,{2}{R},3.0,R,1,rare
+148,"Teval, Arbiter of Virtue",35.0,10959,0.0,5,0,1567,30.0,False,{2}{B}{G}{U},5.0,BGU,1,mythic
+149,"Aang, at the Crossroads // Aang, Destined Savior",35.0,None,0.0,5,0,1588,30.0,False,,5.0,GUW,1,rare
+150,"Judith, Carnage Connoisseur",34.7,5023,0.0,5,4,1028,25.7,False,{3}{B}{R},5.0,BR,1,rare
+151,Kíli the Resourceful,34.6,6562,0.0,15,4,625,15.6,False,{1}{W},2.0,W,4,rare
+152,"Anzrag, the Quake-Mole",34.6,2699,0.0,9,0,1025,25.6,False,{2}{R}{G},4.0,GR,1,mythic
+153,"Halana and Alena, Partners",34.6,2025,0.0,9,0,1025,25.6,False,{2}{R}{G},4.0,GR,1,rare
+154,Spectacular Spider-Man,34.6,3067,0.0,15,4,625,15.6,False,{1}{W},2.0,W,1,rare
+155,"Abomination, Terrifying Titan",34.6,18949,0.0,9,0,1025,25.6,False,{3}{R/G},4.0,GR,2,uncommon
+156,"Wolverine, Fierce Fighter",34.6,15065,0.0,9,0,1025,25.6,False,{2}{R}{G},4.0,GR,1,rare
+157,"Bard, King of Dale",34.5,7117,0.0,0,8,1062,26.6,False,{4}{W}{U},6.0,UW,4,mythic
+158,"Bonny Pall, Clearcutter",34.4,3559,0.0,0,8,1056,26.4,False,{3}{G}{U}{U},6.0,GU,2,rare
+159,Metalhead,34.2,22555,0.0,5,4,1007,25.2,False,{4}{U},5.0,RU,2,uncommon
+160,"Johann, Apprentice Sorcerer",34.2,12893,0.0,9,0,1007,25.2,False,{2}{U}{R},4.0,RU,2,uncommon
+161,"Alania, Divergent Storm",34.2,4068,0.0,5,4,1007,25.2,False,{3}{U}{R},5.0,RU,1,rare
+162,Tifa Lockhart,34.2,2635,0.0,15,4,607,15.2,False,{1}{G},2.0,G,4,rare
+163,"Marwyn, the Clearcutter",34.1,23739,0.0,12,8,564,14.1,False,{R},1.0,R,4,uncommon
+164,"Karn, Gilded Guardian",34.0,21432,0.0,0,4,2749,30.0,False,{2/W}{2/U}{2/B}{2/R}{2/G},10.0,BGRUW,1,rare
+165,Gollum the Abandoned,34.0,19927,0.0,15,4,601,15.0,False,{1}{B},2.0,B,4,uncommon
+166,"Gollum, Riddle Master",34.0,15407,0.0,15,4,601,15.0,False,{1}{B},2.0,B,4,mythic
+167,"Proft, Consulting Detective",33.4,21457,0.0,15,4,575,14.4,False,{1}{U},2.0,U,3,uncommon
+168,"Fblthp, Impossibly Lost",33.4,15625,0.0,15,4,575,14.4,False,{1}{U},2.0,U,2,uncommon
+169,"Loki, God of Mischief",33.4,8252,0.0,15,4,575,14.4,False,{1}{U},2.0,U,2,rare
+170,"Tomik, Izzet Sparkmage",33.1,13522,0.0,15,4,564,14.1,False,{1}{R},2.0,R,2,uncommon
+171,Óin the Brave,33.1,11210,0.0,15,4,564,14.1,False,{1}{R},2.0,R,4,common
+172,"Hawkeye, Master Marksman",33.1,15077,0.0,15,4,564,14.1,False,{1}{R},2.0,R,4,rare
+173,"Misty Knight, Hero for Hire",33.1,14466,0.0,15,4,564,14.1,False,{1}{R},2.0,R,1,uncommon
+174,Koth of the Homestead,32.6,19279,0.0,13,4,625,15.6,False,{2}{W},3.0,W,4,uncommon
+175,"Danitha, Sword of Hope",32.6,20163,0.0,13,4,625,15.6,False,{2}{W},3.0,W,4,uncommon
+176,"Anafenza, Unyielding Lineage",32.6,7685,0.0,13,4,625,15.6,False,{2}{W},3.0,W,2,rare
+177,"Toby, Beastie Befriender",32.6,4990,0.0,13,4,625,15.6,False,{2}{W},3.0,W,4,rare
+178,"Arahbo, the First Fang",32.6,3681,0.0,13,4,625,15.6,False,{2}{W},3.0,W,1,rare
+179,"Etali, Primal Storm",32.5,281,18.4,0,0,564,14.1,False,{4}{R}{R},6.0,R,3,rare
+180,"Surrak, Elusive Hunter",32.2,7196,0.0,13,4,607,15.2,False,{2}{G},3.0,G,1,rare
+181,"Loot, the Anomaly",32.0,23273,0.0,13,4,601,15.0,False,{2}{B},3.0,B,4,uncommon
+182,"Winter, Tormented Loner",32.0,20235,0.0,13,4,601,15.0,False,{2}{B},3.0,B,4,uncommon
+183,Gaius van Baelsar,32.0,5749,0.0,9,8,601,15.0,False,{2}{B}{B},4.0,B,4,uncommon
+184,The Master of Lake-town,32.0,8453,0.0,13,4,601,15.0,False,{1}{B}{B},3.0,B,3,rare
+185,"Arnim Zola, Bio-Fanatic",32.0,19848,0.0,13,4,601,15.0,False,{2}{B},3.0,B,4,uncommon
+186,"Kaervek, the Punisher",32.0,6596,0.0,13,4,601,15.0,False,{1}{B}{B},3.0,B,1,rare
+187,"Baron Strucker, HYDRA Overlord",32.0,7834,0.0,13,4,601,15.0,False,{2}{B},3.0,B,2,uncommon
+188,"Ronin, Shadow Stalker",32.0,19846,0.0,13,4,601,15.0,False,{2}{B},3.0,B,1,uncommon
+189,"Hapatra, the Desert Fang",31.8,24006,0.0,5,0,1070,26.8,False,{2}{B}{B}{G},5.0,BG,1,uncommon
+190,"Cloud, Planet's Champion",31.6,7009,0.0,5,0,1063,26.6,False,{3}{R}{W},5.0,RW,1,mythic
+191,Zack Fair,31.6,2620,0.0,12,4,625,15.6,False,{W},1.0,W,1,uncommon
+192,"Jet, Freedom Fighter",31.6,16921,0.0,5,0,1063,26.6,False,{2}{R/W}{R/W}{R/W},5.0,RW,1,uncommon
+193,Agent Maria Hill,31.6,23477,0.0,12,4,625,15.6,False,{W},1.0,W,2,uncommon
+194,Namor the Sub-Mariner,31.4,10811,0.0,13,4,575,14.4,False,{1}{U}{U},3.0,U,2,mythic
+195,"Elrond, Moon-Reader",31.4,10163,0.0,13,4,575,14.4,False,{2}{U},3.0,U,4,mythic
+196,"Iron Lad, Diverging Destiny",31.4,11212,0.0,13,4,575,14.4,False,{2}{U},3.0,U,3,uncommon
+197,"Justice, Vance Astrovik",31.4,22351,0.0,13,4,575,14.4,False,{2}{U},3.0,U,1,uncommon
+198,"Mister Fantastic, Reed Richards",31.4,5390,0.0,9,8,575,14.4,False,{3}{U},4.0,U,4,uncommon
+199,"Ms. Marvel, Kamala Khan",31.4,14792,0.0,13,4,575,14.4,False,{2}{U},3.0,U,1,rare
+200,"Pia, Determined Rebuilder",31.1,23391,0.0,13,4,564,14.1,False,{2}{R},3.0,R,4,uncommon
+201,"Koth, the Geomancer",31.1,14135,0.0,13,4,564,14.1,False,{2}{R},3.0,R,3,uncommon
+202,Dáin Ironfoot,31.1,9492,0.0,13,4,564,14.1,False,{2}{R},3.0,R,4,rare
+203,Smaug the Magnificent,31.1,3417,0.0,9,8,564,14.1,False,{2}{R}{R},4.0,R,4,mythic
+204,"Human Torch, Johnny Storm",31.1,12690,0.0,13,4,564,14.1,False,{2}{R},3.0,R,2,uncommon
+205,Tersa Lightshatter,31.1,6159,0.0,13,4,564,14.1,False,{2}{R},3.0,R,1,rare
+206,"Delney, Streetwise Lookout",30.9,853,2.3,13,0,625,15.6,False,{2}{W},3.0,W,2,mythic
+207,"Uchbenbak, the Great Mistake",30.7,16971,0.0,5,0,1029,25.7,False,{3}{U}{B},5.0,BU,1,uncommon
+208,"Leonardo, Cutting Edge",30.6,9057,0.0,15,0,625,15.6,False,{1}{W},2.0,W,2,rare
+209,"Tomik, Orzhov Lawmage",30.6,15911,0.0,15,0,625,15.6,False,{1}{W},2.0,W,4,uncommon
+210,"Hulk, Gamma Goliath",30.6,16266,0.0,5,0,1025,25.6,False,{3}{R}{G},5.0,GR,3,uncommon
+211,"Teyo, Lightshield Expert",30.6,18870,0.0,15,0,625,15.6,False,{1}{W},2.0,W,1,uncommon
+212,"Cloud, Midgar Mercenary",30.6,1557,0.0,15,0,625,15.6,False,{W}{W},2.0,W,2,mythic
+213,"Dáin, Lord of the Iron Hills",30.6,8579,0.0,15,0,625,15.6,False,{1}{W},2.0,W,2,uncommon
+214,"Giada, Font of Hope",30.6,1618,0.0,15,0,625,15.6,False,{1}{W},2.0,W,3,rare
+215,Adelbert Steiner,30.6,6680,0.0,15,0,625,15.6,False,{1}{W},2.0,W,1,uncommon
+216,"Flash Thompson, Spider-Fan",30.6,11654,0.0,15,0,625,15.6,False,{1}{W},2.0,W,1,uncommon
+217,"Rhys, the Evermore",30.6,11184,0.0,15,0,625,15.6,False,{1}{W},2.0,W,1,rare
+218,Agent Phil Coulson,30.6,10416,0.0,15,0,625,15.6,False,{1}{W},2.0,W,2,rare
+219,"Night Nurse, Healer of Heroes",30.6,15003,0.0,15,0,625,15.6,False,{1}{W},2.0,W,1,uncommon
+220,"Patriot, Shield Wielder",30.6,17737,0.0,15,0,625,15.6,False,{1}{W},2.0,W,2,uncommon
+221,"Quandrix, the Proof",30.4,7039,0.0,0,4,1056,26.4,False,{4}{G}{U},6.0,GU,2,mythic
+222,"Koma, World-Eater",30.4,2113,0.0,0,4,1056,26.4,False,{3}{G}{G}{U}{U},7.0,GU,1,rare
+223,Prime Speaker Zegana,30.4,2862,0.0,0,4,1056,26.4,False,{2}{G}{G}{U}{U},6.0,GU,1,rare
+224,Kid Loki,30.4,9601,0.0,12,4,575,14.4,False,{U},1.0,U,1,uncommon
+225,"Loot, Exuberant Explorer",30.3,865,2.1,13,0,607,15.2,False,{2}{G},3.0,G,2,rare
+226,"Fblthp, Knows the Way",30.2,24020,0.0,15,0,607,15.2,False,{X}{G}{G},2.0,G,3,uncommon
+227,"Yoshimaru, Scrappy Stray",30.2,23583,0.0,15,0,607,15.2,False,{1}{G},2.0,G,1,uncommon
+228,"Marwyn, the Preserver",30.2,16264,0.0,15,0,607,15.2,False,{1}{G},2.0,G,4,uncommon
+229,"Melek, Reforged Researcher",30.2,12745,0.0,5,0,1007,25.2,False,{3}{U}{R},5.0,RU,1,mythic
+230,"Hellcat, Undying Vigilante",30.2,22359,0.0,15,0,607,15.2,False,{G}{G},2.0,G,1,uncommon
+231,"Shang-Chi, Master of Kung Fu",30.2,4736,0.0,15,0,607,15.2,False,{1}{G},2.0,G,2,mythic
+232,"Tigra, Feline Fury",30.2,17088,0.0,15,0,607,15.2,False,{1}{G},2.0,G,1,uncommon
+233,"Gallia, Tragic Host",30.0,30076,0.0,15,0,601,15.0,False,{1}{B},2.0,B,4,uncommon
+234,Liliana the Repentant,30.0,12403,0.0,15,0,601,15.0,False,{1}{B},2.0,B,1,rare
+235,"Vadmir, New Blood",30.0,8710,0.0,15,0,601,15.0,False,{1}{B},2.0,B,1,rare
+236,"Tinybones, Bauble Burglar",30.0,2585,0.0,15,0,601,15.0,False,{1}{B},2.0,B,1,rare
+237,"Zul Ashur, Lich Lord",30.0,2492,0.0,15,0,601,15.0,False,{1}{B},2.0,B,1,rare
+238,"Muldrotha, the Gravetide",30.0,1101,0.0,0,0,1567,30.0,False,{3}{B}{G}{U},6.0,BGU,1,mythic
+239,"Yellowjacket, Heartless Marauder",30.0,20614,0.0,15,0,601,15.0,False,{1}{B},2.0,B,1,uncommon
+240,Uldaros Theorix,29.7,15107,0.0,0,4,1029,25.7,False,{3}{U}{B}{B},6.0,BU,1,mythic
+241,"Aurelia, the Warleader",29.5,816,3.0,0,0,1063,26.6,False,{2}{R}{R}{W}{W},6.0,RW,1,mythic
+242,Geist of Saint Thalia,29.4,6248,0.0,15,0,575,14.4,False,{1}{U},2.0,U,4,uncommon
+243,"Samut, Tyrant of Naktamun",29.4,8534,0.0,15,0,575,14.4,False,{1}{U},2.0,U,2,rare
+244,The Wondrous Wasp,29.4,12655,0.0,15,0,575,14.4,False,{1}{U},2.0,U,1,rare
+245,"Tetsuko Umezawa, Fugitive",29.4,1663,0.0,15,0,575,14.4,False,{1}{U},2.0,U,2,uncommon
+246,"Taigam, Master Opportunist",29.4,4794,0.0,15,0,575,14.4,False,{1}{U},2.0,U,1,mythic
+247,"Bilbo, Thief in the Night",29.4,9216,0.0,15,0,575,14.4,False,{1}{U},2.0,U,4,mythic
+248,"Caelorna, Coral Tyrant",29.4,10127,0.0,15,0,575,14.4,False,{1}{U},2.0,U,1,uncommon
+249,"Bilbo, Luckwearer // Burglar's Plot",29.4,None,0.0,15,0,575,14.4,False,{1}{U} // {4}{U},2.0,U,4,uncommon
+250,"Shuri, Wakandan Inventor",29.4,5673,0.0,15,0,575,14.4,False,{1}{U},2.0,U,3,uncommon
+251,"Niv-Mizzet, Visionary",29.2,2169,0.0,0,4,1007,25.2,False,{4}{U}{R},6.0,RU,1,mythic
+252,"Ovika, Enigma Goliath",29.2,3343,0.0,0,4,1007,25.2,False,{5}{U}{R},7.0,RU,1,rare
+253,"Speed, Young Avenger",29.1,18492,0.0,15,0,564,14.1,False,{1}{R},2.0,R,3,uncommon
+254,"Samut, Hazoret's Champion",29.1,7865,0.0,15,0,564,14.1,False,{1}{R},2.0,R,1,rare
+255,"Gallia, the Merrymaker",29.1,23111,0.0,15,0,564,14.1,False,{1}{R},2.0,R,4,uncommon
+256,"Raphael, Tough Turtle",29.1,10748,0.0,15,0,564,14.1,False,{1}{R},2.0,R,1,common
+257,Loki Laufeyson,29.1,15446,0.0,15,0,564,14.1,False,{1}{R},2.0,R,1,uncommon
+258,"Yoshimaru, Beloved Companion",28.6,15130,0.0,13,0,625,15.6,False,{2}{W},3.0,W,3,uncommon
+259,"Rescue Girl, First Responder",28.6,23361,0.0,13,0,625,15.6,False,{2}{W},3.0,W,4,uncommon
+260,"Lyra, Archangel of Dawn",28.6,13952,0.0,13,0,625,15.6,False,{2}{W},3.0,W,2,rare
+261,Spider-UK,28.6,9037,0.0,9,4,625,15.6,False,{3}{W},4.0,W,1,uncommon
+262,Fíli the Pathfinder,28.6,9756,0.0,9,4,625,15.6,False,{3}{W},4.0,W,4,rare
+263,"Ori, Keeper of Songs",28.6,15354,0.0,13,0,625,15.6,False,{2}{W},3.0,W,4,common
+264,"Captain America, Wings of Freedom",28.6,11721,0.0,13,0,625,15.6,False,{2}{W},3.0,W,4,rare
+265,"Fortune, Loyal Steed",28.6,8138,0.0,13,0,625,15.6,False,{2}{W},3.0,W,1,rare
+266,Aerith Gainsborough,28.6,2073,0.0,13,0,625,15.6,False,{2}{W},3.0,W,1,rare
+267,"Silver Sable, Mercenary Leader",28.6,11000,0.0,13,0,625,15.6,False,{2}{W},3.0,W,1,uncommon
+268,"Captain America, Super-Soldier",28.6,10379,0.0,13,0,625,15.6,False,{1}{W}{W},3.0,W,4,mythic
+269,"Okoye, Dora Milaje Leader",28.6,17396,0.0,9,4,625,15.6,False,{3}{W},4.0,W,1,uncommon
+270,"Quake, Agent of S.H.I.E.L.D.",28.6,18814,0.0,13,0,625,15.6,False,{2}{W},3.0,W,1,uncommon
+271,"Red Guardian, Super-Soldier",28.6,22734,0.0,13,0,625,15.6,False,{2}{W},3.0,W,2,uncommon
+272,"The Sentry, Golden Guardian",28.6,9794,0.0,9,4,625,15.6,False,{3}{W},4.0,W,2,rare
+273,"Loot, the Nexus",28.2,17416,0.0,13,0,607,15.2,False,{2}{G},3.0,G,4,uncommon
+274,"Pia, Aether Ascetic",28.2,9320,0.0,13,0,607,15.2,False,{2}{G},3.0,G,2,uncommon
+275,"Jiang Yanggu, Never Alone",28.2,18120,0.0,9,4,607,15.2,False,{3}{G},4.0,G,1,uncommon
+276,"Tyvar, the Pummeler",28.2,3002,0.0,13,0,607,15.2,False,{1}{G}{G},3.0,G,4,mythic
+277,"Michelangelo, Game Master",28.2,17531,0.0,13,0,607,15.2,False,{2}{G},3.0,G,1,common
+278,"Hercules, Prince of Power",28.2,23492,0.0,13,0,607,15.2,False,{2}{G},3.0,G,3,uncommon
+279,"Hulkling, Burgeoning Bruiser",28.2,21859,0.0,13,0,607,15.2,False,{2}{G},3.0,G,3,uncommon
+280,Ka-Zar of the Savage Land,28.2,14909,0.0,5,8,607,15.2,False,{4}{G},5.0,G,2,uncommon
+281,The Unbeatable Squirrel Girl,28.2,6007,0.0,9,4,607,15.2,False,{1}{G}{G}{G},4.0,G,1,rare
+282,"Danitha, Spear of Agony",28.0,28336,0.0,13,0,601,15.0,False,{2}{B},3.0,B,4,uncommon
+283,"Proft, Sinister Mastermind",28.0,27208,0.0,13,0,601,15.0,False,{2}{B},3.0,B,1,uncommon
+284,"Tinybones, Pocket Nuisance",28.0,14445,0.0,13,0,601,15.0,False,{2}{B},3.0,B,2,uncommon
+285,Gideon the Oathless,28.0,19502,0.0,13,0,601,15.0,False,{2}{B},3.0,B,1,rare
+286,"Scorpion, Seething Striker",28.0,11261,0.0,9,4,601,15.0,False,{3}{B},4.0,B,1,uncommon
+287,"Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel",28.0,None,0.0,13,0,601,15.0,False,,3.0,B,1,mythic
+288,"Swarm, Being of Bees",28.0,12468,0.0,13,0,601,15.0,False,{2}{B},3.0,B,1,common
+289,"Tombstone, Career Criminal",28.0,6321,0.0,13,0,601,15.0,False,{2}{B},3.0,B,1,uncommon
+290,"Arnyn, Deathbloom Botanist",28.0,7629,0.0,13,0,601,15.0,False,{2}{B},3.0,B,1,uncommon
+291,Baron Helmut Zemo,28.0,11868,0.0,13,0,601,15.0,False,{B}{B}{B},3.0,B,1,rare
+292,Madame Masque,28.0,15081,0.0,5,8,601,15.0,False,{4}{B},5.0,B,3,uncommon
+293,Liliana the Faultless,27.6,7534,0.0,12,0,625,15.6,False,{W},1.0,W,2,rare
+294,"Bofur, Reliable Guardian // Concerted Care",27.6,None,0.0,12,0,625,15.6,False,{W} // {1}{W},1.0,W,4,uncommon
+295,"Momo, Friendly Flier",27.6,7106,0.0,12,0,625,15.6,False,{W},1.0,W,1,rare
+296,Aunt May,27.6,4927,0.0,12,0,625,15.6,False,{W},1.0,W,1,uncommon
+297,"Traxos, Academy Guardian",27.4,22787,0.0,9,4,575,14.4,False,{3}{U},4.0,U,3,uncommon
+298,"Mysterio, Master of Illusion",27.4,10998,0.0,9,4,575,14.4,False,{3}{U},4.0,U,1,rare
+299,Quistis Trepe,27.4,8987,0.0,13,0,575,14.4,False,{2}{U},3.0,U,1,uncommon
+300,"Bilbo Baggins, Burglar // Take a Glance",27.4,None,0.0,13,0,575,14.4,False,{2}{U} // {U},3.0,U,4,common
+301,The Mindskinner,27.4,2173,0.0,13,0,575,14.4,False,{U}{U}{U},3.0,U,2,rare
+302,"Attuma, Atlantean Warlord",27.4,11409,0.0,9,4,575,14.4,False,{2}{U}{U},4.0,U,4,uncommon
+303,"Reptil, Dinomorpher",27.2,24738,0.0,12,0,607,15.2,False,{G},1.0,G,3,uncommon
+304,"Rick Jones, Destined Sidekick",27.2,26098,0.0,12,0,607,15.2,False,{G},1.0,G,2,uncommon
+305,"Tetsuko Umezawa, Pursuer",27.1,27213,0.0,9,4,564,14.1,False,{3}{R},4.0,R,4,uncommon
+306,"Gandalf, Goblins' Bane // Flameshape",27.1,None,0.0,13,0,564,14.1,False,{2}{R} // {1}{R},3.0,R,4,mythic
+307,"Bombur, Gentle Dreamer",27.1,14143,0.0,13,0,564,14.1,False,{2}{R},3.0,R,4,uncommon
+308,"Goddric, Cloaked Reveler",27.1,18508,0.0,13,0,564,14.1,False,{1}{R}{R},3.0,R,1,rare
+309,"Krenko, Mob Boss",27.1,1088,0.0,9,4,564,14.1,False,{2}{R}{R},4.0,R,1,rare
+310,"Iron Fist, Living Weapon",27.1,20798,0.0,13,0,564,14.1,False,{2}{R},3.0,R,2,uncommon
+311,The Scarlet Witch,27.1,10282,0.0,13,0,564,14.1,False,{2}{R},3.0,R,1,rare
+312,"Mabel, Bitter Recluse",27.0,25222,0.0,12,0,601,15.0,False,{B},1.0,B,1,uncommon
+313,"Tinybones, the Pickpocket",27.0,2559,0.0,12,0,601,15.0,False,{B},1.0,B,1,mythic
+314,"Whiplash, Vengeful Engineer",27.0,18828,0.0,12,0,601,15.0,False,{B},1.0,B,1,uncommon
+315,"Bifur, Melodic Rider",26.6,9871,0.0,0,0,1063,26.6,False,{4}{R/W}{R/W},6.0,RW,4,uncommon
+316,"Ghalta, Primal Hunger",26.5,458,11.3,0,0,607,15.2,False,{10}{G}{G},12.0,G,2,rare
+317,"Yuriko, Hope from the Shadows",26.4,20162,0.0,12,0,575,14.4,False,{U},1.0,U,3,uncommon
+318,"Stature, Size Shifter",26.4,18918,0.0,12,0,575,14.4,False,{U},1.0,U,2,uncommon
+319,Freya Crescent,26.1,4625,0.0,12,0,564,14.1,False,{R},1.0,R,1,uncommon
+320,"Norin, Swift Survivalist",26.1,10151,0.0,12,0,564,14.1,False,{R},1.0,R,1,uncommon
+321,"Kellan, Planar Trailblazer",26.1,12458,0.0,12,0,564,14.1,False,{R},1.0,R,1,rare
+322,"Quicksilver, Brash Blur",26.1,14527,0.0,12,0,564,14.1,False,{R},1.0,R,2,rare
+323,"Vulture, Scheming Scavenger",25.7,14095,0.0,0,0,1029,25.7,False,{5}{U/B},6.0,BU,1,uncommon
+324,Zaffai and the Tempests,25.2,12095,0.0,0,0,1007,25.2,False,{5}{U}{R},7.0,RU,4,rare
+325,"Thalia, the Survivor",24.6,17627,0.0,9,0,625,15.6,False,{3}{W},4.0,W,2,uncommon
+326,G'raha Tia,24.6,12212,0.0,5,4,625,15.6,False,{4}{W},5.0,W,1,uncommon
+327,"Saheeli, Consul of Oversight",24.6,20309,0.0,5,4,625,15.6,False,{3}{W}{W},5.0,W,4,uncommon
+328,"Yuriko, Blade of the Mighty",24.6,19512,0.0,9,0,625,15.6,False,{3}{W},4.0,W,1,uncommon
+329,"Aang, the Last Airbender",24.6,5999,0.0,9,0,625,15.6,False,{3}{W},4.0,W,1,uncommon
+330,"White Widow, Free Agent",24.6,17994,0.0,9,0,625,15.6,False,{3}{W},4.0,W,2,uncommon
+331,"Invisible Woman, Sue Storm",24.6,12051,0.0,5,4,625,15.6,False,{4}{W},5.0,W,1,uncommon
+332,"Luke Cage, Power Man",24.6,21491,0.0,9,0,625,15.6,False,{3}{W},4.0,W,3,uncommon
+333,"Titanbones, Towering Heart",24.2,19886,0.0,9,0,607,15.2,False,{3}{G},4.0,G,3,uncommon
+334,The Notary Hobbits,24.2,10295,0.0,5,4,607,15.2,False,{3}{G}{G},5.0,G,2,rare
+335,Radagast of Rhosgobel,24.2,4241,0.0,9,0,607,15.2,False,{2}{G}{G},4.0,G,4,rare
+336,Beorn the Fierce,24.2,7956,0.0,5,4,607,15.2,False,{3}{G}{G},5.0,G,4,mythic
+337,"Galion, Elvenking's Butler",24.2,20558,0.0,9,0,607,15.2,False,{2}{G}{G},4.0,G,4,uncommon
+338,"Michelangelo, Improviser",24.2,10495,0.0,9,0,607,15.2,False,{3}{G},4.0,G,1,mythic
+339,"Kona, Rescue Beastie",24.2,2461,0.0,9,0,607,15.2,False,{3}{G},4.0,G,1,rare
+340,"Dwynen, Gilt-Leaf Daen",24.2,2639,0.0,9,0,607,15.2,False,{2}{G}{G},4.0,G,2,uncommon
+341,"Lizard, Connors's Curse",24.2,10490,0.0,9,0,607,15.2,False,{2}{G}{G},4.0,G,1,rare
+342,"She-Hulk, Jade Defender",24.2,16480,0.0,9,0,607,15.2,False,{3}{G},4.0,G,3,uncommon
+343,"Crossbones, Malicious Mercenary",24.0,14385,0.0,9,0,601,15.0,False,{3}{B},4.0,B,2,uncommon
+344,"Teyo, Diamondblade Mage",24.0,27745,0.0,9,0,601,15.0,False,{3}{B},4.0,B,4,uncommon
+345,"Grim Reaper, Lethal Legionnaire",24.0,19471,0.0,9,0,601,15.0,False,{3}{B},4.0,B,2,uncommon
+346,"Jecht, Reluctant Guardian // Braska's Final Aeon",24.0,None,0.0,9,0,601,15.0,False,,4.0,B,1,rare
+347,"Gollum, Silent Slinker // Meager Meal",24.0,None,0.0,9,0,601,15.0,False,{3}{B} // {B},4.0,B,4,common
+348,"Elektra, Daughter of the Hand",24.0,15805,0.0,9,0,601,15.0,False,{2}{B}{B},4.0,B,1,rare
+349,M.O.D.O.K.,24.0,7782,0.0,5,4,601,15.0,False,{3}{B}{B},5.0,B,3,mythic
+350,"Moonstone, Harsh Mistress",24.0,10877,0.0,9,0,601,15.0,False,{3}{B},4.0,B,3,uncommon
+351,"Hapatra, the Desert Frost",23.4,22743,0.0,9,0,575,14.4,False,{3}{U},4.0,U,4,uncommon
+352,"Orysa, Tide Choreographer",23.4,18130,0.0,5,4,575,14.4,False,{4}{U},5.0,U,1,uncommon
+353,"Wiccan, Rising Magician",23.4,16848,0.0,5,4,575,14.4,False,{4}{U},5.0,U,2,uncommon
+354,"Gandalf, Wandering Wizard",23.4,21402,0.0,5,4,575,14.4,False,{4}{U},5.0,U,4,common
+355,"Chameleon, Master of Disguise",23.4,1722,0.0,9,0,575,14.4,False,{3}{U},4.0,U,2,uncommon
+356,"Falcon, Winged Wonder",23.4,24249,0.0,5,4,575,14.4,False,{4}{U},5.0,U,3,uncommon
+357,Kang the Conqueror,23.4,17346,0.0,9,0,575,14.4,False,{2}{U}{U},4.0,U,1,mythic
+358,"General Traag, Heart of Stone",23.1,25875,0.0,5,4,564,14.1,False,{3}{R}{R},5.0,R,3,uncommon
+359,"Jiang Yanggu, Alone",23.1,23536,0.0,5,4,564,14.1,False,{4}{R},5.0,R,4,uncommon
+360,"Arni, Renowned Champion",23.1,26791,0.0,9,0,564,14.1,False,{3}{R},4.0,R,3,uncommon
+361,"Tannuk, Steadfast Second",23.1,4560,0.0,9,0,564,14.1,False,{2}{R}{R},4.0,R,2,mythic
+362,"Balin, Loremaster",23.1,10456,0.0,5,4,564,14.1,False,{3}{R}{R},5.0,R,3,rare
+363,Glóin the Mighty // Easy Pickings,23.1,None,0.0,9,0,564,14.1,False,{3}{R} // {2}{R},4.0,R,3,uncommon
+364,"Thorin, Mountain-king",23.1,9564,0.0,9,0,564,14.1,False,{3}{R},4.0,R,4,mythic
+365,"Imodane, the Pyrohammer",23.1,8271,0.0,9,0,564,14.1,False,{2}{R}{R},4.0,R,1,rare
+366,Fin Fang Foom,23.1,19925,0.0,9,0,564,14.1,False,{2}{R}{R},4.0,R,1,rare
+367,"Hawkeye, Young Avenger",23.1,8556,0.0,9,0,564,14.1,False,{3}{R},4.0,R,1,uncommon
+368,Doctor Doom,23.0,9812,0.0,0,8,601,15.0,False,{4}{B}{B},6.0,B,1,mythic
+369,"Ruric Thar, Biomagus",22.4,23643,0.0,0,8,575,14.4,False,{4}{U}{U},6.0,U,2,uncommon
+370,"Ultron, Artificial Malevolence",21.6,4388,0.0,13,4,185,4.6,False,{3},3.0,C,1,mythic
+371,"Viv Vision, Teen Synthezoid",21.6,15946,0.0,13,4,185,4.6,False,{3},3.0,C,1,uncommon
+372,Master Piandao,20.6,8925,0.0,5,0,625,15.6,False,{4}{W},5.0,W,1,uncommon
+373,The Wandering Rescuer,20.6,4795,0.0,5,0,625,15.6,False,{3}{W}{W},5.0,W,4,mythic
+374,"Syr Alin, the Lion's Claw",20.6,15210,0.0,5,0,625,15.6,False,{3}{W}{W},5.0,W,1,uncommon
+375,Lyra Dawnbringer,20.6,1743,0.0,5,0,625,15.6,False,{3}{W}{W},5.0,W,1,mythic
+376,"Starling, Aerial Ally",20.6,20655,0.0,5,0,625,15.6,False,{4}{W},5.0,W,2,common
+377,"Captain Marvel, Earth's Protector",20.6,15415,0.0,5,0,625,15.6,False,{3}{W}{W},5.0,W,1,mythic
+378,"Captain Mar-Vell, Space-Born",20.6,15737,0.0,5,0,625,15.6,False,{4}{W},5.0,W,1,uncommon
+379,"Edgar, Moonlit Sovereign",20.2,24311,0.0,5,0,607,15.2,False,{3}{G}{G},5.0,G,4,uncommon
+380,"Beorn, Reluctant Host // Till and Tend",20.2,None,0.0,5,0,607,15.2,False,{4}{G} // {1}{G},5.0,G,4,common
+381,"Ojer Kaslem, Deepest Growth // Temple of Cultivation",20.2,None,0.0,5,0,607,15.2,False,,5.0,G,1,mythic
+382,"Spider-Man, Brooklyn Visionary",20.2,6757,0.0,5,0,607,15.2,False,{4}{G},5.0,G,2,common
+383,"Doc Samson, Super Psychiatrist",20.2,9825,0.0,5,0,607,15.2,False,{4}{G},5.0,G,1,uncommon
+384,"Yargle, Glutton of Urborg",20.0,6621,0.0,5,0,601,15.0,False,{4}{B},5.0,B,3,uncommon
+385,"Massacre Girl, Most Wanted",20.0,19326,0.0,5,0,601,15.0,False,{4}{B},5.0,B,1,uncommon
+386,"Zenos yae Galvus // Shinryu, Transcendent Rival",20.0,None,0.0,5,0,601,15.0,False,,5.0,B,1,rare
+387,"Bebop, Warthog Warrior",20.0,21460,0.0,5,0,601,15.0,False,{4}{B},5.0,B,1,common
+388,"Shredder, Unrelenting",20.0,13705,0.0,5,0,601,15.0,False,{4}{B},5.0,B,1,uncommon
+389,"Karn, Argent Defender",19.6,21024,0.0,15,0,185,4.6,False,{2},2.0,C,1,rare
+390,"Marvin, Murderous Mimic",19.6,1090,0.0,15,0,185,4.6,False,{2},2.0,C,3,rare
+391,"Page, Loose Leaf",19.6,15211,0.0,15,0,185,4.6,False,{2},2.0,C,1,common
+392,"Yargle, Goliath of Otaria",19.4,28173,0.0,5,0,575,14.4,False,{4}{U},5.0,U,4,uncommon
+393,"Ironheart, Clever Champion",19.4,10009,0.0,5,0,575,14.4,False,{4}{U},5.0,U,3,rare
+394,"Altanak, the Thrice-Called",19.2,7469,0.0,0,4,607,15.2,False,{5}{G}{G},7.0,G,4,uncommon
+395,"Winter, Team Player",19.1,25346,0.0,5,0,564,14.1,False,{4}{R},5.0,R,3,uncommon
+396,"Zog, Triceraton Castaway",19.1,21120,0.0,5,0,564,14.1,False,{4}{R},5.0,R,1,common
+397,"Wonder Man, Hollywood Hero",19.1,18244,0.0,5,0,564,14.1,False,{3}{R}{R},5.0,R,3,uncommon
+398,"Valgavoth, Terror Eater",19.0,1300,0.0,0,4,601,15.0,False,{6}{B}{B}{B},9.0,B,3,mythic
+399,"Ardyn, the Usurper",19.0,3305,0.0,0,4,601,15.0,False,{5}{B}{B}{B},8.0,B,1,rare
+400,Arcanis the Omnipotent,18.4,3028,0.0,0,4,575,14.4,False,{3}{U}{U}{U},6.0,U,1,rare
+401,Kiora of Fire and Ashes,18.1,23517,0.0,0,4,564,14.1,False,{4}{R}{R},6.0,R,3,uncommon
+402,"Lathliss, Dragon Queen",18.1,1072,0.0,0,4,564,14.1,False,{4}{R}{R},6.0,R,1,rare
+403,The Vision,17.6,7182,0.0,9,4,185,4.6,False,{4},4.0,C,2,rare
+404,Ghalta the Immovable,15.6,14469,0.0,0,0,625,15.6,False,{8}{W},9.0,W,1,uncommon
+405,"Ojer Taq, Deepest Foundation // Temple of Civilization",15.6,None,0.0,0,0,625,15.6,False,,6.0,W,1,mythic
+406,"Zetalpa, Primal Dawn",15.6,1628,0.0,0,0,625,15.6,False,{6}{W}{W},8.0,W,1,rare
+407,"Appa, Loyal Sky Bison",15.6,6161,0.0,0,0,625,15.6,False,{4}{W}{W},6.0,W,1,uncommon
+408,Ghalta the Unstoppable,15.2,10537,0.0,0,0,607,15.2,False,{8}{G},9.0,G,2,uncommon
+409,"Ruric Thar, Magecrusher",15.2,24355,0.0,0,0,607,15.2,False,{5}{G}{G},7.0,G,3,uncommon
+410,The Legend of Kyoshi // Avatar Kyoshi,15.2,None,0.0,0,0,607,15.2,False,,6.0,G,3,mythic
+411,"Lumra, Bellow of the Woods",15.2,1128,0.0,0,0,607,15.2,False,{4}{G}{G},6.0,G,2,mythic
+412,"The Thing, Ben Grimm",15.2,13319,0.0,0,0,607,15.2,False,{5}{G},6.0,G,3,uncommon
+413,"Bumi, King of Three Trials",15.2,10191,0.0,0,0,607,15.2,False,{5}{G},6.0,G,1,uncommon
+414,"Ghalta, Stampede Tyrant",15.2,1081,0.0,0,0,607,15.2,False,{5}{G}{G}{G},8.0,G,1,mythic
+415,The Masters of Evil,15.0,15236,0.0,0,0,601,15.0,False,{5}{B},6.0,B,4,uncommon
+416,The Lord of the Eagles,14.4,13717,0.0,0,0,575,14.4,False,{7}{U}{U},9.0,U,1,rare
+417,"Gandalf, Spark Starter",14.1,20523,0.0,0,0,564,14.1,False,{4}{R}{R},6.0,R,4,uncommon
+418,"Smaug, the Great Calamity // Spew Flame",14.1,None,0.0,0,0,564,14.1,False,{5}{R}{R} // {4}{R},7.0,R,4,common
+419,"Drakuseth, Maw of Flames",14.1,1115,0.0,0,0,564,14.1,False,{4}{R}{R}{R},7.0,R,2,rare
+420,"Shocker, Unshakable",14.1,17997,0.0,0,0,564,14.1,False,{4}{R}{R},6.0,R,1,uncommon
+421,Red Hulk,14.1,10253,0.0,0,0,564,14.1,False,{4}{R}{R},6.0,R,4,uncommon
+422,"Traxos, Scourge Eternal",13.6,22645,0.0,9,0,185,4.6,False,{4},4.0,C,1,uncommon
+423,"Emrakul, the Exigent Doom",8.6,9802,0.0,0,4,185,4.6,False,{10},10.0,C,1,mythic
+424,The Walls of Ba Sing Se,4.6,1862,0.0,0,0,185,4.6,False,{8},8.0,C,1,mythic
+425,"Krang, Utrom Warlord",4.6,3251,0.0,0,0,185,4.6,False,{9},9.0,C,1,mythic

@@ -1,0 +1,25 @@
+Blossoming Sands                                        qty=  9 std=legal    brawl=legal   
+Scoured Barrens                                         qty= 13 std=legal    brawl=legal   
+Selesnya Guildgate                                      qty=  5 std=legal    brawl=legal   
+Ojer Taq, Deepest Foundation // Temple of Civilization  qty=  1 std=legal    brawl=legal   
+Ajani's Pridemate                                       qty=  8 std=legal    brawl=legal   
+Leonin Vanguard                                         qty=  4 std=legal    brawl=legal   
+Dawnwing Marshal                                        qty=  3 std=legal    brawl=legal   
+Felidar Savior                                          qty=  4 std=legal    brawl=legal   
+Borosen, Winged Avenger                                 NOT FOUND
+Shieldmate                                              qty=  1 std=not_legal brawl=legal   
+Disenchant                                              qty=  1 std=legal    brawl=legal   
+Mending                                                 NOT FOUND
+Wall of Omens                                           NOT FOUND
+Glass Casket                                            qty=  2 std=legal    brawl=legal   
+Counter Spike                                           NOT FOUND
+Unflinching Hortimancer                                 qty=  4 std=legal    brawl=legal   
+Danitha, Sword of Hope                                  qty=  4 std=legal    brawl=legal   
+Push                                                    NOT FOUND
+Siphon Strike                                           NOT FOUND
+Reactivate Magic                                        NOT FOUND
+Agro                                                    NOT FOUND
+Enchanted Wings                                         NOT FOUND
+Temple of Plenty                                        qty=  1 std=legal    brawl=legal   
+Thalakos, the High Father                               NOT FOUND
+Leyline of Sanctity                                     NOT FOUND

@@ -1,0 +1,66 @@
+
+====================================================================================================
+D. TARGETED LAND REMOVAL (GW competitivebrawl)
+  q: o:"destroy target land" id<=GW f:competitivebrawl
+   [legal] Strip Mine                                                    cmc=0.0 rare     owned=1
+   [legal] Ghost Quarter                                                 cmc=0.0 uncommon owned=0
+
+====================================================================================================
+E. MASS LAND DENIAL (any color competitivebrawl)
+  q: o:"destroy all lands" OR o:"destroy each land" f:competitivebrawl
+   [not_legal] Impending Disaster                             {1}{R}         cmc=2.0 rare     owned=0
+   [not_legal] Strategy, Schmategy                            {1}{R}         cmc=2.0 rare     owned=0
+   [not_legal] Ajani Vengeant                                 {2}{R}{W}      cmc=4.0 mythic   owned=0
+   [legal] Armageddon                                     {3}{W}         cmc=4.0 mythic   owned=0
+   [not_legal] Bend or Break                                  {3}{R}         cmc=4.0 rare     owned=0
+   [not_legal] Ravages of War                                 {3}{W}         cmc=4.0 rare     owned=0
+   [not_legal] Desolation Angel                               {3}{B}{B}      cmc=5.0 rare     owned=0
+   [not_legal] Catastrophe                                    {4}{W}{W}      cmc=6.0 rare     owned=0
+   [legal] Fall of the Thran                              {5}{W}         cmc=6.0 rare     owned=0
+   [not_legal] Boom // Bust                                   {1}{R} // {5}{R} cmc=8.0 rare     owned=0
+   [not_legal] Decree of Annihilation                         {8}{R}{R}      cmc=10.0 rare     owned=0
+   [not_legal] Myojin of Infinite Rage                        {7}{R}{R}{R}   cmc=10.0 rare     owned=0
+
+====================================================================================================
+E2. LAND SAC / NONBASIC HATE (GW competitivebrawl)
+  q: o:"sacrifice a land" OR o:"nonbasic land" o:"destroy" id<=GW f:competitivebrawl
+   [legal] Demolition Field                                              cmc=0.0 uncommon owned=2
+   [legal] Field of Ruin                                                 cmc=0.0 uncommon owned=2
+   [legal] Boseiju, Who Endures                                          cmc=0.0 rare     owned=1
+   [legal] Cycle of Renewal                               {2}{G}         cmc=3.0 common   owned=1
+   [legal] Entish Restoration                             {2}{G}         cmc=3.0 uncommon owned=1
+   [legal] Dust Bowl                                                     cmc=0.0 rare     owned=0
+   [legal] Encroaching Wastes                                            cmc=0.0 uncommon owned=0
+   [not_legal] Akki Avalanchers                               {R}            cmc=1.0 common   owned=0
+   [not_legal] Brutal Suppression                             {R}            cmc=1.0 uncommon owned=0
+   [not_legal] Chain of Vapor                                 {U}            cmc=1.0 uncommon owned=0
+   [legal] Crop Rotation                                  {G}            cmc=1.0 uncommon owned=0
+   [legal] Elvish Reclaimer                               {G}            cmc=1.0 rare     owned=0
+   [not_legal] Agent of Shauku                                {1}{B}         cmc=2.0 common   owned=0
+   [legal] Brood Astronomer                               {1}{G}         cmc=2.0 rare     owned=0
+   [not_legal] Cephalid Scout                                 {1}{U}         cmc=2.0 common   owned=0
+   [not_legal] Chain of Silence                               {1}{W}         cmc=2.0 uncommon owned=0
+   [not_legal] Constant Mists                                 {1}{G}         cmc=2.0 uncommon owned=0
+   [not_legal] Custody Battle                                 {1}{R}         cmc=2.0 uncommon owned=0
+   [not_legal] Dreamscape Artist                              {1}{U}         cmc=2.0 common   owned=0
+   [not_legal] Edge of Autumn                                 {1}{G}         cmc=2.0 common   owned=0
+   [not_legal] Excavation                                     {1}{U}         cmc=2.0 uncommon owned=0
+   [not_legal] Army Ants                                      {1}{B}{R}      cmc=3.0 uncommon owned=0
+   [not_legal] Aura Fracture                                  {2}{W}         cmc=3.0 common   owned=0
+   [not_legal] Bog Glider                                     {2}{B}         cmc=3.0 common   owned=0
+   [not_legal] Evendo Brushrazer                              {2}{R}         cmc=3.0 rare     owned=0
+   [not_legal] Falling Timber                                 {2}{G}         cmc=3.0 common   owned=0
+   [not_legal] Fault Riders                                   {2}{R}         cmc=3.0 common   owned=0
+   [not_legal] Aggressive Mining                              {3}{R}         cmc=4.0 rare     owned=0
+   [not_legal] Arcane Spyglass                                {4}            cmc=4.0 common   owned=0
+   [not_legal] Argothian Wurm                                 {3}{G}         cmc=4.0 rare     owned=0
+   [not_legal] Baloth Prime                                   {3}{G}         cmc=4.0 rare     owned=0
+   [not_legal] Dwarven Armory                                 {2}{R}{R}      cmc=4.0 rare     owned=0
+   [not_legal] Dwarven Landslide                              {3}{R}         cmc=4.0 common   owned=0
+   [not_legal] Bog Elemental                                  {3}{B}{B}      cmc=5.0 rare     owned=0
+   [not_legal] Coastal Hornclaw                               {4}{U}         cmc=5.0 common   owned=0
+   [not_legal] Everythingamajig                               {5}            cmc=5.0 rare     owned=0
+   [legal] Excavating Anurid                              {4}{G}         cmc=5.0 common   owned=0
+   [not_legal] Demonic Hordes                                 {3}{B}{B}{B}   cmc=6.0 rare     owned=0
+   [not_legal] Exalted Dragon                                 {4}{W}{W}      cmc=6.0 rare     owned=0
+   [legal] Earthquake Dragon                              {14}{G}        cmc=15.0 rare     owned=0

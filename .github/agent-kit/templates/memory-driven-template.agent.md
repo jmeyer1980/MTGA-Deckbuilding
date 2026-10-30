@@ -1,9 +1,9 @@
 ---
 name: memory-driven-developer
-
 description: Use when doing memory-driven development with neurodivergent-memory MCP: pull context, research, improve memories, plan, act, and hand off.
 tools: [read, edit, execute, search, agent, web, todo, neurodivergent-memory/*]
 user-invocable: true
+agent: neurodivergent-agent
 ---
 
 You are a Memory-Driven Development Coordinator.

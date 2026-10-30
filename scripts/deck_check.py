@@ -5,15 +5,22 @@ Checks construction legality (counts, singleton, colour identity), format
 legality including bans, what the deck costs in wildcards, and the mana curve.
 
 Formats:
-    standard  60-card minimum, <=15 sideboard, max 4 copies, Standard-legal
-    brawl     Arena's ranked 100-card Brawl (Competitive Brawl): exactly 100
-              including the commander, singleton, colour identity enforced,
-              no sideboard. Ban checks read Scryfall's `competitivebrawl`
-              legality; `brawl` is CASUAL Brawl's list and would reject cards
-              the ranked queue allows (memory_2535).
+    standard      60-card minimum, <=15 sideboard, max 4 copies,
+                  Standard-legal. Basic lands (and any-number cards) are
+                  exempt from the 4-of cap -- basics are unlimited.
+    standardbrawl 60-card Standard Brawl: exactly 60 including the commander
+                  (commander + 59), singleton, colour identity enforced,
+                  no sideboard. Ban checks read Scryfall's `standardbrawl`
+                  legality, which is MORE restrictive than Standard.
+    brawl         Arena's ranked 100-card Brawl (Competitive Brawl): exactly
+                  100 including the commander, singleton, colour identity
+                  enforced, no sideboard. Ban checks read Scryfall's
+                  `competitivebrawl` legality; `brawl` is CASUAL Brawl's list
+                  and would reject cards the ranked queue allows.
 
 Format is inferred from the filename ("brawl100-*" / "brawl-*" -> brawl,
-anything else -> standard) unless --format is given.
+"standard60-brawl-*" -> standardbrawl, anything else -> standard)
+unless --format is given.
 
 Cards not in pool.json are looked up individually -- a deck may legitimately
 contain cards you do not own yet; that is what the wildcard budget is for.
@@ -117,7 +124,7 @@ class Cards:
             # legality -- fall through to a live refetch rather than check the
             # CASUAL field. owned is only ever set from overrides, so the fetch
             # path re-applying them loses nothing.
-            if "competitivebrawl" in self.cache[key]:
+            if "competitivebrawl" in self.cache[key] and "standardbrawl" in self.cache[key]:
                 rec = self.cache[key]
                 if key in self.overrides:
                     rec["owned"] = max(rec.get("owned", 0), self.overrides[key])
@@ -163,6 +170,7 @@ class Cards:
             "type_line": c.get("type_line", ""),
             "color_identity": c.get("color_identity", []),
             "standard": c.get("legalities", {}).get("standard"),
+            "standardbrawl": c.get("legalities", {}).get("standardbrawl"),
             "brawl": c.get("legalities", {}).get("brawl"),
             # Ranked ladder's own list. Fallback keeps a Scryfall schema gap
             # from becoming a missing key (which would read as "not legal").
@@ -271,7 +279,11 @@ def parse_deck(path):
 
 def infer_format(path):
     base = os.path.basename(path).lower()
-    return "brawl" if base.startswith("brawl") else "standard"
+    if base.startswith("brawl"):
+        return "brawl"
+    if base.startswith("standard60-brawl-"):
+        return "standardbrawl"
+    return "standard"
 
 
 def check(path, fmt, cards, quiet=False):
@@ -287,15 +299,19 @@ def check(path, fmt, cards, quiet=False):
     side_count = sum(q for q, _ in side)
 
     # ---- construction rules -------------------------------------------
-    if fmt == "brawl":
+    if fmt in ("brawl", "standardbrawl"):
         total = main_count + cmdr_count
+        want = 100 if fmt == "brawl" else 60
+        fname = "Brawl" if fmt == "brawl" else "Standard Brawl"
         if cmdr_count != 1:
-            errors.append(f"Brawl needs exactly 1 commander, found {cmdr_count}")
-        if total != 100:
-            errors.append(f"Brawl must be exactly 100 cards, found {total}")
+            errors.append(f"{fname} needs exactly 1 commander, found {cmdr_count}")
+        if total != want:
+            errors.append(f"{fname} must be exactly {want} cards, found {total}")
         if side_count:
-            errors.append(f"Brawl has no sideboard, found {side_count} cards")
+            errors.append(f"{fname} has no sideboard, found {side_count} cards")
         for q, n in main + cmdr:
+            # Basics are unlimited; any-number cards opt out in their own
+            # text. Everything else is singleton -- exactly 1 copy.
             if q > 1 and norm(n) not in BASICS and not unlimited(cards, n):
                 errors.append(f"Singleton violation: {q} x {n}")
     else:
@@ -384,7 +400,7 @@ def check(path, fmt, cards, quiet=False):
             curve[mv] = curve.get(mv, 0) + q
 
     # ---- colour identity (Brawl) --------------------------------------
-    if fmt == "brawl" and commander_ci is not None:
+    if fmt in ("brawl", "standardbrawl") and commander_ci is not None:
         for q, n, where in entries:
             if where == "commander":
                 continue
@@ -502,7 +518,7 @@ def main():
     _utf8_stdout()
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("decks", nargs="+")
-    ap.add_argument("--format", choices=("standard", "brawl"))
+    ap.add_argument("--format", choices=("standard", "standardbrawl", "brawl"))
     ap.add_argument("--quiet", action="store_true", help="one line per deck")
     args = ap.parse_args()
 

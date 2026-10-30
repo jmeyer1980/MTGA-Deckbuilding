@@ -8,12 +8,14 @@ For every game in that session:
   - match the transcript's deck against const DECKS in the drill HTML
     (commander + size + card-name overlap; handles the two Elspeth decks)
   - replay the kept hand through the drill's own rule: ruleKeepV2 for
-    rule:"hares-v2" decks, the legacy 2-5 lands rule otherwise
+    rule:"hares-v2", standard board-start rules for PG/PH, and the legacy
+    2-5 lands rule otherwise
   - compute lands-by-turn-4 (3 draws on the play, 4 on the draw) = "worked"
 
 Usage:
   py -3.12 scripts/session_audit.py
   py -3.12 scripts/session_audit.py --gap 2 --verbose
+  py -3.12 scripts/session_audit.py --game-id <match-uuid>
   py -3.12 scripts/session_audit.py --dir "C:\\...\\out\\text"
 """
 import argparse
@@ -77,7 +79,7 @@ def deck_index(deck):
     return byname, land_names
 
 
-def match_deck(decks, cmdr, n_cards, tnames):
+def match_deck(decks, cmdr, n_cards, tnames, tcounts):
     """Score DECKS entries against the transcript; highest score wins."""
     best, best_score = None, -1.0
     for d in decks:
@@ -89,8 +91,13 @@ def match_deck(decks, cmdr, n_cards, tnames):
             score += 10
         if d.get("size") == n_cards:
             score += 40
-        dnames = {primary(c["n"]) for c in d["cards"]}
-        if tnames:
+        dcounts = {primary(c["n"]): c["q"] for c in d["cards"]}
+        if tcounts:
+            overlap = sum(min(qty, dcounts.get(name, 0))
+                          for name, qty in tcounts.items())
+            score += 100.0 * overlap / sum(tcounts.values())
+        elif tnames:
+            dnames = set(dcounts)
             score += 100.0 * len(tnames & dnames) / len(tnames)
         if score > best_score:
             best, best_score = d, score
@@ -131,7 +138,7 @@ def parse_deck_section(lines):
     _, sec = section(lines, "Your deck")
     if sec is None:
         return None, None, set(), set()
-    cmdr, n_cards, names, seen = None, None, set(), set()
+    cmdr, n_cards, names, seen, counts = None, None, set(), set(), {}
     for l in lines:
         if l.startswith("Commander: "):
             cmdr = l[len("Commander: "):].strip()
@@ -142,9 +149,11 @@ def parse_deck_section(lines):
         if m:
             name = primary(m.group(1))
             names.add(name)
+            qty = re.match(r"^- (\d+)× ", l)
+            counts[name] = int(qty.group(1)) if qty else 1
             if not l.endswith("· not seen"):
                 seen.add(name)
-    return cmdr, n_cards, names, seen
+    return cmdr, n_cards, names, seen, counts
 
 
 def norm_card(s, seen):
@@ -255,7 +264,7 @@ def rule_keep_v2(hand, byname):
     def is_land_bridge(c):
         return (not c.get("l")) and primary(c["n"]) in (
             "Ambitious Farmhand", "Knight of the White Orchid", "Loyal Warhound",
-            "Arcane Signet", "The Mind Stone", "Pearl Medallion")
+            "Arcane Signet", "The Mind Stone", "Mind Stone", "Pearl Medallion")
     def is_bridge(c):
         return is_land_bridge(c) or (
             (not c.get("l")) and primary(c["n"]) in ("Hare Apparent", "Esper Sentinel"))
@@ -286,6 +295,99 @@ def rule_keep_v2(hand, byname):
 def rule_legacy(hand, land_names):
     lands = sum(1 for n in hand if primary(n) in land_names)
     return (2 <= lands <= 5), "%d lands — base 2-5 rule" % lands
+
+
+def rule_keep_standard(hand, byname):
+    """Port of drill's PG/PH keep rule: starter plus two early actions."""
+    cards = [byname.get(primary(n), {"n": n, "l": False, "c": 99}) for n in hand]
+    lands = sum(1 for c in cards if c.get("l"))
+    if lands <= 1 or lands >= 6:
+        return False, "%d lands — mulligan 0/1/6/7" % lands
+    starters = {"Optimistic Scavenger", "Warden of the Inner Sky",
+                "Resolute Reinforcements", "Hare Apparent"}
+    has_starter = any(not c.get("l") and primary(c["n"]) in starters for c in cards)
+    has_armor_target = any(
+        not c.get("l") and primary(c["n"]) in starters for c in cards)
+    actions = sum(
+        1 for c in cards
+        if not c.get("l") and c.get("c", 99) <= 3
+        and (primary(c["n"]) != "Ethereal Armor" or has_armor_target))
+    if not has_starter:
+        return False, "no turn-1/2 board starter (Scavenger, Warden, Reinforcements, or Hare)"
+    if actions < 2:
+        return False, "board starter but fewer than 2 spells with mana value 3 or less"
+    if lands == 5:
+        return True, "5 lands kept only with a board starter and 2 spells with mana value 3 or less"
+    return True, "%d lands with a board starter and 2 spells with mana value 3 or less" % lands
+
+
+def score_opening_hand(hand, byname, deck):
+    """Global local opening-hand rubric; component scores are not probabilities."""
+    normalized = {primary(name).casefold(): card for name, card in byname.items()}
+    cards = [normalized.get(primary(n).casefold(),
+                            {"n": n, "l": False, "m": "", "c": 0,
+                             "k": "", "r": ""})
+             for n in hand]
+    playable = [c for c in cards if not c.get("l")]
+
+    def mana_value(card):
+        cost = (card.get("m") or "").split("//")[0]
+        if not cost:
+            return card.get("c", 0)
+        total = 0
+        for symbol in re.findall(r"\{([^}]+)\}", cost):
+            numeric = re.findall(r"\d+", symbol)
+            if numeric:
+                total += max(map(int, numeric))
+            elif symbol.upper() not in ("X", "Y", "Z"):
+                total += 1
+        return total
+
+    t1 = sum(1 for c in playable if mana_value(c) <= 1)
+    t2 = sum(1 for c in playable if mana_value(c) == 2)
+    t3 = sum(1 for c in playable if mana_value(c) == 3)
+    lands = sum(1 for c in cards if c.get("l"))
+    has_t1, has_t2, has_t3 = lands >= 1 and t1 > 0, lands >= 2 and t2 > 0, lands >= 3 and t3 > 0
+    expected_lands = 7 * (deck.get("lands") or 0) / (deck.get("size") or 60)
+    land_fit = max(0, 100 - abs(lands - expected_lands) * 28)
+    kind = lambda c: c.get("k") or ""
+    role = lambda c: (c.get("r") or "").lower()
+    interaction_cards = sum(
+        1 for c in playable
+        if role(c) in ("removal", "protect", "interaction")
+        or (kind(c) == "instant" and mana_value(c) <= 3))
+    threat_cards = sum(
+        1 for c in playable
+        if role(c) in ("threat", "payoff", "hare")
+        or (kind(c) in ("creature", "planeswalker") and mana_value(c) <= 4))
+    synergy_cards = sum(
+        1 for c in playable
+        if role(c) in ("payoff", "hare", "token", "engine"))
+    fast_threats = sum(
+        1 for c in playable
+        if ((kind(c) in ("creature", "planeswalker")
+             or role(c) in ("threat", "payoff", "hare"))
+            and mana_value(c) <= 3))
+
+    return {
+        "velocity": ((35 if has_t1 else 0) + (25 if has_t2 else 0)
+                     + (15 if has_t3 else 0)
+                     + (25 if has_t1 and has_t2 and has_t3 else 0)),
+        "consistency": min(100, int(land_fit * 0.75
+                                    + min(100, (t1 + t2 + t3) * 25) * 0.25 + 0.5)),
+        "interaction": min(100, interaction_cards * 35),
+        "efficiency": min(100, t1 * 28 + t2 * 18 + t3 * 8),
+        "lethality": min(100, fast_threats * 20 + synergy_cards * 12
+                         + max(0, threat_cards - fast_threats) * 8),
+    }
+
+
+def rule_for_deck(deck, hand, byname, land_names):
+    if deck.get("rule") == "hares-v2":
+        return rule_keep_v2(hand, byname)
+    if deck.get("rule") in ("standard-pg-v1", "standard-ph-v1"):
+        return rule_keep_standard(hand, byname)
+    return rule_legacy(hand, land_names)
 
 
 def deduce_first_hand(lines, opening_idx, seen, kept_hand, decision):
@@ -330,26 +432,55 @@ def find_session(text_dir, gap_hours):
     return session
 
 
+def find_game(text_dir, game_id):
+    """Return only the transcript whose filename stem exactly matches game_id."""
+    files = glob.glob(os.path.join(text_dir, "*.md"))
+    matches = [f for f in files
+               if os.path.splitext(os.path.basename(f))[0].casefold()
+               == game_id.casefold()]
+    if not matches:
+        raise SystemExit("no transcript for game ID %s in %s" % (game_id, text_dir))
+    if len(matches) > 1:
+        raise SystemExit("multiple transcripts for game ID %s in %s" % (game_id, text_dir))
+    path = matches[0]
+    lines = read_lines(path)
+    ts, res = header_time(lines, path)
+    return [(ts, path, res, lines)]
+
+
 def main():
-    ap = argparse.ArgumentParser(description="Audit mulligan decisions for the most recent session.")
+    ap = argparse.ArgumentParser(description="Audit mulligan decisions for a session or one game.")
     ap.add_argument("--dir", default=DEFAULT_TEXT, help="transcript dir (default: %(default)s)")
     ap.add_argument("--drill", default=DEFAULT_DRILL, help="drill html (default: %(default)s)")
     ap.add_argument("--gap", type=float, default=2.0, help="max hours between matches in a session")
     ap.add_argument("--verbose", action="store_true", help="print every kept hand")
+    ap.add_argument("--game-id", help="audit only the transcript named <game-id>.md")
     args = ap.parse_args()
 
     decks = parse_decks(args.drill)
-    session = find_session(args.dir, args.gap)
+    session = (find_game(args.dir, args.game_id) if args.game_id
+               else find_session(args.dir, args.gap))
 
     span = "%s -> %s" % (session[0][0].strftime("%m-%d %H:%M"),
                          session[-1][0].strftime("%m-%d %H:%M"))
-    print("SESSION %s  (%d files, gap <= %.1fh)" % (span, len(session), args.gap))
+    if args.game_id:
+        print("GAME ID %s  (%s, %s)" %
+              (os.path.splitext(os.path.basename(session[0][1]))[0], span, session[0][2]))
+        missing_note = next((line[2:] for line in session[0][3]
+                             if line.startswith("> Part of this match is missing")), None)
+        if missing_note:
+            print("TRANSCRIPT CAVEAT: %s" % missing_note)
+        print("WORKED = turn-four land threshold (3 lands on play / 4 on draw), not the keep-rule verdict.")
+    else:
+        print("SESSION %s  (%d files, gap <= %.1fh)" % (span, len(session), args.gap))
     print()
 
-    hdr = "%-6s %-5s %-6s %-16s %-6s %-6s %-5s %-8s %s"
-    print(hdr % ("TIME", "RES", "POS", "DECISION", "LANDS", "T4LAND", "RULE", "AGREE?", "WORKED"))
+    hdr = "%-6s %-5s %-6s %-16s %-6s %-6s %-5s %-8s %-24s %s"
+    print(hdr % ("TIME", "RES", "POS", "DECISION", "LANDS", "T4LAND", "RULE",
+                 "AGREE?", "PROFILE", "WORKED"))
     n_agree = n_decided = n_worked = n_playable = 0
     n_mull = n_mull_agree = 0
+    profile_groups = {}
     wl = {"Won": 0, "Lost": 0, "Drew": 0}
     problems = []
 
@@ -358,26 +489,32 @@ def main():
         oi, opening = section(lines, "Opening")
         wl[res] = wl.get(res, 0) + 1
         if oi is None or not opening:
-            print(hdr % (tm, res, "-", "(no opening)", "-", "-", "-", "-", "-"))
+            print(hdr % (tm, res, "-", "(no opening)", "-", "-", "-", "-", "-", "-"))
             continue
         n_playable += 1
-        cmdr, n_cards, tnames, seen = parse_deck_section(lines)
-        deck, score = match_deck(decks, cmdr, n_cards, tnames)
+        cmdr, n_cards, tnames, seen, tcounts = parse_deck_section(lines)
+        deck, score = match_deck(decks, cmdr, n_cards, tnames, tcounts)
         byname, land_names = deck_index(deck)
 
         op = parse_opening(lines, oi, opening)
         if op is None:
-            print(hdr % (tm, res, "-", "(no keep line)", "-", "-", "-", "-", "-"))
+            print(hdr % (tm, res, "-", "(no keep line)", "-", "-", "-", "-", "-", "-"))
             continue
         hand = op["hand"]
         open_lands = sum(1 for n in hand if primary(n) in land_names)
         t4 = t4_lands(open_lands, lines, oi, op["on_play"], land_names)
         worked = 3 <= t4 <= 5
 
-        if deck.get("rule") == "hares-v2":
-            keep, why = rule_keep_v2(hand, byname)
-        else:
-            keep, why = rule_legacy(hand, land_names)
+        keep, why = rule_for_deck(deck, hand, byname, land_names)
+        profile = score_opening_hand(hand, byname, deck)
+        profile_text = " ".join("%s%d" % (key[0].upper(), value)
+                                for key, value in profile.items())
+        group = deck.get("label") or deck["id"]
+        group_totals = profile_groups.setdefault(
+            group, {key: 0 for key in profile})
+        group_totals["n"] = group_totals.get("n", 0) + 1
+        for key, value in profile.items():
+            group_totals[key] += value
 
         n_decided += 1
         n_agree += keep           # his final action is always a keep; rule must say keep
@@ -390,6 +527,7 @@ def main():
 
         print(hdr % (tm, res, "play" if op["on_play"] else "draw", op["decision"],
                      open_lands, t4, "KEEP" if keep else "MULL", agree,
+                     profile_text,
                      "yes" if worked else "NO"))
 
         # deduction: seen cards never accounted for by hand/draw/cast/play/holding
@@ -398,10 +536,7 @@ def main():
             fh_lands = sum(1 for n in residual if primary(n) in land_names)
             if len(residual) == 7:
                 # full rejected hand: judge the mulligan decision itself
-                if deck.get("rule") == "hares-v2":
-                    fh_keep, fh_why = rule_keep_v2(residual, byname)
-                else:
-                    fh_keep, fh_why = rule_legacy(residual, land_names)
+                fh_keep, fh_why = rule_for_deck(deck, residual, byname, land_names)
                 verdict = "rule %s" % ("KEEP" if fh_keep else "MULL")
                 ok = not fh_keep          # he mulliganed; rule must agree
                 n_mull += 1
@@ -418,7 +553,7 @@ def main():
             print("       NOTE: %d seen-but-unaccounted card(s) despite keep: %s"
                   % (len(residual), " | ".join(residual)))
 
-        if args.verbose:
+        if args.verbose or args.game_id:
             print("       deck=%s (score %.0f, rule=%s)" % (deck["id"], score, deck.get("rule") or "legacy"))
             print("       why: %s" % why)
             print("       hand: %s" % " | ".join(hand))
@@ -437,6 +572,14 @@ def main():
     print("RECORD %d-%d-%d  |  rule agreement %d/%d keeps  |  mulligan agreement %d/%d  |  worked %d/%d"
           % (wl["Won"], wl["Lost"], wl["Drew"], n_agree, n_decided,
              n_mull_agree, n_mull, n_worked, n_decided))
+    if profile_groups:
+        print("Post-mulligan kept-hand profile means by deck (0-100 heuristic, not win probability):")
+        for group, totals in profile_groups.items():
+            print("  %s (n=%d): %s"
+                  % (group, totals["n"], "  ".join(
+                      "%s=%d" % (key, round(totals[key] / totals["n"]))
+                      for key in ("velocity", "consistency", "interaction",
+                                  "efficiency", "lethality"))))
     if problems:
         print("FLAGS:")
         for tm, msg in problems:

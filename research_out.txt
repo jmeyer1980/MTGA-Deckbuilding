@@ -1,0 +1,217 @@
+====================================================================================================
+KUTZIL ORACLE TEXT
+  {1}{G}{W}  Legendary Creature ù Cat Warrior
+  Your opponents can't cast spells during your turn.
+Whenever one or more creatures you control each with power greater than its base power deals combat damage to a player, draw a card.
+  legalities: competitivebrawl=legal, standard=legal
+
+====================================================================================================
+A. +1/+1 COUNTER SYNERGY (GW, competitivebrawl)
+  scryfall q: o:"+1/+1 counter" id<=GW f:competitivebrawl -t:land
+   [legal] Ajani's Pridemate                            {1}{W}        cmc=2.0 uncommon owned=8
+   [legal] Abomination, Irradiated Brute                {2}{G}{G}     cmc=4.0 rare     owned=4
+   [legal] Ajani, Caller of the Pride                   {1}{W}{W}     cmc=3.0 mythic   owned=3
+   [legal] Agent Maria Hill                             {W}           cmc=1.0 uncommon owned=2
+   [legal] Agent Phil Coulson                           {1}{W}        cmc=2.0 rare     owned=2
+   [legal] Ajani Resolute                               {1}{W}        cmc=2.0 mythic   owned=2
+   [legal] Additive Evolution                           {3}{G}{G}     cmc=5.0 uncommon owned=2
+   [legal] Aeronaut Cavalry                             {4}{W}        cmc=5.0 common   owned=2
+   [legal] Aerith Gainsborough                          {2}{W}        cmc=3.0 rare     owned=1
+   [legal] Action News Crew                             {1}{W}        cmc=2.0 common   owned=0
+   [legal] Adherent of Hope                             {1}{W}        cmc=2.0 common   owned=0
+   [legal] Agatha's Soul Cauldron                       {2}           cmc=2.0 mythic   owned=0
+   [legal] Ainok Bond-Kin                               {1}{W}        cmc=2.0 common   owned=0
+   [legal] Ainok Guide                                  {1}{G}        cmc=2.0 common   owned=0
+   [legal] Ainok Wayfarer                               {1}{G}        cmc=2.0 common   owned=0
+   [legal] Aang, A Lot to Learn                         {2}{G/W}      cmc=3.0 uncommon owned=0
+   [legal] Abzan Falconer                               {2}{W}        cmc=3.0 uncommon owned=0
+   [legal] Advocate of the Beast                        {2}{G}        cmc=3.0 common   owned=0
+   [legal] Afterburner Expert                           {2}{G}        cmc=3.0 rare     owned=0
+   [legal] Agent Bishop, Man in Black                   {2}{W}        cmc=3.0 rare     owned=0
+   [legal] Ainok Artillerist                            {2}{G}        cmc=3.0 common   owned=0
+   [legal] Airlift Chaplain                             {2}{W}        cmc=3.0 common   owned=0
+   [legal] Abuelo's Awakening                           {X}{3}{W}     cmc=4.0 rare     owned=0
+   [legal] Abzan Battle Priest                          {3}{W}        cmc=4.0 uncommon owned=0
+  ... (16 more)
+
+====================================================================================================
+B. ATTACK TRIGGERS / GO-WIDE (GW, competitivebrawl)
+  scryfall q: o:"whenever you attack" id<=GW f:competitivebrawl -t:land
+   [legal] Roads Go Ever, Ever On                       {1}{W}        cmc=2.0 rare     owned=4
+   [legal] Armasaur Guide                               {4}{W}        cmc=5.0 common   owned=4
+   [legal] Lionheart Glimmer                            {3}{W}{W}     cmc=5.0 uncommon owned=4
+   [legal] Seasoned Consultant                          {1}{W}        cmc=2.0 common   owned=3
+   [legal] Celeborn the Wise                            {3}{G}        cmc=4.0 uncommon owned=3
+   [legal] Karlov Watchdog                              {3}{W}        cmc=4.0 uncommon owned=2
+   [legal] Leader's Talent                              {1}{W}        cmc=2.0 rare     owned=1
+   [legal] Adeline, Resplendent Cathar                  {1}{W}{W}     cmc=3.0 rare     owned=1
+   [legal] Hazardroot Herbalist                         {2}{G}        cmc=3.0 uncommon owned=1
+   [legal] Warren Warleader                             {2}{W}{W}     cmc=4.0 mythic   owned=1
+   [legal] Cosmic Cube                                  {5}           cmc=5.0 mythic   owned=1
+   [legal] Rabble Rousing                               {4}{W}        cmc=5.0 rare     owned=1
+   [legal] Guide of Souls                               {W}           cmc=1.0 rare     owned=0
+   [legal] Paladin Class                                {W}           cmc=1.0 rare     owned=0
+   [legal] Dyadrine, Synthesis Amalgam                  {X}{G}{W}     cmc=2.0 rare     owned=0
+   [legal] Hunter's Talent                              {1}{G}        cmc=2.0 uncommon owned=0
+   [legal] Ranger Class                                 {1}{G}        cmc=2.0 rare     owned=0
+   [legal] Urdnan, Dromoka Warrior                      {1}{W}        cmc=2.0 uncommon owned=0
+   [legal] Case of the Trampled Garden                  {2}{G}        cmc=3.0 uncommon owned=0
+   [legal] Kithkin Brinefarer                           {1}{G}{W}     cmc=3.0 rare     owned=0
+   [legal] Master's Guidance                            {2}{G}        cmc=3.0 rare     owned=0
+   [legal] Sparring Regimen                             {2}{W}        cmc=3.0 rare     owned=0
+   [legal] Toph, Earthbending Master                    {3}{G}        cmc=4.0 mythic   owned=0
+   [legal] Dawnsire, Sunstar Dreadnought                {5}           cmc=5.0 mythic   owned=0
+  ... (3 more)
+
+====================================================================================================
+C. PROTECTION / INDSTRUCTIBLE / HEXPROOF (GW)
+  scryfall q: (o:"indestructible" o:creature OR o:"hexproof" o:creature) id<=GW f:competitivebrawl -t:land
+   [legal] Blossoming Defense                           {G}           cmc=1.0 uncommon owned=4
+   [legal] Bofur, Reliable Guardian // Concerted Care   {W} // {1}{W} cmc=1.0 uncommon owned=4
+   [legal] Burdened Stoneback                           {1}{W}        cmc=2.0 uncommon owned=3
+   [legal] Airtight Alibi                               {2}{G}        cmc=3.0 common   owned=2
+   [legal] Bark-Knuckle Boxer                           {1}{G}        cmc=2.0 uncommon owned=1
+   [legal] Barkhide Troll                               {G}{G}        cmc=2.0 uncommon owned=1
+   [legal] Biosynthic Burst                             {1}{G}        cmc=2.0 common   owned=1
+   [legal] Adept Watershaper                            {2}{W}        cmc=3.0 rare     owned=1
+   [legal] Bilbo's Ring                                 {3}           cmc=3.0 rare     owned=1
+   [legal] Akroma's Will                                {3}{W}        cmc=4.0 rare     owned=1
+   [legal] Blessed Hippogriff // Tyr's Blessing         {3}{W} // {W} cmc=4.0 common   owned=1
+   [legal] Algorithmic Ferocity                         {G}           cmc=1.0 uncommon owned=0
+   [legal] Basri, Tomorrow's Champion                   {W}           cmc=1.0 rare     owned=0
+   [legal] Blizzard Brawl                               {G}           cmc=1.0 uncommon owned=0
+   [legal] Built to Last                                {W}           cmc=1.0 common   owned=0
+   [legal] Adamant Will                                 {1}{W}        cmc=2.0 common   owned=0
+   [legal] Adanto Vanguard                              {1}{W}        cmc=2.0 uncommon owned=0
+   [legal] Alpha Authority                              {1}{G}        cmc=2.0 uncommon owned=0
+   [legal] Beaming Defiance                             {1}{W}        cmc=2.0 common   owned=0
+   [legal] Bladed Ambassador                            {1}{W}        cmc=2.0 uncommon owned=0
+   [legal] Bombadil's Song                              {1}{G}        cmc=2.0 common   owned=0
+   [legal] Bronzehide Lion                              {G}{W}        cmc=2.0 rare     owned=0
+   [legal] Bulwark Ox                                   {1}{W}        cmc=2.0 rare     owned=0
+   [legal] Captain America's Shield                     {2}           cmc=2.0 rare     owned=0
+  ... (16 more)
+
+====================================================================================================
+D. TARGETED LAND REMOVAL (GW competitivebrawl)
+  scryfall q: o:"destroy target land" id<=GW f:competitivebrawl
+   [legal] Strip Mine                                                 cmc=0.0 rare     owned=1
+   [legal] Ghost Quarter                                              cmc=0.0 uncommon owned=0
+
+====================================================================================================
+E. MASS LAND DENIAL (any color, competitivebrawl)
+  scryfall q: o:"destroy all lands" OR o:"destroy each land" f:competitivebrawl
+   [not_legal] Impending Disaster                           {1}{R}        cmc=2.0 rare     owned=0
+   [not_legal] Strategy, Schmategy                          {1}{R}        cmc=2.0 rare     owned=0
+   [not_legal] Ajani Vengeant                               {2}{R}{W}     cmc=4.0 mythic   owned=0
+   [legal] Armageddon                                   {3}{W}        cmc=4.0 mythic   owned=0
+   [not_legal] Bend or Break                                {3}{R}        cmc=4.0 rare     owned=0
+   [not_legal] Ravages of War                               {3}{W}        cmc=4.0 rare     owned=0
+   [not_legal] Desolation Angel                             {3}{B}{B}     cmc=5.0 rare     owned=0
+   [not_legal] Catastrophe                                  {4}{W}{W}     cmc=6.0 rare     owned=0
+   [legal] Fall of the Thran                            {5}{W}        cmc=6.0 rare     owned=0
+   [not_legal] Boom // Bust                                 {1}{R} // {5}{R} cmc=8.0 rare     owned=0
+   [not_legal] Decree of Annihilation                       {8}{R}{R}     cmc=10.0 rare     owned=0
+   [not_legal] Myojin of Infinite Rage                      {7}{R}{R}{R}  cmc=10.0 rare     owned=0
+
+====================================================================================================
+F. EXTRA TURNS (any color, competitivebrawl)
+  scryfall q: o:"extra turn" f:competitivebrawl
+   [legal] Lost Isle Calling                            {1}{U}        cmc=2.0 rare     owned=1
+   [legal] Kang the Conqueror                           {2}{U}{U}     cmc=4.0 mythic   owned=1
+   [legal] Piece It Together                            {U}           cmc=1.0 uncommon owned=0
+   [legal] Timestream Navigator                         {1}{U}        cmc=2.0 mythic   owned=0
+   [legal] Alchemist's Gambit                           {1}{R}{R}     cmc=3.0 rare     owned=0
+   [legal] Chance for Glory                             {1}{R}{W}     cmc=3.0 mythic   owned=0
+   [legal] Ichormoon Gauntlet                           {2}{U}        cmc=3.0 mythic   owned=0
+   [legal] Magistrate's Scepter                         {3}           cmc=3.0 rare     owned=0
+   [legal] Teferi, Master of Time                       {2}{U}{U}     cmc=4.0 mythic   owned=0
+   [legal] The Legend of Kuruk // Avatar Kuruk                        cmc=4.0 mythic   owned=0
+   [legal] Trouble in Pairs                             {2}{W}{W}     cmc=4.0 rare     owned=0
+   [legal] Temporal Manipulation                        {3}{U}{U}     cmc=5.0 mythic   owned=0
+   [legal] Time Warp                                    {3}{U}{U}     cmc=5.0 rare     owned=0
+   [legal] Ugin's Nexus                                 {5}           cmc=5.0 mythic   owned=0
+   [legal] Ultimecia, Time Sorceress // Ultimecia, Omnipotent               cmc=5.0 uncommon owned=0
+   [legal] Karn's Temporal Sundering                    {4}{U}{U}     cmc=6.0 rare     owned=0
+   [legal] Medomai the Ageless                          {4}{W}{U}     cmc=6.0 mythic   owned=0
+   [legal] Part the Waterveil                           {4}{U}{U}     cmc=6.0 mythic   owned=0
+   [legal] Teferi, Timebender                           {4}{W}{U}     cmc=6.0 mythic   owned=0
+   [legal] Wanderwine Prophets                          {4}{U}{U}     cmc=6.0 rare     owned=0
+   [legal] Alrund's Epiphany                            {5}{U}{U}     cmc=7.0 mythic   owned=0
+   [legal] Nexus of Fate                                {5}{U}{U}     cmc=7.0 mythic   owned=0
+   [legal] Expropriate                                  {7}{U}{U}     cmc=9.0 mythic   owned=0
+   [legal] Temporal Trespass                            {8}{U}{U}{U}  cmc=11.0 mythic   owned=0
+  ... (2 more)
+
+====================================================================================================
+G. COUNTER DOUBLERS / CRUSADE
+  scryfall q: "doubling season" OR "cathars crusade" OR "branching evolution" OR "primal vigor" f:competitivebrawl
+   [legal] Doubling Season                              {4}{G}        cmc=5.0 mythic   owned=2
+   [legal] Branching Evolution                          {2}{G}        cmc=3.0 rare     owned=0
+   [legal] Primal Vigor                                 {4}{G}        cmc=5.0 rare     owned=0
+
+====================================================================================================
+H. ARTIFACT COUNTER PAYOFFS
+  scryfall q: "walking ballista" OR "hangarback walker" OR "animation module" OR "the ozolith" f:competitivebrawl
+   [legal] Hangarback Walker                            {X}{X}        cmc=0.0 rare     owned=0
+   [not_legal] Walking Ballista                             {X}{X}        cmc=0.0 rare     owned=0
+   [legal] Animation Module                             {1}           cmc=1.0 rare     owned=0
+   [legal] The Ozolith                                  {1}           cmc=1.0 rare     owned=0
+
+====================================================================================================
+I. PLANESWALKER HAYMAKERS (GW)
+  scryfall q: t:planeswalker id<=GW f:competitivebrawl
+   [legal] Elspeth, Storm Slayer                        {3}{W}{W}     cmc=5.0 mythic   owned=4
+   [legal] Ajani, Caller of the Pride                   {1}{W}{W}     cmc=3.0 mythic   owned=3
+   [legal] Ajani Resolute                               {1}{W}        cmc=2.0 mythic   owned=2
+   [legal] Archangel Elspeth                            {2}{W}{W}     cmc=4.0 mythic   owned=2
+   [legal] Garruk, Curse Breaker                        {3}{G}{G}     cmc=5.0 mythic   owned=1
+   [legal] Ajani, Outland Chaperone                     {1}{W}{W}     cmc=3.0 mythic   owned=0
+   [legal] Basri Ket                                    {1}{W}{W}     cmc=3.0 mythic   owned=0
+   [legal] Freyalise, Skyshroud Partisan                {1}{G}{G}     cmc=3.0 mythic   owned=0
+   [legal] Gideon Blackblade                            {1}{W}{W}     cmc=3.0 mythic   owned=0
+   [legal] Gideon of the Trials                         {1}{W}{W}     cmc=3.0 mythic   owned=0
+   [legal] Huatli, the Sun's Heart                      {2}{G/W}      cmc=3.0 uncommon owned=0
+   [legal] Jiang Yanggu, Wildcrafter                    {2}{G}        cmc=3.0 uncommon owned=0
+   [legal] Ajani Steadfast                              {3}{W}        cmc=4.0 mythic   owned=0
+   [legal] Ajani, Adversary of Tyrants                  {2}{W}{W}     cmc=4.0 mythic   owned=0
+   [legal] Ajani, Sleeper Agent                         {1}{G}{G/W/P}{W} cmc=4.0 mythic   owned=0
+   [legal] Ajani, Strength of the Pride                 {2}{W}{W}     cmc=4.0 mythic   owned=0
+   [legal] Ajani, the Greathearted                      {2}{G}{W}     cmc=4.0 rare     owned=0
+   [legal] Calix, Destiny's Hand                        {2}{G}{W}     cmc=4.0 mythic   owned=0
+   [legal] Ellywick Tumblestrum                         {2}{G}{G}     cmc=4.0 mythic   owned=0
+   [legal] Elspeth, Sun's Nemesis                       {2}{W}{W}     cmc=4.0 mythic   owned=0
+   [legal] Garruk, Unleashed                            {2}{G}{G}     cmc=4.0 mythic   owned=0
+   [legal] Garruk, Wrath of the Wilds                   {2}{G}{G}     cmc=4.0 mythic   owned=0
+   [legal] Gideon, Ally of Zendikar                     {2}{W}{W}     cmc=4.0 mythic   owned=0
+   [legal] Grand Master of Flowers                      {2}{W}{W}     cmc=4.0 mythic   owned=0
+  ... (16 more)
+
+====================================================================================================
+J. BIG THREATS (GW competitivebrawl, cmc>=5)
+  scryfall q: id<=GW f:competitivebrawl -t:land cmc>=5
+   [legal] Altanak, the Thrice-Called                   {5}{G}{G}     cmc=7.0 uncommon owned=4
+   [legal] Alabaster Host Intercessor                   {5}{W}        cmc=6.0 common   owned=3
+   [legal] Additive Evolution                           {3}{G}{G}     cmc=5.0 uncommon owned=2
+   [legal] Aeronaut Cavalry                             {4}{W}        cmc=5.0 common   owned=2
+   [legal] Affectionate Indrik                          {5}{G}        cmc=6.0 uncommon owned=2
+   [legal] Aggressive Mammoth                           {3}{G}{G}{G}  cmc=6.0 rare     owned=2
+   [legal] A Killer Among Us                            {4}{G}        cmc=5.0 uncommon owned=1
+   [legal] Absolving Lammasu                            {4}{W}        cmc=5.0 uncommon owned=1
+   [legal] Agatha's Champion                            {4}{G}        cmc=5.0 uncommon owned=1
+   [legal] Ajani's Response                             {4}{W}        cmc=5.0 common   owned=1
+   [legal] Aang, Air Nomad                              {3}{W}{W}     cmc=5.0 rare     owned=0
+   [legal] Aang, Airbending Master                      {4}{W}        cmc=5.0 mythic   owned=0
+   [legal] Acidic Slime                                 {3}{G}{G}     cmc=5.0 uncommon owned=0
+   [legal] Adaptive Shimmerer                           {5}           cmc=5.0 common   owned=0
+   [legal] Adaptive Snapjaw                             {4}{G}        cmc=5.0 common   owned=0
+   [legal] Aeve, Progenitor Ooze                        {2}{G}{G}{G}  cmc=5.0 rare     owned=0
+   [legal] Agonasaur Rex                                {3}{G}{G}     cmc=5.0 rare     owned=0
+   [legal] Airdrop Aeronauts                            {3}{W}{W}     cmc=5.0 uncommon owned=0
+   [legal] Ajani Fells the Godsire                      {3}{W}{W}     cmc=5.0 uncommon owned=0
+   [legal] Ajani, Mentor of Heroes                      {3}{G}{W}     cmc=5.0 mythic   owned=0
+   [legal] Ajani, Wise Counselor                        {3}{W}{W}     cmc=5.0 mythic   owned=0
+   [legal] Alacrian Jaguar                              {4}{G}        cmc=5.0 common   owned=0
+   [legal] Alive // Well                                {3}{G} // {W} cmc=5.0 uncommon owned=0
+   [legal] Altar of the Goyf                            {5}           cmc=5.0 uncommon owned=0
+  ... (16 more)

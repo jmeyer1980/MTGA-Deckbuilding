@@ -8,13 +8,15 @@ decks = json.load(open(os.path.join(ROOT, "mulligan-decks-v2.json"), encoding="u
 hares = next(d for d in decks if d["id"] == "brawl100-elspeth-hares-v21c")
 byname = {c["n"].split(" // ")[0]: c for c in hares["cards"]}
 byname.update({c["n"]: c for c in hares["cards"]})
+byname.setdefault("Secluded Courtyard", {
+    "n": "Secluded Courtyard", "l": True, "c": 0, "t": []})
 
 def landVal(c):
     if not c["l"]: return 0
     return 0.5 if "half" in c.get("t", []) else 1
 def isLandBridge(c): return (not c["l"]) and (c["n"].split(" // ")[0] in (
     "Ambitious Farmhand", "Knight of the White Orchid", "Loyal Warhound",
-    "Arcane Signet", "The Mind Stone", "Pearl Medallion"))
+    "Arcane Signet", "The Mind Stone", "Mind Stone", "Pearl Medallion"))
 def isBridge(c): return isLandBridge(c) or ((not c["l"]) and c["n"] in ("Hare Apparent", "Esper Sentinel"))
 def isStranded(c): return (not c["l"]) and ("stranded" in c.get("t", []))
 def earlyPlay(c): return (not c["l"]) and (c["c"] <= 2 or isBridge(c))
@@ -53,6 +55,10 @@ cases = [
     ("33d4562d Prosper (expect MULL: Queen no bridge?)",
      ["Plains", "Plains", "Hare Apparent", "Hare Apparent",
       "Secluded Courtyard", "Teferi's Protection", "The Queen of Dale"], True),  # Hare bridge
+    ("17:42 current list (expect KEEP: Air Temple + Plains + land bridges)",
+     ["Abandoned Air Temple", "Ambitious Farmhand", "Hare Apparent",
+      "Knight of the White Orchid", "Plains", "Teferi's Protection",
+      "Waystone's Guidance"], True),
     ("864f1ea2 Esika (expect MULL: Mondrak+Ring no bridge?)",
      ["Plains", "Plains", "Arcane Signet", "Exorcise",
       "Hop to It", "Mondrak, Glory Dominus", "The One Ring"], True),  # Signet bridge
@@ -60,6 +66,9 @@ cases = [
      ["Hare Apparent", "Fabled Passage", "Brave the Elements", "The Mind Stone",
       "Tocasia's Welcome", "Ojer Taq, Deepest Foundation", "Hare Apparent"], False),
 ]
+air_temple = byname["Abandoned Air Temple"]
+assert air_temple["l"] and "half" not in air_temple.get("t", []), \
+    "Abandoned Air Temple should be a full land in current Hares list"
 ok = True
 for label, hand, exp in cases:
     keep, why = rule(hand)
@@ -67,3 +76,44 @@ for label, hand, exp in cases:
     if keep != exp: ok = False
     print(f"{mark} keep={keep} exp={exp} :: {label} :: {why}")
 print("ALL-OK" if ok else "MISMATCHES PRESENT")
+if not ok:
+    raise SystemExit(1)
+
+snapshot = next(d for d in decks
+                if d["id"] == "brawl100-elspeth-hares-html-snapshot")
+snapshot_byname = {c["n"].split(" // ")[0]: c for c in snapshot["cards"]}
+snapshot_byname.update({c["n"]: c for c in snapshot["cards"]})
+assert snapshot["size"] == sum(c["q"] for c in snapshot["cards"]) == 99
+assert snapshot["lands"] == sum(c["q"] for c in snapshot["cards"] if c["l"]) == 36
+assert snapshot_byname["Hare Apparent"]["q"] == 26
+assert snapshot_byname["Dollmaker's Shop"]["c"] == 2
+assert "bridge" in snapshot_byname["Mind Stone"].get("t", [])
+assert "colorless" in snapshot_byname["Rogue's Passage"].get("t", [])
+byname = snapshot_byname
+snapshot_cases = [
+    ("HTML snapshot: 2 Plains, Hare, and 2-drop (KEEP)",
+     ["Plains", "Plains", "Hare Apparent", "Dollmaker's Shop",
+      "Rabbit Response", "Felidar Retreat", "Angel of Finality"], True),
+    ("HTML snapshot: Nykthos half-land (MULL)",
+     ["Nykthos, Shrine to Nyx", "Plains", "Hare Apparent",
+      "Murdock's Crusade", "Rabbit Response", "Felidar Retreat",
+      "Angel of Finality"], False),
+    ("HTML snapshot: colorless land warning (thin KEEP)",
+     ["Field of Ruin", "Plains", "Hare Apparent", "Murdock's Crusade",
+      "Rabbit Response", "Felidar Retreat", "Angel of Finality"], True),
+    ("HTML snapshot: no play before turn 3 (MULL)",
+     ["Plains", "Plains", "Rabbit Response", "Felidar Retreat",
+      "Angel of Finality", "Okoye, Dora Milaje Leader", "Release the Dogs"],
+     False),
+]
+snapshot_ok = True
+for label, hand, exp in snapshot_cases:
+    keep, why = rule(hand)
+    mark = "OK " if keep == exp else "FAIL"
+    if keep != exp:
+        snapshot_ok = False
+    print(f"{mark} keep={keep} exp={exp} :: {label} :: {why}")
+print("HTML-SNAPSHOT-ALL-OK" if snapshot_ok else
+      "HTML-SNAPSHOT-MISMATCHES PRESENT")
+if not snapshot_ok:
+    raise SystemExit(1)
