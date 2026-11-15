@@ -64,13 +64,25 @@ def search(query):
         req = urllib.request.Request(
             url, headers={"User-Agent": UA, "Accept": "application/json"}
         )
-        try:
-            with urllib.request.urlopen(req, timeout=30) as r:
-                data = json.load(r)
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return  # Scryfall returns 404 for "no cards matched"
-            sys.exit(f"Scryfall HTTP {e.code}: {e.read()[:300]}")
+        data = None
+        for attempt in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    data = json.load(r)
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 404:
+                    return  # Scryfall returns 404 for "no cards matched"
+                if e.code != 429:
+                    sys.exit(f"Scryfall HTTP {e.code}: {e.read()[:300]}")
+                if attempt == 3:
+                    sys.exit(
+                        "Scryfall kept rate-limiting this search. "
+                        "Wait a minute and re-run."
+                    )
+                wait = 5 * (attempt + 1)
+                sys.stderr.write(f"  rate-limited search, waiting {wait}s\n")
+                time.sleep(wait)
         yield from data.get("data", [])
         url = data.get("next_page")
         time.sleep(0.12)

@@ -30,6 +30,9 @@ python scripts/deck_check.py decks/foo.txt   # validate one deck
 python scripts/deck_check.py "decks/*.txt" --quiet
 ```
 
+Pool refreshes and `find.py` retry Scryfall HTTP 429 responses with bounded
+backoff, then stop explicitly if the rate limit persists.
+
 `deck_check.py` verifies counts, singleton/4-of, colour identity, format
 legality, bans, wildcard affordability, and the mana curve. Format is inferred
 from the filename: `brawl*` → Brawl, anything else → Standard.

@@ -104,8 +104,21 @@ def post(names):
             "Content-Type": "application/json",
         },
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.load(resp)
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return json.load(resp)
+        except urllib.error.HTTPError as e:
+            if e.code != 429:
+                raise
+            if attempt == 3:
+                raise SystemExit(
+                    "Scryfall kept rate-limiting a collection batch. "
+                    "Wait a minute and re-run."
+                ) from e
+            wait = 5 * (attempt + 1)
+            sys.stderr.write(f"  rate-limited on collection batch, waiting {wait}s\n")
+            time.sleep(wait)
 
 
 def build(counts):
