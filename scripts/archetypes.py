@@ -66,7 +66,7 @@ STANDARD_BLUEPRINTS = {
         },
         curve_targets={1: 0.20, 2: 0.30, 3: 0.25, 4: 0.15, 5: 0.05, 6: 0.03, 7: 0.02},
         land_target=22,
-        notes="Fast, creature-based strategy. Curve tops at 4. Wins by T4-T6.",
+        notes="Fast, creature-based strategy. Curve tops at 4. Wins by T4-T6. Emphasizes early creatures and aggressive mana development.",
     ),
     "midrange": Blueprint(
         format="standard",
@@ -86,7 +86,7 @@ STANDARD_BLUEPRINTS = {
         },
         curve_targets={2: 0.15, 3: 0.25, 4: 0.25, 5: 0.20, 6: 0.10, 7: 0.05},
         land_target=25,
-        notes="Value-oriented. Strong 3-5 drops, answers early, finishes mid-game.",
+        notes="Value-oriented. Strong 3-5 drops, answers early, finishes mid-game. Prioritizes card advantage and board control over tempo.",
     ),
     "control": Blueprint(
         format="standard",
@@ -106,7 +106,7 @@ STANDARD_BLUEPRINTS = {
         },
         curve_targets={1: 0.05, 2: 0.10, 3: 0.15, 4: 0.25, 5: 0.20, 6: 0.15, 7: 0.10},
         land_target=26,
-        notes="Answer-heavy. Board wipes + counterspells, finish with few big threats.",
+        notes="Answer-heavy. Board wipes + counterspells, finish with few big threats. Prioritizes answering opponent's threats before deploying your own.",
     ),
     "tempo": Blueprint(
         format="standard",
@@ -126,7 +126,7 @@ STANDARD_BLUEPRINTS = {
         },
         curve_targets={1: 0.15, 2: 0.25, 3: 0.25, 4: 0.20, 5: 0.10, 6: 0.03, 7: 0.02},
         land_target=22,
-        notes="Early threats backed by counterspells and protection. Curve tops at 4.",
+        notes="Early threats backed by counterspells and protection. Emphasizes developing a board presence while maintaining mana efficiency for interaction. Curve tops at 4 with cheap spells and protection effects.",
     ),
 }
 

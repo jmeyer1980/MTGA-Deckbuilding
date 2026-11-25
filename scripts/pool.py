@@ -61,7 +61,7 @@ def norm(name):
     return stripped.casefold()
 
 # Fields we keep per card. Deliberately narrow -- pool.json stays readable.
-KEEP = ("mana_cost", "cmc", "rarity", "type_line", "color_identity", "set")
+KEEP = ("mana_cost", "cmc", "rarity", "type_line", "color_identity", "set", "oracle_text", "keywords", "produced_mana")
 
 # Cards that opt out of the 4-of / singleton limit say so in their own text
 # (Hare Apparent, Persistent Petitioners, Relentless Rats, Dragon's Approach...).
