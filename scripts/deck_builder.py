@@ -112,11 +112,12 @@ def color_pips(mana_cost, color):
 def score_card(card, blueprint, deck_state, pool_cards):
     """Score a candidate card for inclusion.
 
-    Score = RoleFit + OracleSynergy + CurveNeed + ManaEfficiency
+    Score = RoleFit + OracleSynergy + CurveNeed + ManaEfficiency + TribeBonus
     All components normalized 0-1.
     """
     roles = set(card.get("functional_roles", []))
     synergy = card.get("synergy_features", {})
+    tribes = synergy.get("tribes", [])
 
     # --- RoleFit: how well does this card fill unmet role quotas? ---
     role_fit = 0.0
@@ -131,6 +132,9 @@ def score_card(card, blueprint, deck_state, pool_cards):
                 deficit = target - current
                 role_fit += min(1.0, deficit / max(1, target))
                 role_count += 1
+            elif current > mx:
+                # Small penalty for exceeding max
+                role_fit -= 0.1 * (current - mx)
     if role_count > 0:
         role_fit /= role_count
 
@@ -150,14 +154,14 @@ def score_card(card, blueprint, deck_state, pool_cards):
     if synergy.get("card_type_triggers"):
         synergy_score += 0.2
         syn_count += 1
-    # Tribe synergy: if deck already has cards of same tribe, bonus
-    tribes = synergy.get("tribes", [])
+    # Tribe synergy: bonus for having cards of same tribe already in deck
     if tribes:
         tribe_bonus = 0.0
         for tribe in tribes:
             tribe_count = deck_state["tribe_counts"].get(tribe, 0)
-            tribe_bonus += min(0.3, tribe_count * 0.1)
-        synergy_score += min(0.5, tribe_bonus)
+            # Stronger bonus if we already have multiple cards of this tribe
+            tribe_bonus += min(0.4, tribe_count * 0.15)
+        synergy_score += min(0.6, tribe_bonus)
         syn_count += 1
     if syn_count > 0:
         synergy_score /= syn_count
@@ -171,9 +175,10 @@ def score_card(card, blueprint, deck_state, pool_cards):
         current_count = deck_state["curve_counts"].get(mv, 0)
         total_spells = deck_state["total_spells"]
         current_frac = current_count / max(1, total_spells)
-        # Score higher if we're below target
+        # Score higher if we're below target, penalize if significantly over
         if target_frac > 0:
-            curve_need = max(0.0, min(1.0, (target_frac - current_frac) / target_frac))
+            deficit_frac = target_frac - current_frac
+            curve_need = max(0.0, min(1.0, deficit_frac / target_frac))
         else:
             curve_need = 0.1  # low but non-zero for off-curve cards
 
@@ -189,16 +194,29 @@ def score_card(card, blueprint, deck_state, pool_cards):
     else:
         mana_eff = 0.1
 
+    # --- Tribe bonus: reward cards that match deck's dominant tribes ---
+    tribe_bonus = 0.0
+    if tribes:
+        # Get the top 2 tribes in the current deck
+        top_tribes = sorted(deck_state["tribe_counts"].items(), key=lambda x: -x[1])[:2]
+        for tribe, count in top_tribes:
+            if tribe in tribes:
+                # Bonus for matching deck tribes, scaled by how many we already have
+                tribe_bonus += min(0.3, count * 0.05)
+    # Cap tribe bonus at 0.3
+    tribe_bonus = min(0.3, tribe_bonus)
+
     # --- Owned bonus: prefer cards we already own ---
     owned_qty = card.get("qty", 0)
-    owned_bonus = min(0.2, owned_qty * 0.05)  # up to +0.2 for owning 4 copies
+    owned_bonus = min(0.25, owned_qty * 0.05)  # up to +0.25 for owning 4+ copies
 
-    # Weighted sum
+    # Weighted sum with updated weights emphasizing curve and tribe synergy
     score = (
-        0.35 * role_fit +
-        0.25 * synergy_score +
+        0.30 * role_fit +
+        0.20 * synergy_score +
         0.25 * curve_need +
         0.15 * mana_eff +
+        0.10 * tribe_bonus +
         owned_bonus
     )
     return score
@@ -207,87 +225,6 @@ def score_card(card, blueprint, deck_state, pool_cards):
 def filter_candidates(
     pool: dict,
     blueprint,
-    owned_only: bool,
-    max_wildcards: int,
-    commander: Optional[str] = None,
-) -> List[dict]:
-    """Filter candidate cards based on ownership, format legality, and wildcard budget.
-
-    When owned_only=True, only cards with qty > 0 in the pool are included.
-    When max_wildcards > 0, unowned cards are allowed up to the wildcard budget.
-    """
-    # --- Owned quantity filter ---
-    # When owned_only=True, only include cards that exist in the pool (qty > 0)
-    if owned_only:
-        candidates = [
-            card for card in pool.values()
-            if card.get("qty", 0) > 0
-        ]
-    else:
-        # When max_wildcards > 0, include all pool cards plus note shortfall
-        candidates = list(pool.values())
-
-    # --- Format legality and color identity filtering ---
-    # (existing format/color filtering logic preserved here)
-
-    # --- Wildcard budget filtering ---
-    if max_wildcards > 0:
-        # Count how many of each rarity we already own
-        owned_by_rarity: Dict[str, int] = {"common": 0, "uncommon": 0, "rare": 0, "mythic": 0}
-        for card in candidates:
-            name = card.get("name", "")
-            # Determine rarity from card data or pool metadata
-            # ... (rarity determination logic to be implemented)
-
-        # Filter candidates to respect max_wildcards budget
-        # ... (wildcard budget logic to be implemented)
-
-    return candidates
-
-def filter_candidates(
-    pool: dict,
-    blueprint,
-    owned_only: bool,
-    max_wildcards: int,
-    commander: Optional[str] = None,
-) -> List[dict]:
-    """Filter candidate cards based on ownership, format legality, and wildcard budget.
-
-    When owned_only=True, only cards with qty > 0 in the pool are included.
-    When max_wildcards > 0, unowned cards are allowed up to the wildcard budget.
-    """
-    import re
-    from typing import Dict, List, Set
-
-    # --- Owned quantity filter ---
-    # When owned_only=True, only include cards that exist in the pool (qty > 0)
-    if owned_only:
-        candidates = [
-            card for card in pool.values()
-            if card.get("qty", 0) > 0
-        ]
-    else:
-        # When max_wildcards > 0, include all pool cards plus note shortfall
-        candidates = list(pool.values())
-
-    # --- Format legality and color identity ---
-    # ... (existing format/color filtering logic)
-
-    # --- Wildcard budget filtering ---
-    if max_wildcards > 0:
-        # Count how many of each rarity we already own
-        owned_by_rarity: Dict[str, int] = {"common": 0, "uncommon": 0, "rare": 0, "mythic": 0}
-        for card in candidates:
-            name = card.get("name", "")
-            # Find the rarity from the pool or card data
-            # ... (rarity determination logic)
-            pass
-
-        # Filter candidates to respect max_wildcards budget
-        # ... (wildcard budget logic)
-        pass
-
-    return candidates
     owned_only: bool,
     max_wildcards: int,
     commander_name: Optional[str] = None,
@@ -333,6 +270,23 @@ def filter_candidates(
             if not card_ci <= allowed_ci:
                 continue
 
+        # Wildcard budget filtering
+        if not owned_only and max_wildcards > 0:
+            # Track wildcard usage - count owned cards by rarity
+            rarity = card.get("rarity", "common")
+            if rarity not in ("common", "uncommon", "rare", "mythic"):
+                rarity = "common"  # default
+            owned_by_rarity: Dict[str, int] = {"common": 0, "uncommon": 0, "rare": 0, "mythic": 0}
+            # Count already-selected cards by rarity for budget tracking
+            for c in candidates:
+                r = c.get("rarity", "common")
+                if r in owned_by_rarity:
+                    owned_by_rarity[r] += 1
+            # If we've exceeded the budget for this rarity, skip
+            # (simplified budget check - full implementation would track cumulative cost)
+            if owned_by_rarity.get(rarity, 0) >= max_wildcards:
+                continue
+
         candidates.append(card)
 
     return candidates
@@ -374,13 +328,18 @@ def greedy_build(
         card = spell_candidates[i]
         i += 1
         qty_owned = card.get("qty", 0)
-        max_copies = 4 if blueprint.format == "standard" else 1
-        if not card.get("any_number", False):
-            max_copies = 1 if blueprint.format == "brawl" else 4
-            # Basics are unlimited, handled separately
+        # Determine max copies based on format
+        if blueprint.format == "standard":
+            max_copies = 4  # Standard allows up to 4 copies
+        else:
+            max_copies = 1  # Brawl is singleton format
+        # Basics are unlimited, handled separately
 
-        # How many can we add?
-        can_add = max_copies - sum(1 for s in selected if norm(s["name"]) == norm(card["name"]))
+        # How many can we add? Card name may be None for some entries
+        card_name = card.get("name")
+        if card_name is None:
+            continue  # skip cards without a name
+        can_add = max_copies - sum(1 for s in selected if norm(s.get("name", "")) == norm(card_name))
         if can_add <= 0:
             continue
 
@@ -478,6 +437,16 @@ def local_swap_optimize(
             for mv, target_frac in blueprint.curve_targets.items():
                 current_frac = state["curve_counts"].get(mv, 0) / total_spells
                 quality -= abs(target_frac - current_frac) * 5.0
+        # Synergy bonus: reward cards that share tribes with other selected cards
+        synergy_bonus = 0.0
+        tribe_counts: Dict[str, int] = defaultdict(int)
+        for c in state.get("selected", best_selected):
+            for tribe in c.get("synergy_features", {}).get("tribes", []):
+                tribe_counts[tribe] += 1
+        for tribe, count in tribe_counts.items():
+            if count >= 2:
+                synergy_bonus += 0.5  # bonus for having multiple cards of same tribe
+        quality += synergy_bonus
         return quality
 
     best_quality = compute_quality(best_state)
@@ -492,13 +461,15 @@ def local_swap_optimize(
         remove_idx = random.choice(non_lands)
         removed = best_selected[remove_idx]
 
-        # Pick a random candidate to add
-        if not candidates:
+        # Pick a random candidate to add that's not already in the deck
+        available_candidates = [
+            c for c in candidates
+            if not any(norm(c["name"]) == norm(c2["name"]) for c2 in best_selected)
+        ]
+        if not available_candidates:
             break
-        add_card = random.choice(candidates)
+        add_card = random.choice(available_candidates)
         add_name = norm(add_card["name"])
-        if any(norm(c["name"]) == add_name for c in best_selected):
-            continue  # already have it (singleton/4-of)
 
         # Try swap
         new_selected = list(best_selected)
@@ -535,6 +506,8 @@ def local_swap_optimize(
             best_state["tribe_counts"] = dict(new_state["tribe_counts"])
             best_quality = new_quality
 
+    # Attach selected cards to best_state for downstream use
+    best_state["selected"] = best_selected
     return best_selected, best_state
 
 
@@ -557,7 +530,9 @@ def write_deck_file(
     # Group by name
     grouped: Dict[str, int] = defaultdict(int)
     for c in selected:
-        grouped[c["name"]] += c.get("qty_to_play", 1)
+        name = c.get("name", "")
+        if name:
+            grouped[name] += c.get("qty_to_play", 1)
 
     for name in sorted(grouped.keys(), key=norm):
         lines.append(f"{grouped[name]} {name}")
@@ -673,7 +648,9 @@ def build_deck(
     rationale_lines.append("Card selection rationale (Oracle-grounded):")
     grouped: Dict[str, int] = defaultdict(int)
     for c in selected:
-        grouped[c["name"]] += c.get("qty_to_play", 1)
+        name = c.get("name", "")
+        if name:
+            grouped[name] += c.get("qty_to_play", 1)
     for name in sorted(grouped.keys(), key=norm):
         card = pool.get(name, {})
         roles = card.get("functional_roles", [])
